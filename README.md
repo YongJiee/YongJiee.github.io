@@ -1,10 +1,3 @@
-# 👨‍💻 Tan Yong Jie
-
-**Robotics Systems Undergraduate at Singapore Institute of Technology**  
-WorldSkills Mechatronics Competitor | Autonomous Navigation with ROS1
-
----
-
 ## 🧠 Skills
 
 - **Programming & Tools:** C++, Python, ROS1, Gazebo, RViz, Linux, Git  
