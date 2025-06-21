@@ -1,12 +1,12 @@
 # Robotics Systems Undergraduate at Singapore Institute of Technology
 
-#### Skills:
+### Skills:
 - Programming & Tools:  C++, Python, ROS1, Gazebo, RViz, Linux, Git
 - Robotics & Systems:   Autonomous Navigation, SLAM, TF2, MoveBase
 - Hardware Experience:   LIMO Robot, Pixy2 Camera, STM32, PLCs, Arduino
 - Soft Skills: Team leadership, problem solving
 
-## Education
+### Education
 - Higher Nitec in Mechatronics Engineering       | Institute of Technical Education
 - Diploma in Robotics & Mechatronics Engineering | Nanyang Polytechnic
 
