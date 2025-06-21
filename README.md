@@ -1,7 +1,10 @@
-### Education
+# Robotics Systems Undergraduate at Singapore Institute of Technology
 
-### Work Experience
+#### Technical Skills: C, C++, Python
 
+## Education
+Higher Nitec in Mechatronics Engineering       | Institute of Technical Education
+Diploma in Robotics & Mechatronics Engineering | Nanyang Polytechnic
 
 ### Projects
-- Systems Engineering Project
+- Systems Engineering Project 1
