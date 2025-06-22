@@ -1,4 +1,6 @@
-## 🧠 Skills
+##  Portfolio
+
+##  Skills
 
 - **Programming & Tools:** C++, Python, ROS1, Gazebo, RViz, Linux, Git  
 - **Robotics & Systems:** Autonomous Navigation, SLAM, TF2, MoveBase  
@@ -7,7 +9,7 @@
 
 ---
 
-## 🎓 Education
+##  Education
 
 - **Higher Nitec in Mechatronics Engineering**  
   Institute of Technical Education  
@@ -16,9 +18,9 @@
 
 ---
 
-## 🚀 Projects
+##  Projects
 
-### 🔧 Systems Engineering Project 1
+###  Systems Engineering Project 1
 Led a team of 6 to design, simulate, and deploy a fully autonomous navigation system for a LIMO robot using **ROS1 Melodic**.
 
 **Tech Stack:** ROS1, Ubuntu, TF2, RViz, MoveBase, RTabMap
@@ -33,7 +35,7 @@ Led a team of 6 to design, simulate, and deploy a fully autonomous navigation sy
 
 ---
 
-## 🏆 Awards & Recognition
+##  Awards & Recognition
 
 - **WorldSkills Singapore – Mechatronics Competitor**  
   Trained and represented school in the mechatronics category.  
