@@ -1,0 +1,93 @@
+// - - - - - - - - - - - - - - - - - -
+
+// Profile
+
+// - - - - - - - - - - - - - - - - - -
+
+
+.hero {
+	position: relative;
+	top: 0px;
+	margin-top: 0px;
+	padding: 60px 0 100px;
+	background: $hero-background-color;
+	height: 300px !important;
+
+	@include mq(tabletp) {
+		margin-top: 25px;
+		padding: 120px 0 180px;
+	}
+
+	@include mq(laptop) {
+		margin-top: 30px;
+		padding: 160px 0 220px;
+	}
+
+	h1 {
+		position: relative;
+		top: -70px;
+		color: $hero-text-color;
+
+		@include mq(tabletp) {
+			white-space: pre-line;
+		}
+	}
+
+	p {
+
+		position: relative;
+		top: -70px;
+		color: rgba($hero-text-color, 0.8);
+
+		@include mq(tabletp) {
+			margin-top: 25px;
+		}
+
+		@include mq(laptop) {
+			margin-top: 30px;
+		}
+	}
+
+	.socials {
+		position: relative;
+		top: -70px;
+		margin-top: 15px;
+
+		@include mq(tabletp) {
+			margin-top: 25px;
+		}
+
+		@include mq(laptop) {
+			margin-top: 30px;
+		}
+	}
+
+	.socials__item__link {
+		background: rgba($hero-text-color, 0.8);
+		color: $hero-background-color;
+
+		&:hover {
+			background: $hero-text-color;
+		}
+	}
+}
+
+.hero__image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba($hero-background-color, $overlay-opacity);
+}
