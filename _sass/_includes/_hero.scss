@@ -26,7 +26,7 @@
 
 	h1 {
 		position: relative;
-		top: -70px;
+		top: 0;
 		color: $hero-text-color;
 
 		@include mq(tabletp) {
@@ -37,7 +37,7 @@
 	p {
 
 		position: relative;
-		top: -70px;
+		top: 0;
 		color: rgba($hero-text-color, 0.8);
 
 		@include mq(tabletp) {
