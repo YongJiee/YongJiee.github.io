@@ -1,9 +1,6 @@
 // - - - - - - - - - - - - - - - - - -
-
 // Profile
-
 // - - - - - - - - - - - - - - - - - -
-
 
 .hero {
 	position: relative;
@@ -11,11 +8,14 @@
 	margin-top: 0px;
 	padding: 60px 0 100px;
 	background: $hero-background-color;
-	height: 300px !important;
+
+	// Fix 1: Allow auto height on mobile, fixed height on larger screens
+	height: auto !important;
 
 	@include mq(tabletp) {
 		margin-top: 25px;
 		padding: 120px 0 180px;
+		height: 300px !important;
 	}
 
 	@include mq(laptop) {
@@ -23,23 +23,36 @@
 		padding: 160px 0 220px;
 	}
 
-	h1 {
+	// Fix 2: Wrap content inside hero to push it down below header
+	.wrap {
+		position: relative;
+		z-index: 2;
+		padding-top: 80px; // Push content down below fixed navbar
+		text-align: center;
+	}
+
+	// Fix 3: Don't offset content on mobile, only shift on tablet and up
+	h1,
+	p,
+	.socials {
 		position: relative;
 		top: 0;
-		color: $hero-text-color;
 
 		@include mq(tabletp) {
 			top: -70px;
+		}
+	}
+
+	h1 {
+		color: $hero-text-color;
+
+		@include mq(tabletp) {
 			white-space: pre-line;
-			
 		}
 	}
 
 	p {
-
-		position: relative;
-		top: -70px;
-		color: rgba($hero-text-color, 0.8);
+		color: rgba($hero-text-color, 0.85);
 
 		@include mq(tabletp) {
 			margin-top: 25px;
@@ -51,8 +64,6 @@
 	}
 
 	.socials {
-		position: relative;
-		top: -70px;
 		margin-top: 15px;
 
 		@include mq(tabletp) {
@@ -83,6 +94,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	z-index: 0;
 }
 
 .hero__overlay {
@@ -92,4 +104,5 @@
 	bottom: 0;
 	left: 0;
 	background: rgba($hero-background-color, $overlay-opacity);
+	z-index: 1;
 }

@@ -4,7 +4,7 @@ subtitle:
 description: 
 featured_image:
 ---
-<figure style= "text-align: center; float: left; width: 65%; margin-right: 2%; margin-left: 0%; font-style: italic">
+<figure style= "text-align: center; float: left; width: 50%; margin-right: 2%; margin-left: 0%; font-style: italic">
     <img src="/images/Me.jpg" style="width: 70%;" class="img-fluid rounded">
   </figure>
 
