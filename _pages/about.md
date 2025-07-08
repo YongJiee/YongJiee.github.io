@@ -1,11 +1,11 @@
 ---
 title: About me
-subtitle: Great to meet you!
-description: Great to meet you!
-featured_image: /images/qdsh.jpg
+subtitle: 
+description: 
+featured_image: /images/Me.jpg
 ---
 <figure style= "text-align: center; float: left; width: 65%; margin-right: 2%; margin-left: 0%; font-style: italic">
-    <img src="/images/me.jpeg" style="width: 70%;" class="img-fluid rounded">
+    <img src="/images/Me.JPG" style="width: 70%;" class="img-fluid rounded">
   </figure>
 
 I am Yong Jie.Currently pursuing a degree in Robotics Systems (RSE) at Singapore Institute of Technology (SIT) and will graduate in 2028.

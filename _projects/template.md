@@ -1,8 +1,8 @@
 ---
-title: 'Limo Robot Navigation'
+title: 'ROS Navigation with LIMO robot'
 subtitle: 'ROS, Python'
 date: 2025-07-08 12:00:00 +000
-description: My project team and I programmed a Baxter robot to play a full game of checkers against a human opponent. This project placed 1st in the judged competition between 6 teams!
+description: Developed an autonomous navigation system using ROS1 on the LIMO robot as part of a university group project. Integrated RTAB-Map for SLAM, configured the navigation stack, and enabled reliable indoor path planning in dynamic environments.
 featured_image: '/images/Projects/Limo Robot.jpg'
 ---
 
