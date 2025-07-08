@@ -11,7 +11,7 @@
 	margin-top: 0px;
 	padding: 60px 0 100px;
 	background: $hero-background-color;
-	height: 300px !important;
+	height: auto !important;
 
 	@include mq(tabletp) {
 		margin-top: 25px;
@@ -21,6 +21,7 @@
 	@include mq(laptop) {
 		margin-top: 30px;
 		padding: 160px 0 220px;
+		height: 300px !important;
 	}
 
 	h1 {
@@ -50,7 +51,7 @@
 
 	.socials {
 		position: relative;
-		top: -70px;
+		top: 0;
 		margin-top: 15px;
 
 		@include mq(tabletp) {
