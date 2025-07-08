@@ -5,9 +5,10 @@
   position: relative;
   top: 0;
   margin-top: 0;
+  margin-bottom: 2rem; // ⬅ extra spacing below hero
   padding: 60px 0 100px;
   background: $hero-background-color;
-  height: auto !important; // allow dynamic height on mobile
+  height: auto !important; // allow dynamic height
 
   @include mq(tabletp) {
     margin-top: 25px;
@@ -21,8 +22,8 @@
   }
 
   .wrap {
-    padding-top: 60px;  // ↓ previously 120px — raised content
-    padding-bottom: 10px; // ↓ add bottom compression
+    padding-top: 60px;        // ⬆ Raised everything up
+    padding-bottom: 10px;     // ⬇ Compress bottom spacing
     position: relative;
     z-index: 2;
     text-align: center;
@@ -39,32 +40,28 @@
   h1 {
     position: relative;
     top: 0;
-
-    @include mq(tabletp) {
-      top: -70px;
-      white-space: pre-line;
-    }
-
     color: $hero-text-color;
     margin-bottom: 0.5rem;
+
+    @include mq(tabletp) {
+      white-space: pre-line;
+    }
   }
 
   p {
     position: relative;
     top: 0;
+    color: rgba($hero-text-color, 0.85);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 
     @include mq(tabletp) {
-      top: -70px;
       margin-top: 25px;
     }
 
     @include mq(laptop) {
       margin-top: 30px;
     }
-
-    color: rgba($hero-text-color, 0.85);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
   }
 
   .socials {
