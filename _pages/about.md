@@ -8,13 +8,8 @@ featured_image: /images/qdsh.jpg
     <img src="/images/me.jpeg" style="width: 70%;" class="img-fluid rounded">
   </figure>
 
-Thanks for stopping by! I'm **Maurice**, a Roboticist from [Bcharre, Lebanon](https://en.wikipedia.org/wiki/Bsharri).
+I am Yong Jie.Currently pursuing a degree in Robotics Systems (RSE) at Singapore Institute of Technology (SIT) and will graduate in 2028.
 
-I currently work for [Boston Dynamics](https://www.bostondynamics.com) remotely from Detroit, MI. I am on on the Manipulation team for the [Stretch](https://www.bostondynamics.com/stretch) project, and am responsible for motion generation. To date, my code has helped Stretch move >6 million customer boxes.
+I've been exposed to robotics since I was 13 years old, and my interest has grown. During my secondary school years, I joined the Robotics Club and competed in both local and international competitions, winning numerous first-place awards. After secondary school, I studied Robotics and Mechatronics Engineering at ITE (Higher Nitec) and NYP, where I became interested in robotics automation and PLC. In addition, throughout my ITE and NYP, I competed in WorldSkills in mechatronics and received a medallion of excellence.
 
-I graduated from **Northwestern**'s Master of Science in Robotics program! My interests include motion planning (optimization or ML based) and any kind of modeling that can improve my understanding of a system.
-
-
-Aside from Robotics, I love playing guitar, hiking, and cold plunges! 
-
-<a href="https://moribots.github.io/images/MR.pdf" class="button button--large" download="MR.pdf">Resume</a>
+<a href="https://YongJiee.github.io/images/Tan Yong Jie_Resume (2025).pdf" class="button button--large" download="Tan Yong Jie_Resume (2025).pdf">Resume</a>
