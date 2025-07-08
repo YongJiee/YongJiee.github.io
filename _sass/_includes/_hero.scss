@@ -7,12 +7,12 @@
   margin-top: 0;
   padding: 60px 0 100px;
   background: $hero-background-color;
-  height: auto !important; // allow full height on mobile
+  height: auto !important; // allow dynamic height on mobile
 
   @include mq(tabletp) {
     margin-top: 25px;
     padding: 120px 0 180px;
-    height: 300px !important; // restore height on larger screens
+    height: 300px !important;
   }
 
   @include mq(laptop) {
@@ -21,18 +21,27 @@
   }
 
   .wrap {
-    padding-top: 120px; // push content below fixed nav bar
+    padding-top: 100px;  // ↓ previously 120px — raised content
+    padding-bottom: 20px; // ↓ add bottom compression
     position: relative;
     z-index: 2;
     text-align: center;
+
+    @include mq(tabletp) {
+      padding-top: 60px;
+    }
+
+    @include mq(laptop) {
+      padding-top: 40px;
+    }
   }
 
   h1 {
     position: relative;
-    top: 0; // keep flat on mobile
+    top: 0;
 
     @include mq(tabletp) {
-      top: -70px; // shift upward only on larger screens
+      top: -70px;
       white-space: pre-line;
     }
 
