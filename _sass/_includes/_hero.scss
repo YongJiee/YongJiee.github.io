@@ -1,114 +1,93 @@
 // - - - - - - - - - - - - - - - - - -
+
 // Profile
+
 // - - - - - - - - - - - - - - - - - -
+
+
 .hero {
-  position: relative;
-  top: 0;
-  margin-top: 0;
-  margin-bottom: 4rem; // ✅ Extra space below hero to avoid overlap
-  padding: 60px 0 100px;
-  background: $hero-background-color;
-  height: auto !important;
+	position: relative;
+	top: 0px;
+	margin-top: 0px;
+	padding: 60px 0 100px;
+	background: $hero-background-color;
+	height: 300px !important;
 
-  @include mq(tabletp) {
-    margin-top: 25px;
-    padding: 120px 0 180px;
-    height: 300px !important;
-  }
+	@include mq(tabletp) {
+		margin-top: 25px;
+		padding: 120px 0 180px;
+	}
 
-  @include mq(laptop) {
-    margin-top: 30px;
-    padding: 160px 0 220px;
-  }
+	@include mq(laptop) {
+		margin-top: 30px;
+		padding: 160px 0 220px;
+	}
 
-  .wrap {
-    padding-top: 60px;       // ✅ Raised content
-    padding-bottom: 0px;     // ✅ No excess padding at bottom (spacing controlled outside)
-    position: relative;
-    z-index: 2;
-    text-align: center;
+	h1 {
+		position: relative;
+		top: -70px;
+		color: $hero-text-color;
 
-    @include mq(tabletp) {
-      padding-top: 40px;
-    }
+		@include mq(tabletp) {
+			white-space: pre-line;
+		}
+	}
 
-    @include mq(laptop) {
-      padding-top: 30px;
-    }
-  }
+	p {
 
-  h1 {
-    position: relative;
-    top: 0;
-    color: $hero-text-color;
-    margin-bottom: 0.5rem;
+		position: relative;
+		top: -70px;
+		color: rgba($hero-text-color, 0.8);
 
-    @include mq(tabletp) {
-      white-space: pre-line;
-    }
-  }
+		@include mq(tabletp) {
+			margin-top: 25px;
+		}
 
-  p {
-    position: relative;
-    top: 0;
-    color: rgba($hero-text-color, 0.85);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+		@include mq(laptop) {
+			margin-top: 30px;
+		}
+	}
 
-    @include mq(tabletp) {
-      margin-top: 25px;
-    }
+	.socials {
+		position: relative;
+		top: -70px;
+		margin-top: 15px;
 
-    @include mq(laptop) {
-      margin-top: 30px;
-    }
-  }
+		@include mq(tabletp) {
+			margin-top: 25px;
+		}
 
-  .socials {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.25rem;
-    margin-bottom: 2.5rem; // ✅ Increased for breathing space
+		@include mq(laptop) {
+			margin-top: 30px;
+		}
+	}
 
-    @include mq(tabletp) {
-      margin-top: 0.5rem;
-    }
+	.socials__item__link {
+		background: rgba($hero-text-color, 0.8);
+		color: $hero-background-color;
 
-    @include mq(laptop) {
-      margin-top: 0.25rem;
-    }
-  }
-
-  .socials__item__link {
-    background: rgba($hero-text-color, 0.8);
-    color: $hero-background-color;
-    padding: 0.5rem;
-    border-radius: 50%;
-
-    &:hover {
-      background: $hero-text-color;
-    }
-  }
+		&:hover {
+			background: $hero-text-color;
+		}
+	}
 }
 
 .hero__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .hero__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba($hero-background-color, $overlay-opacity);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba($hero-background-color, $overlay-opacity);
 }
