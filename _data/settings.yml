@@ -1,5 +1,5 @@
 basic_settings:
-  site_title: Maurice Rahme
+  site_title: Yong Jie
   favicon_image: /images/robot_c.png
 
 header_settings:
@@ -10,12 +10,8 @@ menu_settings:
   menu_items:
     - title: 'Projects'
       url: '/'
-    - title: 'Blog'
-      url: '/blog/'
     - title: 'About'
       url: '/about'
-    - title: 'Contact'
-      url: '/contact'
     - title: 'Resume'
       url: 'https://moribots.github.io/images/MR.pdf'
 
