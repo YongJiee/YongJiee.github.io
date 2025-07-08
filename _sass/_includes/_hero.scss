@@ -23,10 +23,10 @@
   }
 
   .wrap {
-    padding-top: 50px; // ✅ push content lower on mobile
+    padding-top: 10px; // ✅ push content lower on mobile
 
     @include mq(tabletp) {
-      padding-top: 20px;
+      padding-top: 5px;
     }
 
     @include mq(laptop) {
