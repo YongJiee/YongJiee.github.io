@@ -16,19 +16,13 @@ menu_settings:
       url: 'https://YongJiee.github.io/images/Tan Yong Jie_Resume (2025).pdf'
 
 footer_settings:
-  footer_tagline: 'Creativity from prototyping to production.'
+  footer_tagline: ''
 
 hero_settings:
   overlay_opacity: 0.8
 
 post_settings:
   grid_spacing: 10
-
-contact_settings:
-  form_action: 'https://formspree.io/xbjlvbkj'
-  confirmation_url: '/thanks'
-  email_subject: 'Contact form submission'
-  send_button_text: 'Send Message'
 
 social_settings:
   facebook_url: ''
