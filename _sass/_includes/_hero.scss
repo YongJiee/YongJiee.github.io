@@ -21,18 +21,18 @@
   }
 
   .wrap {
-    padding-top: 100px;  // ↓ previously 120px — raised content
-    padding-bottom: 20px; // ↓ add bottom compression
+    padding-top: 60px;  // ↓ previously 120px — raised content
+    padding-bottom: 10px; // ↓ add bottom compression
     position: relative;
     z-index: 2;
     text-align: center;
 
     @include mq(tabletp) {
-      padding-top: 60px;
+      padding-top: 40px;
     }
 
     @include mq(laptop) {
-      padding-top: 40px;
+      padding-top: 30px;
     }
   }
 
