@@ -5,10 +5,10 @@
   position: relative;
   top: 0;
   margin-top: 0;
-  margin-bottom: 2rem; // ⬅ extra spacing below hero
+  margin-bottom: 4rem; // ✅ Extra space below hero to avoid overlap
   padding: 60px 0 100px;
   background: $hero-background-color;
-  height: auto !important; // allow dynamic height
+  height: auto !important;
 
   @include mq(tabletp) {
     margin-top: 25px;
@@ -22,8 +22,8 @@
   }
 
   .wrap {
-    padding-top: 60px;        // ⬆ Raised everything up
-    padding-bottom: 10px;     // ⬇ Compress bottom spacing
+    padding-top: 60px;       // ✅ Raised content
+    padding-bottom: 0px;     // ✅ No excess padding at bottom (spacing controlled outside)
     position: relative;
     z-index: 2;
     text-align: center;
@@ -70,7 +70,7 @@
     justify-content: center;
     gap: 1rem;
     margin-top: 0.25rem;
-	margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem; // ✅ Increased for breathing space
 
     @include mq(tabletp) {
       margin-top: 0.5rem;
