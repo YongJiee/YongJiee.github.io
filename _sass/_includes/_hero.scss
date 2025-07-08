@@ -1,19 +1,18 @@
 // - - - - - - - - - - - - - - - - - -
 // Profile
 // - - - - - - - - - - - - - - - - - -
-
 .hero {
   position: relative;
-  top: 0px;
-  margin-top: 0px;
+  top: 0;
+  margin-top: 0;
   padding: 60px 0 100px;
   background: $hero-background-color;
-  height: auto !important; // allow full content height on mobile
+  height: auto !important; // allow full height on mobile
 
   @include mq(tabletp) {
     margin-top: 25px;
     padding: 120px 0 180px;
-    height: 300px !important;
+    height: 300px !important; // restore height on larger screens
   }
 
   @include mq(laptop) {
@@ -22,7 +21,7 @@
   }
 
   .wrap {
-    padding-top: 120px; // ensures content is pushed below fixed nav
+    padding-top: 120px; // push content below fixed nav bar
     position: relative;
     z-index: 2;
     text-align: center;
@@ -30,10 +29,10 @@
 
   h1 {
     position: relative;
-    top: 0;
+    top: 0; // keep flat on mobile
 
     @include mq(tabletp) {
-      top: -70px;
+      top: -70px; // shift upward only on larger screens
       white-space: pre-line;
     }
 
@@ -61,20 +60,17 @@
 
   .socials {
     position: relative;
-    top: 0; // don't lift on mobile
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 
     @include mq(tabletp) {
-      top: -40px;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     @include mq(laptop) {
-      top: -50px;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
   }
 
