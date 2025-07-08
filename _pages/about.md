@@ -2,10 +2,10 @@
 title: About me
 subtitle: 
 description: 
-featured_image: /images/Me.jpg
+featured_image:
 ---
 <figure style= "text-align: center; float: left; width: 65%; margin-right: 2%; margin-left: 0%; font-style: italic">
-    <img src="/images/Me.JPG" style="width: 70%;" class="img-fluid rounded">
+    <img src="/images/Me.jpg" style="width: 70%;" class="img-fluid rounded">
   </figure>
 
 I am Yong Jie.Currently pursuing a degree in Robotics Systems (RSE) at Singapore Institute of Technology (SIT) and will graduate in 2028.
