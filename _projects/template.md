@@ -1,9 +1,9 @@
 ---
-title: 'Baxter Plays Checkers'
-subtitle: 'ROS, MoveIt, AI, OpenCV'
-date: 2019-12-13 10:05:55 +0300
+title: 'Limo Robot Navigation'
+subtitle: 'ROS, Python'
+date: 2025-07-08 12:00:00 +000
 description: My project team and I programmed a Baxter robot to play a full game of checkers against a human opponent. This project placed 1st in the judged competition between 6 teams!
-featured_image: '/images/Projects/baxter_chx2.png'
+featured_image: '/images/Projects/Limo Robot.jpg'
 ---
 
 ![](/images/demo/demo-landscape.jpg)
