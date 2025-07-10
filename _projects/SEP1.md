@@ -6,7 +6,7 @@ description: Developed an autonomous navigation system using ROS1 on the LIMO ro
 featured_image: '/images/Projects/Limo Robot.jpg'
 ---
 
-![](/images/Projects/Limo%20Robot.jpg)
+![](/images/Projects/SEP1/Navigation.gif)
 
 ## Project Overview
 
