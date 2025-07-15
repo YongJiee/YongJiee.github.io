@@ -11,12 +11,13 @@ featured_image: '/images/Projects/SEP1/Navigation.gif'
 ## Project Overview
 
 As part of our university's Systems Engineering Project 1 module, our team applied the SEBoK systems approach to design and implement an autonomous navigation system. 
-We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Mastercard Bridge, featuring various navigation plots and a custom ramp structure. A LIMO robot was used to navigate the arena autonomously using ROS1 Melodic, the Navigation Stack, and RTAB-Map for real-time SLAM and mapping.
+We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Mastercard Bridge, featuring various navigation plots and a custom ramp structure. A LIMO robot was used to navigate the arena autonomously using **ROS1 Melodic**, the **Navigation Stack**, and **RTAB-Map** for real-time **SLAM** and mapping.
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
 
-### Final Video
-This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses RTAB-Map for real-time SLAM, along with the ROS1 Navigation Stack for path planning, obstacle avoidance, and dynamic recovery.
+
+### Final Demonstration Video
+This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses **RTAB-Map** for real-time SLAM, along with the **ROS1 Navigation Stack** for path planning, obstacle avoidance, and dynamic recovery.
 
 <iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
