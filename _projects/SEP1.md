@@ -15,34 +15,11 @@ We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Ma
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
-### Image galleries
-
-Here's a really neat custom feature we added – galleries:
-
-<div class="gallery" data-columns="3">
-	<img src="/images/Projects/SEP1/Draft_1.jpg">
-    <img src="/images/Projects/SEP1/Draft_2.jpg">
-    <img src="/images/Projects/SEP1/Draft_3.jpg">
-    <img src="/images/Projects/SEP1/Draft_4.jpg">
+### Draft Layout
+Final Layout:
+<div class="gallery" data-columns="1">
+  <img src="/images/Projects/SEP1/Draft_Final.jpg">
 </div>
-
-Inspired by the Galleries feature from WordPress, we've made it easy to create grid layouts for your images. Just use a bit of simple HTML in your post to create a masonry grid image layout:
-
-<div class="gallery" data-columns="3">
-  <figure>
-    <img src="/images/Projects/SEP1/Draft_5.jpg">
-    <figcaption>🧪 Iteration 5: Final wall and ramp refinements</figcaption>
-  </figure>
-  <figure>
-    <img src="/images/Projects/SEP1/Draft_6.jpg">
-    <figcaption>🚧 Iteration 6: Maze curvature tests</figcaption>
-  </figure>
-  <figure>
-    <img src="/images/Projects/SEP1/Draft_Final.jpg">
-    <figcaption>✅ Final Layout: SLAM-validated navigation arena</figcaption>
-  </figure>
-</div>
-
 
 ### Final Plot
 <div class="gallery" data-columns="1">
