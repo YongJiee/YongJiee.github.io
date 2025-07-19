@@ -17,6 +17,15 @@ Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engin
 
 <iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
+![](/images/Projects/SEP1/Limo%20Robot.jpg)
+Hardware: 
+* AgileX LIMO Robot
+* Jetson Nano
+* Orrbec Astra Depth Camera
+* 2D LiDAR Sensor
+* IMU (Inertial Measurement Unit)
+* Wheel Encoders
+
 ### Final Layout
 Drawing Layout:
 <div class="gallery" data-columns="1">
