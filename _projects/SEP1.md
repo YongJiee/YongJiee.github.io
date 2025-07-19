@@ -9,8 +9,6 @@ featured_image: '/images/Projects/SEP1/Navigation.gif'
 ### Skills: ROS1 Navigation Stack, SLAM & Mapping, Python
 
 ## Project Overview
-
-<!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**.  -->
 Our team applied the **SEBoK systems approach** to design and implement an autonomous navigation system as part of our university's **Systems Engineering Project 1** module.
 
 We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewel Mastercard Bridge, featuring various navigation plots and a custom ramp structure. The **AgileX LIMO robot** navigated the arena autonomously using **ROS1 Melodic**, the **Navigation Stack**, and **RTAB-Map** for real-time **SLAM** and mapping.
