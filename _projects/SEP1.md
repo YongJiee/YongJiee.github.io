@@ -22,17 +22,17 @@ Drawing Layout:
 </div>
 Final Layout:
 <div class="gallery" data-columns="2">
-	<img src="/images/Projects/SEP1/Final_TopView.png.png">
+	<img src="/images/Projects/SEP1/Final_TopView.png">
 	<img src="/images/Projects/SEP1/Final_Isometric.png">
 </div>
 CAD Drawing
 <div class="gallery" data-columns="1">
-  <img src="/images/Projects/SEP1/Draft_Final.jpg">
+  <img src="/images/Projects/SEP1/Final_Drawing.png">
 </div>
 
 ### Final Plot
 <div class="gallery" data-columns="1">
-	<img src="/images/Projects/SEP1/Final_Drawing.png.jpg">
+	<img src="/images/Projects/SEP1/Draft_Final.jpg">
 </div>
 
 ### Final Demonstration Video
