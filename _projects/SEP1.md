@@ -22,7 +22,7 @@ Drawing Layout:
 </div>
 Final Layout:
 <div class="gallery" data-columns="2">
-	<img src="/images/Projects/SEP1/Final_Drawing.png">
+	<img src="/images/Projects/SEP1/Final_TopView.png.png">
 	<img src="/images/Projects/SEP1/Final_Isometric.png">
 </div>
 CAD Drawing
@@ -32,7 +32,7 @@ CAD Drawing
 
 ### Final Plot
 <div class="gallery" data-columns="1">
-	<img src="/images/Projects/SEP1/Final_Plot.jpg">
+	<img src="/images/Projects/SEP1/Final_Drawing.png.jpg">
 </div>
 
 ### Final Demonstration Video
