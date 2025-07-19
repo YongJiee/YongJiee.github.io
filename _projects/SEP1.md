@@ -28,13 +28,21 @@ Here's a really neat custom feature we added – galleries:
 
 Inspired by the Galleries feature from WordPress, we've made it easy to create grid layouts for your images. Just use a bit of simple HTML in your post to create a masonry grid image layout:
 
-```html
 <div class="gallery" data-columns="3">
+  <figure>
     <img src="/images/Projects/SEP1/Draft_5.jpg">
+    <figcaption>🧪 Iteration 5: Final wall and ramp refinements</figcaption>
+  </figure>
+  <figure>
     <img src="/images/Projects/SEP1/Draft_6.jpg">
-    <img src="/images/Projects/SEP1/Draft_7.jpg">
-    <img src="/images/Projects/SEP1/Draft_Final.jpg.jpg">
+    <figcaption>🚧 Iteration 6: Maze curvature tests</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/Projects/SEP1/Draft_Final.jpg">
+    <figcaption>✅ Final Layout: SLAM-validated navigation arena</figcaption>
+  </figure>
 </div>
+
 
 ### Final Plot
 <div class="gallery" data-columns="1">
