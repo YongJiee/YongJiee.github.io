@@ -21,7 +21,7 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ---
 
-## 🔍 Project Highlights
+## Project Highlights
 
 <!-- - Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python) -->
 - Developed autonomous indoor navigation using **ROS1 Navigation Stack**
@@ -76,7 +76,7 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 ## Technical Challenges & Solutions
 
 One key challenge was handling situations where the robot could not generate a valid path due to costmap inflation, dead ends, or dynamic obstacles.  
-**Solution:** I implemented a **custom recovery behavior** that:
+**Solution:** We implemented a **custom recovery behavior** that:
 - **Clears the local costmap**
 - **Rotates in place** to scan for new paths
 - **Reverses slightly** to escape dead ends  
@@ -86,13 +86,19 @@ One key challenge was handling situations where the robot could not generate a v
 
 ## Development Timeline
 
-- **Week 1–2:** Learned ROS basics using `turtlesim`, publisher/subscriber, launch files
-- **Week 3–4:** Built arena prototype and prepared sensor mounts
-- **Week 5:** Began using LIMO robot for integration and sensor testing
-- **Week 6–7:** Implemented SLAM using RTAB-Map and real-time mapping
-- **Week 8–10:** Integrated Navigation Stack with costmaps and AMCL localization
-- **Week 11:** Developed and tested recovery behavior logic
-- **Week 12:** Final showcase and demo presentation
+- **Week 1:** Team formation, plot assignment, and setup of Ubuntu 18.04 development environment  
+- **Week 2:** Learned core ROS1 concepts — packages, nodes, topics, and services  
+- **Week 3:** Practiced using `roslaunch`, implemented custom publishers/subscribers, and built basic service/client 
+- **Week 4:** Introduction to the ROS Navigation Stack — concepts like costmaps, TF, and robot footprint  
+- **Week 5:** Navigation setup with LIMO robot, including `actionlib`, transforms, and real-world teleop testing  
+- **Week 6:** Integrated RTAB-Map for SLAM using depth and LiDAR sensors in indoor environment  
+- **Week 7:** Fine-tuned map resolution, visual SLAM performance, and robot localization using AMCL  
+- **Week 8:** Implemented global and local planners with costmap tuning for tighter indoor spaces  
+- **Week 9:** Developed custom recovery behavior — clear costmap, rotate, reverse, retry goal planning  
+- **Week 10:** Conducted full-route testing and debugging in dynamic arena with obstacles and ramps  
+- **Week 11:** Final system integration, edge case handling, and demo preparation  
+- **Week 12:** Live demonstration of autonomous navigation
+
 
 ---
 
