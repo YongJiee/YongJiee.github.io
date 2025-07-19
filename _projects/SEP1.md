@@ -5,8 +5,7 @@ date: 2025-07-08 12:00:00 +0000
 description: Developed an autonomous navigation system using ROS1 on the LIMO robot as part of a university group project. Integrated RTAB-Map for SLAM, configured the navigation stack, and enabled reliable indoor path planning in dynamic environments.
 featured_image: '/images/Projects/SEP1/Navigation.gif'
 ---
-<iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-
+![](/images/Projects/Limo Robot.jpg)
 
 ## Project Overview
 
@@ -15,7 +14,7 @@ We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Ma
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
-![](/images/Projects/Limo Robot.jpg)
+<iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 ### Final Layout
 Drawing Layout:
