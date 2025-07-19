@@ -1,7 +1,7 @@
 ---
 title: 'ROS Navigation with LIMO robot'
 subtitle: 'ROS1 Melodic, Python, Navigation Stack, RTAB-Map'
-date: 2025-07-08 12:00:00 +000
+date: 2025-07-08 12:00:00 +0000
 description: Developed an autonomous navigation system using ROS1 on the LIMO robot as part of a university group project. Integrated RTAB-Map for SLAM, configured the navigation stack, and enabled reliable indoor path planning in dynamic environments.
 featured_image: '/images/Projects/SEP1/Navigation.gif'
 ---
@@ -15,8 +15,17 @@ We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Ma
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
-### Draft Layout
+### Final Layout
+Drawing Layout:
+<div class="gallery" data-columns="1">
+  <img src="/images/Projects/SEP1/Draft_Final.jpg">
+</div>
 Final Layout:
+<div class="gallery" data-columns="2">
+	<img src="/images/Projects/SEP1/Final_Drawing.png">
+	<img src="/images/Projects/SEP1/Final_Isometric.png">
+</div>
+CAD Drawing
 <div class="gallery" data-columns="1">
   <img src="/images/Projects/SEP1/Draft_Final.jpg">
 </div>
