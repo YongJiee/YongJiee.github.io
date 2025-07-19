@@ -15,7 +15,13 @@ We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Ma
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
+### Image carousels
 
+Final Images
+
+<div class="gallery" data-columns="1">
+	<img src="/images/Projects/SEP1/Final_Plot.jpg">
+</div>
 
 ### Final Demonstration Video
 This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses **RTAB-Map** for real-time SLAM, along with the **ROS1 Navigation Stack** for path planning, obstacle avoidance, and dynamic recovery.
