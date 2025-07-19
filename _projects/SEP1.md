@@ -20,19 +20,14 @@ Drawing Layout:
 <div class="gallery" data-columns="1">
   <img src="/images/Projects/SEP1/Draft_Final.jpg">
 </div>
-Final Layout:
-<div class="gallery" data-columns="2">
-	<img src="/images/Projects/SEP1/Final_TopView.png">
-	<img src="/images/Projects/SEP1/Final_Isometric.png">
-</div>
-CAD Drawing
+CAD Drawing:
 <div class="gallery" data-columns="1">
   <img src="/images/Projects/SEP1/Final_Drawing.png">
 </div>
 
-### Final Plot
+# Actual Plot View:
 <div class="gallery" data-columns="1">
-	<img src="/images/Projects/SEP1/Draft_Final.jpg">
+	<img src="/images/Projects/SEP1/Final_Plot.jpg">
 </div>
 
 ### Final Demonstration Video
