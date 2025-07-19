@@ -15,10 +15,7 @@ We built a 1.5m x 1.33m arena themed after Singapore Changi Airport’s Jewel Ma
 
 Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git).
 
-### Image carousels
-
-Final Images
-
+### Final Plot
 <div class="gallery" data-columns="1">
 	<img src="/images/Projects/SEP1/Final_Plot.jpg">
 </div>
