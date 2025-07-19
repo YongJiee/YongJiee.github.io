@@ -17,18 +17,27 @@ Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engin
 
 <iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-<figure style= "text-align: center; float: left; width: 50%; margin-right: 2%; margin-left: 0%; font-style: italic">
-    <img src="/images/Projects/SEP1/Limo Robot.jpg" style="width: 70%;" class="img-fluid rounded">
-    <p>AgileX LIMO Robot</p>
-  </figure>
+<!-- Hardware List on Left -->
+<div style="width: 45%; float: left; margin-left: 0%; margin-right: 2%;">
+  <h3>Hardware:</h3>
+  <ul>
+    <li>AgileX LIMO Robot</li>
+    <li>Jetson Nano</li>
+    <li>Orrbec Astra Depth Camera</li>
+    <li>2D LiDAR Sensor</li>
+    <li>IMU (Inertial Measurement Unit)</li>
+    <li>Wheel Encoders</li>
+  </ul>
+</div>
 
-Hardware: 
-* AgileX LIMO Robot
-* Jetson Nano
-* Orrbec Astra Depth Camera
-* 2D LiDAR Sensor
-* IMU (Inertial Measurement Unit)
-* Wheel Encoders
+<!-- Image on Right -->
+<figure style="text-align: center; float: right; width: 50%; margin-left: 2%; margin-right: 0%; font-style: italic">
+  <img src="/images/Projects/SEP1/Limo Robot.jpg" style="width: 70%;" class="img-fluid rounded">
+  <p>AgileX LIMO Robot</p>
+</figure>
+
+<div style="clear: both;"></div>
+
 
 ### Final Layout
 Drawing Layout:
