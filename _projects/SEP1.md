@@ -17,7 +17,11 @@ Check out the full program on [GitHub](https://github.com/YongJiee/Systems-Engin
 
 <iframe src="https://www.youtube.com/embed/jBH--Sihadw" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-![](/images/Projects/SEP1/Limo%20Robot.jpg)
+<figure style= "text-align: center; float: left; width: 50%; margin-right: 2%; margin-left: 0%; font-style: italic">
+    <img src="/images/Projects/SEP1/Limo Robot.jpg" style="width: 70%;" class="img-fluid rounded">
+    <p>AgileX LIMO Robot</p>
+  </figure>
+
 Hardware: 
 * AgileX LIMO Robot
 * Jetson Nano
