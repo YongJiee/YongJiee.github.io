@@ -8,7 +8,8 @@ featured_image: '/images/Projects/SEP1/Navigation.gif'
 
 ### Skills: ROS1 Navigation Stack, SLAM & Mapping, Python
 
-## 🧠 Project Overview
+## Project Overview
+<!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. -->
 
 Our team applied the **SEBoK systems approach** to design and implement an autonomous navigation system as part of our university's **Systems Engineering Project 1** module.
 
@@ -22,16 +23,16 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ## 🔍 Project Highlights
 
-- 👨‍💻 Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python)
-- 🚗 Developed autonomous indoor navigation using **ROS1 Navigation Stack**
-- 🧠 Integrated **RTAB-Map** for real-time **SLAM** and map generation
-- 🛠️ Deployed on **AgileX LIMO Robot** with depth camera and LiDAR
-- ♻️ **Implemented custom recovery behavior** using `/move_base/make_plan` service
-- 🧪 Built a Changi Airport-themed arena with 35cm-wide paths and 14cm ramp
+<!-- - Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python) -->
+- Developed autonomous indoor navigation using **ROS1 Navigation Stack**
+- Integrated **RTAB-Map** for real-time **SLAM** and map generation
+- Deployed on **AgileX LIMO Robot** with depth camera and LiDAR
+- **Implemented custom recovery behavior** using `/move_base/make_plan` service
+- Built a Changi Airport-themed arena with 35cm-wide paths and 14cm ramp
 
 ---
 
-## 🤖 Hardware Integration
+## Hardware Integration
 
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <!-- Hardware List -->
@@ -58,7 +59,7 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ---
 
-## 🗺️ Arena Design & Physical Setup
+## Arena Design & Physical Setup
 
 **Drawing Layout:**
 <img src="/images/Projects/SEP1/Draft_Final.jpg" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
@@ -72,30 +73,30 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ---
 
-## ⚙️ Technical Challenges & Solutions
+## Technical Challenges & Solutions
 
-> One key challenge was handling situations where the robot could not generate a valid path due to costmap inflation, dead ends, or dynamic obstacles.  
-> ✅ **Solution:** I implemented a **custom recovery behavior** that:
-> - **Clears the local costmap**
-> - **Rotates in place** to scan for new paths
-> - **Reverses slightly** to escape dead ends  
-> This greatly improved recovery success and allowed the robot to continue navigating reliably in dynamic environments.
-
----
-
-## ⏱️ Development Timeline
-
-- ✅ **Week 1–2:** Learned ROS basics using `turtlesim`, publisher/subscriber, launch files
-- ✅ **Week 3–4:** Built arena prototype and prepared sensor mounts
-- ✅ **Week 5:** Began using LIMO robot for integration and sensor testing
-- ✅ **Week 6–7:** Implemented SLAM using RTAB-Map and real-time mapping
-- ✅ **Week 8–10:** Integrated Navigation Stack with costmaps and AMCL localization
-- ✅ **Week 11:** Developed and tested recovery behavior logic
-- ✅ **Week 12:** Final showcase and demo presentation
+One key challenge was handling situations where the robot could not generate a valid path due to costmap inflation, dead ends, or dynamic obstacles.  
+**Solution:** I implemented a **custom recovery behavior** that:
+- **Clears the local costmap**
+- **Rotates in place** to scan for new paths
+- **Reverses slightly** to escape dead ends  
+ This greatly improved recovery success and allowed the robot to continue navigating reliably in dynamic environments.
 
 ---
 
-## 🎬 Demonstration
+## Development Timeline
+
+- **Week 1–2:** Learned ROS basics using `turtlesim`, publisher/subscriber, launch files
+- **Week 3–4:** Built arena prototype and prepared sensor mounts
+- **Week 5:** Began using LIMO robot for integration and sensor testing
+- **Week 6–7:** Implemented SLAM using RTAB-Map and real-time mapping
+- **Week 8–10:** Integrated Navigation Stack with costmaps and AMCL localization
+- **Week 11:** Developed and tested recovery behavior logic
+- **Week 12:** Final showcase and demo presentation
+
+---
+
+## Demonstration
 
 This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses **RTAB-Map** for real-time SLAM, along with the **ROS1 Navigation Stack** for path planning, obstacle avoidance, and dynamic recovery.
 
