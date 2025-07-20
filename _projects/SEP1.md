@@ -58,16 +58,57 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 ---
 ## Software Overview
 
-| Component       | Purpose                              | Tool/ Package                       |
-|-----------------|--------------------------------------|-------------------------------------|
-| SLAM            | Real-time mapping and loop closure   | `rtabmap_ros`                       |
-| Localization    | Estimate robot pose in map           | `amcl`                              |
-| Global Planning | Generate optimal path to goal        | `NavFn` (inside `move_base`)        |
-| Local Planning  | Navigate around local obstacles      | `TrajectoryPlannerROS`              |
-| Costmap         | Create obstacle-aware 2D grid map    | `costmap_2d`                        |
-| Recovery        | Handle blocked paths or failed plans | Custom Python logic + costmap reset |
-| Visualization   | Visualize map, pose, and commands    | `RViz`                              |
-| Command Control | Launch, topic/service control        | `roslaunch`, custom Python nodes    |
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;">
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>SLAM</h4>
+    <p><strong>Purpose:</strong> Real-time mapping and loop closure</p>
+    <p><strong>Tool:</strong> <code>rtabmap_ros</code></p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Localization</h4>
+    <p><strong>Purpose:</strong> Estimate robot pose in map</p>
+    <p><strong>Tool:</strong> <code>amcl</code></p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Global Planning</h4>
+    <p><strong>Purpose:</strong> Generate optimal path to goal</p>
+    <p><strong>Tool:</strong> <code>NavFn</code> (inside <code>move_base</code>)</p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Local Planning</h4>
+    <p><strong>Purpose:</strong> Navigate around local obstacles</p>
+    <p><strong>Tool:</strong> <code>TrajectoryPlannerROS</code></p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Costmap</h4>
+    <p><strong>Purpose:</strong> Create obstacle-aware 2D grid map</p>
+    <p><strong>Tool:</strong> <code>costmap_2d</code></p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Recovery</h4>
+    <p><strong>Purpose:</strong> Handle blocked paths or failed plans</p>
+    <p><strong>Tool:</strong> Custom Python logic + costmap reset</p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Visualization</h4>
+    <p><strong>Purpose:</strong> Visualize map, pose, and commands</p>
+    <p><strong>Tool:</strong> <code>RViz</code></p>
+  </div>
+
+  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Command Control</h4>
+    <p><strong>Purpose:</strong> Launch, topic/service control</p>
+    <p><strong>Tool:</strong> <code>roslaunch</code>, custom Python nodes</p>
+  </div>
+
+</div>
 
 ---
 
