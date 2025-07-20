@@ -56,13 +56,13 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 <div style="clear: both;"></div>
 
 ---
-## Software Integration
+## Software Overview
 
-| Item                 | Author        | Supports tables? | Price |
-|----------------------|---------------|------------------|-------|
-| Duet Jekyll Theme    | Jekyll Themes | Yes              | $49   |
-| Index Jekyll Theme   | Jekyll Themes | Yes              | $49   |
-| Journal Jekyll Theme | Jekyll Themes | Yes              | $49   |
+| Componenet      | Purpose                            | Tool/ Package               |
+|-----------------|------------------------------------|-----------------------------|
+| SLAM            | Real-time mapping and loop closure | `rtabmap_ros`               |
+| Localization    | Estimate robot pose in map         | `amcl`                      |
+| Global Planning | Generate optimal path to goal      |`NavFn` (inside `move_base`) |
 
 ---
 
