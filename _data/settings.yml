@@ -156,8 +156,8 @@ advanced_settings:
     .tag-container span {
       display: inline-block;
       padding: 6px 14px;
-      background-color: #fee2e2; /* light red */
-      color: #b91c1c; /* deep red text */
+      background-color: #e5e9f0; /* light red */
+      color: #2c3e50; /* deep red text */
       border-radius: 9999px;
       font-weight: 600;
       font-size: 0.95em;

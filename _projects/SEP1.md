@@ -12,7 +12,6 @@ featured_image: '/images/Projects/SEP1/Navigation.gif'
   <span>Python</span>
   <span>RViz</span>
 </div>
-</div>
 
 ## Project Overview
 <!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. -->
