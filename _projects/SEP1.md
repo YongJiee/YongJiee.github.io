@@ -1,12 +1,10 @@
 ---
 title: 'ROS Navigation with LIMO robot'
 subtitle: 'ROS1 Melodic, Python, Navigation Stack, RTAB-Map'
-date: 2025-07-08 12:00:00 +0000
+date: 2025-07-20 12:00:00 +0000
 description: Developed an autonomous navigation system using ROS1 on the LIMO robot as part of a university group project. Integrated RTAB-Map for SLAM, configured the navigation stack, and enabled reliable indoor path planning in dynamic environments.
 featured_image: '/images/Projects/SEP1/Navigation.gif'
 ---
-
-### Skills: ROS1 Navigation Stack, SLAM & Mapping, Python
 
 ## Project Overview
 <!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. -->
@@ -56,6 +54,21 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 </div>
 
 <div style="clear: both;"></div>
+
+---
+
+## Software Overview
+
+| Component        | Purpose                                         | Tool/Package                        |
+|------------------|-------------------------------------------------|-------------------------------------|
+| SLAM             | Real-time mapping and loop closure              | `rtabmap_ros`                       |
+| Localization     | Estimate robot pose in map                      | `amcl`                              |
+| Global Planning  | Generate optimal path to goal                   | `NavFn` (inside `move_base`)        |
+| Local Planning   | Navigate around local obstacles                 | `TrajectoryPlannerROS` or similar   |
+| Costmap          | Create obstacle-aware 2D grid map               | `costmap_2d`                        |
+| Recovery         | Handle blocked paths or failed plans            | Custom Python logic + costmap reset |
+| Visualization    | Visualize map, pose, and commands               | `RViz`                              |
+| Command Control  | Launch, topic/service control                   | `roslaunch`, custom Python nodes    |
 
 ---
 
