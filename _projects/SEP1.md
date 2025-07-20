@@ -5,6 +5,13 @@ date: 2025-07-08 12:00:00 +0000
 description: Developed an autonomous navigation system using ROS1 on the LIMO robot as part of a university group project. Integrated RTAB-Map for SLAM, configured the navigation stack, and enabled reliable indoor path planning in dynamic environments.
 featured_image: '/images/Projects/SEP1/Navigation.gif'
 ---
+<div style="margin: 20px 0;">
+  <span style="background-color: #dbeafe; color: #1e3a8a; padding: 6px 12px; border-radius: 9999px; font-weight: 600; margin-right: 6px;">ROS1</span>
+  <span style="background-color: #dbeafe; color: #1e3a8a; padding: 6px 12px; border-radius: 9999px; font-weight: 600; margin-right: 6px;">RTAB-Map</span>
+  <span style="background-color: #dbeafe; color: #1e3a8a; padding: 6px 12px; border-radius: 9999px; font-weight: 600; margin-right: 6px;">Navigation Stack</span>
+  <span style="background-color: #dbeafe; color: #1e3a8a; padding: 6px 12px; border-radius: 9999px; font-weight: 600; margin-right: 6px;">Python</span>
+  <span style="background-color: #dbeafe; color: #1e3a8a; padding: 6px 12px; border-radius: 9999px; font-weight: 600;">RViz</span>
+</div>
 
 ## Project Overview
 <!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. -->
