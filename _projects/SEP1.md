@@ -58,11 +58,16 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 ---
 ## Software Overview
 
-| Componenet      | Purpose                            | Tool/ Package               |
-|-----------------|------------------------------------|-----------------------------|
-| SLAM            | Real-time mapping and loop closure | `rtabmap_ros`               |
-| Localization    | Estimate robot pose in map         | `amcl`                      |
-| Global Planning | Generate optimal path to goal      |`NavFn` (inside `move_base`) |
+| Component       | Purpose                              | Tool/ Package                       |
+|-----------------|--------------------------------------|-------------------------------------|
+| SLAM            | Real-time mapping and loop closure   | `rtabmap_ros`                       |
+| Localization    | Estimate robot pose in map           | `amcl`                              |
+| Global Planning | Generate optimal path to goal        | `NavFn` (inside `move_base`)        |
+| Local Planning  | Navigate around local obstacles      | `TrajectoryPlannerROS`              |
+| Costmap         | Create obstacle-aware 2D grid map    | `costmap_2d`                        |
+| Recovery        | Handle blocked paths or failed plans | Custom Python logic + costmap reset |
+| Visualization   | Visualize map, pose, and commands    | `RViz`                              |
+| Command Control | Launch, topic/service control        | `roslaunch`, custom Python nodes    |
 
 ---
 
