@@ -145,6 +145,30 @@ font_settings:
 advanced_settings:
   ajax_loading: false
   analytics: UA-161551607-1
-  custom_styles: ""
+  custom_styles: |
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tag-container span {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #fee2e2; /* light red */
+      color: #b91c1c; /* deep red text */
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95em;
+      user-select: none;
+    }
+
+    .tag-container span:active,
+    .tag-container span:focus,
+    .tag-container span::selection {
+      background-color: #fca5a5; /* lighter red when selected */
+      color: #7f1d1d;
+    }
   header_js: ""
   footer_js: ""
