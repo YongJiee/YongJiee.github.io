@@ -166,4 +166,4 @@ One key challenge was handling situations where the robot could not generate a v
 
 This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses **RTAB-Map** for real-time SLAM, along with the **ROS1 Navigation Stack** for path planning, obstacle avoidance, and dynamic recovery.
 
-<iframe src="https://www.youtube.com/embed/1f2t4Yp_YZo" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/YuCFiMQ4BtU" width="640" height="360" frameborder="0" allowfullscreen></iframe>
