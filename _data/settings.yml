@@ -19,47 +19,30 @@ footer_settings:
   footer_tagline: |
     <div class="bottom-contact">
       <div class="container">
-        <h2>Let's Work Together</h2>
-        <p class="subtitle">Have a project in mind or just want to connect? I'd love to hear from you and discuss how we can bring your ideas to life.</p>
+        <h3>Get In Touch</h3>
+        <p class="subtitle">Ready to collaborate? Let's connect!</p>
         
-        <form class="contact-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
             </div>
           </div>
           
           <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Job Opportunity / General Inquiry">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about your project, timeline, budget, or anything else you'd like to discuss..." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
           </div>
           
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
 
-        <div class="contact-info">
-          <div class="contact-info-item">
-            <div class="icon">📧</div>
-            <div><a href="mailto:your.email@example.com">your.email@example.com</a></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">💼</div>
-            <div><a href="https://www.linkedin.com/in/yong-jie-tan/" target="_blank">LinkedIn</a></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">💻</div>
-            <div><a href="https://github.com/YongJiee" target="_blank">GitHub</a></div>
-          </div>
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com" class="contact-link">📧 Email</a>
+          <a href="https://www.linkedin.com/in/yong-jie-tan/" target="_blank" class="contact-link">💼 LinkedIn</a>
+          <a href="https://github.com/YongJiee" target="_blank" class="contact-link">💻 GitHub</a>
         </div>
       </div>
     </div>
@@ -217,95 +200,65 @@ advanced_settings:
       color: #7f1d1d;
     }
 
-    /* Bottom Contact Form */
+    /* Bottom Contact Form - Compact Version */
     .bottom-contact {
       background: linear-gradient(135deg, #132930 0%, #1a3642 100%);
-      padding: 4rem 0;
-      margin-top: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bottom-contact::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(160, 32, 240, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(160, 32, 240, 0.1) 0%, transparent 50%);
-      pointer-events: none;
+      padding: 2.5rem 0;
+      margin-top: 3rem;
     }
 
     .bottom-contact .container {
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
+      padding: 0 1.5rem;
     }
 
-    .bottom-contact h2 {
+    .bottom-contact h3 {
       color: #ffffff;
       text-align: center;
-      margin-bottom: 1rem;
-      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
     }
 
     .bottom-contact .subtitle {
       color: #ABB7B7;
       text-align: center;
-      margin-bottom: 3rem;
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 2rem;
+      font-size: 1rem;
     }
 
     .contact-form {
       background: rgba(255, 255, 255, 0.08);
-      padding: 2.5rem;
-      border-radius: 16px;
+      padding: 1.5rem;
+      border-radius: 12px;
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1.5rem;
     }
 
     .form-row {
       display: flex;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
 
     .form-group {
       flex: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.75rem;
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.01em;
+      margin-bottom: 1rem;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 1rem 1.25rem;
+      padding: 0.75rem;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
+      border-radius: 6px;
       color: #ffffff;
       font-family: "Muli", serif;
-      font-size: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
       box-sizing: border-box;
     }
 
@@ -320,85 +273,60 @@ advanced_settings:
       outline: none;
       border-color: #a020f0;
       background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 0 3px rgba(160, 32, 240, 0.25);
-      transform: translateY(-1px);
+      box-shadow: 0 0 0 2px rgba(160, 32, 240, 0.25);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 140px;
+      min-height: 80px;
       font-family: inherit;
     }
 
     .submit-btn {
       background: linear-gradient(135deg, #a020f0 0%, #8a1cc7 100%);
       color: white;
-      padding: 1.25rem 3rem;
+      padding: 0.75rem 2rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       display: block;
-      margin: 2rem auto 0;
-      min-width: 220px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
+      margin: 0 auto;
+      min-width: 160px;
     }
 
     .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(160, 32, 240, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(160, 32, 240, 0.3);
     }
 
-    .submit-btn:hover::before {
-      left: 100%;
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
     }
 
-    .submit-btn:active {
-      transform: translateY(-1px);
-    }
-
-    /* Contact Info Section */
-    .contact-info {
+    /* Contact Links */
+    .contact-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .contact-info-item {
-      text-align: center;
+    .contact-link {
       color: #ABB7B7;
-    }
-
-    .contact-info-item .icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #a020f0;
-    }
-
-    .contact-info-item a {
-      color: #ffffff;
       text-decoration: none;
+      font-size: 0.9rem;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .contact-info-item a:hover {
+    .contact-link:hover {
       color: #a020f0;
     }
 
@@ -408,43 +336,73 @@ advanced_settings:
         gap: 0;
       }
       
+      .bottom-contact {
+        padding: 2rem 0;
+      }
+      
       .bottom-contact .container {
         padding: 0 1rem;
       }
       
       .contact-form {
-        padding: 2rem 1.5rem;
+        padding: 1.25rem;
       }
 
-      .bottom-contact h2 {
-        font-size: 2.2rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
+      .contact-links {
         gap: 1rem;
       }
 
       .submit-btn {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        min-width: auto;
         width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .bottom-contact {
-        padding: 3rem 0;
-      }
-
-      .bottom-contact h2 {
-        font-size: 1.8rem;
-      }
-
-      .contact-form {
-        padding: 1.5rem 1rem;
+        min-width: auto;
       }
     }
   header_js: ""
-  footer_js: ""
+  footer_js: |
+    <script>
+    // Simple form handling without mailto
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+          
+          if (!name || !email || !message) {
+            alert('Please fill in all fields.');
+            return;
+          }
+          
+          const submitBtn = form.querySelector('.submit-btn');
+          const originalText = submitBtn.textContent;
+          
+          // Show sending state
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+          
+          // Create email body
+          const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+          const subject = `Portfolio Contact from ${name}`;
+          
+          // Open email client (more reliable than form mailto)
+          window.location.href = `mailto:your.email@example.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+          
+          // Reset form after short delay
+          setTimeout(() => {
+            submitBtn.textContent = 'Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            form.reset();
+            
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.style.background = 'linear-gradient(135deg, #a020f0, #8a1cc7)';
+              submitBtn.disabled = false;
+            }, 2000);
+          }, 1000);
+        });
+      }
+    });
+    </script>
