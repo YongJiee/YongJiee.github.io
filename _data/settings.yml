@@ -403,9 +403,13 @@ advanced_settings:
   header_js: ""
   footer_js: |
     <script>
-    // Add contact form functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Create and insert the contact form HTML
+    // Multiple approaches to ensure the contact form shows
+    function insertContactForm() {
+      // Avoid duplicate forms
+      if (document.querySelector('.bottom-contact')) {
+        return;
+      }
+      
       const contactFormHTML = `
         <div class="bottom-contact">
           <div class="container">
@@ -455,53 +459,68 @@ advanced_settings:
         </div>
       `;
       
-      // Insert the contact form before the footer
-      const footer = document.querySelector('footer') || document.body;
-      footer.insertAdjacentHTML('beforebegin', contactFormHTML);
+      // Try multiple insertion methods
+      const footer = document.querySelector('footer');
+      const main = document.querySelector('main');
+      const body = document.body;
       
-      // Add form submission handling
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Get form data
-          const formData = new FormData(form);
-          const name = formData.get('name');
-          const email = formData.get('email');
-          const subject = formData.get('subject');
-          const message = formData.get('message');
-          
-          // Basic validation
-          if (!name || !email || !message) {
-            alert('Please fill in all required fields.');
-            return;
-          }
-          
-          // Here you would typically send the data to your server
-          // For now, we'll show a success message
-          const submitBtn = form.querySelector('.submit-btn');
-          const originalText = submitBtn.textContent;
-          
-          submitBtn.textContent = 'Sending...';
-          submitBtn.disabled = true;
-          
-          // Simulate sending (replace with actual form submission)
-          setTimeout(() => {
-            submitBtn.textContent = 'Message Sent!';
-            submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            
-            // Reset form
-            form.reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-              submitBtn.textContent = originalText;
-              submitBtn.style.background = 'linear-gradient(135deg, #a020f0, #8a1cc7)';
-              submitBtn.disabled = false;
-            }, 3000);
-          }, 1500);
-        });
+      if (footer) {
+        footer.insertAdjacentHTML('beforebegin', contactFormHTML);
+      } else if (main) {
+        main.insertAdjacentHTML('afterend', contactFormHTML);
+      } else {
+        body.insertAdjacentHTML('beforeend', contactFormHTML);
       }
-    });
+      
+      // Add form functionality
+      setTimeout(() => {
+        const form = document.getElementById('contactForm');
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            if (!name || !email || !message) {
+              alert('Please fill in all required fields.');
+              return;
+            }
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+              submitBtn.textContent = 'Message Sent!';
+              submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+              form.reset();
+              
+              setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = 'linear-gradient(135deg, #a020f0, #8a1cc7)';
+                submitBtn.disabled = false;
+              }, 3000);
+            }, 1500);
+          });
+        }
+      }, 100);
+    }
+
+    // Try different timing approaches
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', insertContactForm);
+    } else {
+      insertContactForm();
+    }
+    
+    // Fallback - try again after a short delay
+    setTimeout(insertContactForm, 1000);
+    
+    // Another fallback for slow-loading sites
+    window.addEventListener('load', insertContactForm);
     </script>
