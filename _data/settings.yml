@@ -16,7 +16,53 @@ menu_settings:
       url: 'https://YongJiee.github.io/images/Tan Yong Jie_Resume (2025).pdf'
 
 footer_settings:
-  footer_tagline: ''
+  footer_tagline: |
+    <div class="bottom-contact">
+      <div class="container">
+        <h2>Let's Work Together</h2>
+        <p class="subtitle">Have a project in mind or just want to connect? I'd love to hear from you and discuss how we can bring your ideas to life.</p>
+        
+        <form class="contact-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Job Opportunity / General Inquiry">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project, timeline, budget, or anything else you'd like to discuss..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="icon">📧</div>
+            <div><a href="mailto:your.email@example.com">your.email@example.com</a></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">💼</div>
+            <div><a href="https://www.linkedin.com/in/yong-jie-tan/" target="_blank">LinkedIn</a></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">💻</div>
+            <div><a href="https://github.com/YongJiee" target="_blank">GitHub</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 hero_settings:
   overlay_opacity: 0.8
@@ -401,126 +447,4 @@ advanced_settings:
       }
     }
   header_js: ""
-  footer_js: |
-    <script>
-    // Multiple approaches to ensure the contact form shows
-    function insertContactForm() {
-      // Avoid duplicate forms
-      if (document.querySelector('.bottom-contact')) {
-        return;
-      }
-      
-      const contactFormHTML = `
-        <div class="bottom-contact">
-          <div class="container">
-            <h2>Let's Work Together</h2>
-            <p class="subtitle">Have a project in mind or just want to connect? I'd love to hear from you and discuss how we can bring your ideas to life.</p>
-            
-            <form class="contact-form" id="contactForm" action="#" method="POST">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Project Collaboration / Job Opportunity / General Inquiry">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about your project, timeline, budget, or anything else you'd like to discuss..." required></textarea>
-              </div>
-              
-              <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-
-            <div class="contact-info">
-              <div class="contact-info-item">
-                <div class="icon">📧</div>
-                <div><a href="mailto:your.email@example.com">your.email@example.com</a></div>
-              </div>
-              <div class="contact-info-item">
-                <div class="icon">💼</div>
-                <div><a href="https://www.linkedin.com/in/yong-jie-tan/" target="_blank">LinkedIn</a></div>
-              </div>
-              <div class="contact-info-item">
-                <div class="icon">💻</div>
-                <div><a href="https://github.com/YongJiee" target="_blank">GitHub</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-      
-      // Try multiple insertion methods
-      const footer = document.querySelector('footer');
-      const main = document.querySelector('main');
-      const body = document.body;
-      
-      if (footer) {
-        footer.insertAdjacentHTML('beforebegin', contactFormHTML);
-      } else if (main) {
-        main.insertAdjacentHTML('afterend', contactFormHTML);
-      } else {
-        body.insertAdjacentHTML('beforeend', contactFormHTML);
-      }
-      
-      // Add form functionality
-      setTimeout(() => {
-        const form = document.getElementById('contactForm');
-        if (form) {
-          form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            if (!name || !email || !message) {
-              alert('Please fill in all required fields.');
-              return;
-            }
-            
-            const submitBtn = form.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-              submitBtn.textContent = 'Message Sent!';
-              submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-              form.reset();
-              
-              setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.background = 'linear-gradient(135deg, #a020f0, #8a1cc7)';
-                submitBtn.disabled = false;
-              }, 3000);
-            }, 1500);
-          });
-        }
-      }, 100);
-    }
-
-    // Try different timing approaches
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', insertContactForm);
-    } else {
-      insertContactForm();
-    }
-    
-    // Fallback - try again after a short delay
-    setTimeout(insertContactForm, 1000);
-    
-    // Another fallback for slow-loading sites
-    window.addEventListener('load', insertContactForm);
-    </script>
+  footer_js: ""
