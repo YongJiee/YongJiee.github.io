@@ -2,7 +2,7 @@
 title: 'Autonomous Navigation with LIMO Robot using ROS1'
 subtitle: 'ROS1 Melodic, Python, Navigation Stack, RTAB-Map'
 date: 2025-07-08 12:00:00 +0000
-description: As part of the Systems Engineering Project 1 module, developed an autonomous indoor navigation system for the LIMO robot.
+description: Developed an autonomous indoor navigation system for the LIMO robot as part of the Systems Engineering Project 1 course module. Integrated ROS1 Melodic with RTAB-Map for SLAM and tuned the navigation stack for reliable path planning and obstacle avoidance.
 featured_image: '/images/Projects/SEP1/Final Navigation.gif'
 ---
 <div class="tag-container">
