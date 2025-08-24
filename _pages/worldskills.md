@@ -31,13 +31,13 @@ I began competing in WorldSkills while studying at ITE, focusing on practical in
 ### PLC & HMI Platforms
 - **Twincat PLC** – Motion and logic control for automation cells  
 - **Panasonic PLC** – Control systems for competition and projects  
-- **Panasonic HMI (FPWINgr7)** – Used to monitor and control entire systems, including production status and alarms  
+- **Panasonic HMI** – Used to monitor and control entire systems, including production status and alarms  
 
 ### Programming Languages & Tools
-- **Ladder Diagram (LD)** – Standard industrial control logic  
-- **Sequential Function Chart (SFC)** – Process sequencing  
-- **Structured Text (ST)** – Complex logic and data handling  
-- **Continuous Function Chart (CFC)** – Control and monitoring loops  
+- **Ladder Diagram (LD)**
+- **Sequential Function Chart (SFC)**
+- **Structured Text (ST)**
+- **Continuous Function Chart (CFC)**
 
 ### Automation Skills
 - Electrical and pneumatic circuit design and panel wiring  
