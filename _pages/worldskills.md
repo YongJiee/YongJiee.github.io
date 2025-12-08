@@ -29,9 +29,9 @@ I began competing in WorldSkills while studying at ITE, focusing on practical in
 ## Industrial Automation Expertise
 
 ### PLC & HMI Platforms
-- **Twincat PLC** – Motion and logic control for automation cells  
-- **Panasonic PLC** – Control systems for competition and projects  
-- **Panasonic HMI** – Used to monitor and control entire systems, including production status and alarms  
+- **Twincat PLC**
+- **Panasonic PLC** 
+- **Panasonic HMI** 
 
 ### Programming Languages & Tools
 - **Ladder Diagram (LD)**
