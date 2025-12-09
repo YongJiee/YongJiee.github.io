@@ -3,7 +3,7 @@ title: 'Autonomous Maze Explorer'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
 date: 2024-12-08 10:05:55 +0300
 description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust obstacle avoidance and intelligent exploration strategies.
-featured_image: '/images/Projects/maze_explorer.png'
+featured_image: '/images/Projects/Project4/Exploration_Final.gif'
 ---
 
 ![](/images/Projects/maze_explorer_demo.jpg)
@@ -13,6 +13,13 @@ featured_image: '/images/Projects/maze_explorer.png'
 This project demonstrates autonomous maze exploration and navigation using ROS2 (Robot Operating System 2). The TurtleBot3 robot autonomously navigates through unknown maze environments, builds a map in real-time using SLAM (Simultaneous Localization and Mapping), and successfully finds the exit without any pre-programmed map or path.
 
 The system was developed as part of the RSE2108 ROS2 Assignment, where the robot had to solve mazes larger than 2.5m x 2.5m with grid sizes of 0.5m x 0.5m, starting from the center of the maze.
+
+Watch the TurtleBot3 autonomously explore and solve three different maze configurations:
+
+### Map 1:
+<video width="100%" controls poster="/images/Projects/Project4/map1_thumb.jpg">
+    <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
+</video>
 
 ---
 
