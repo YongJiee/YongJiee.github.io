@@ -1,8 +1,8 @@
 ---
-title: 'Autonomous Maze Explorer'
+title: 'Autonomous Maze Escape Robot'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
-date: 2025-07-01 12:00:00 +0000
-description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust obstacle avoidance and intelligent exploration strategies.
+date: 2025-09-01 12:00:00 +0000
+description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust exit detection and intelligent pathfinding.
 featured_image: '/images/Projects/Project4/Exploration_Final.gif'
 ---
 <div class="tag-container">
@@ -15,11 +15,9 @@ featured_image: '/images/Projects/Project4/Exploration_Final.gif'
 
 ## Project Overview
 
-This project demonstrates autonomous maze exploration and navigation using ROS2 (Robot Operating System 2). The TurtleBot3 robot autonomously navigates through unknown maze environments, builds a map in real-time using SLAM (Simultaneous Localization and Mapping), and successfully finds the exit without any pre-programmed map or path.
+This project demonstrates autonomous maze navigation and escape using ROS2 (Robot Operating System 2). The TurtleBot3 robot autonomously navigates through unknown maze environments, builds a map in real-time using SLAM (Simultaneous Localization and Mapping), and successfully finds and exits the maze without any pre-programmed map or path.
 
-The system was developed as part of the RSE2108 ROS2 Assignment, where the robot had to solve mazes larger than 2.5m x 2.5m with grid sizes of 0.5m x 0.5m, starting from the center of the maze.
-
-Watch the TurtleBot3 autonomously explore and solve three different maze configurations:
+The system was developed as part of the RSE2108 ROS2 Assignment, where the robot had to escape from mazes larger than 2.5m x 2.5m with grid sizes of 0.5m x 0.5m, starting from the center of the maze.
 
 ### Large 5x5 Maze
 <video width="100%" controls >
@@ -111,12 +109,12 @@ best = max(safe, key=safe.get)
     <div style="text-align: center;">
         <img src="/images/Projects/Project4/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">2.5x2.5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Basic exploration and exit detection</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;"></p>
     </div>
     <div style="text-align: center;">
         <img src="/images/Projects/Project4/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Large 5x5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Complex navigation with recovery behaviors</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;"></p>
     </div>
 </div>
 
