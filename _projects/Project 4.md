@@ -21,20 +21,10 @@ The system was developed as part of the RSE2108 ROS2 Assignment, where the robot
 
 Watch the TurtleBot3 autonomously explore and solve three different maze configurations:
 
-### Map 1: Large 5x5 Maze
+### Final Large 5x5 Maze
 <video width="100%" controls >
     <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
 </video>
-
-### Map 1: 2.5x2.5 Maze
-<div class="gallery" data-columns="1">
-	<img src="/images/Projects/Project4/Maze_final.gif" style="width: 80%">
-</div>
-
-### Map 1: Large 5x5 Maze
-<div class="gallery" data-columns="1">
-	<img src="/images/Projects/Project4/Maze01_final.gif" style="width: 80%">
-</div>
 
 ---
 
@@ -45,28 +35,6 @@ Watch the TurtleBot3 autonomously explore and solve three different maze configu
 The project integrates several sophisticated robotics frameworks and algorithms working in harmony. The Nav2 (Navigation 2) stack provides the core navigation capabilities, handling path planning, obstacle avoidance, and motion control with custom parameters tuned for optimal performance in tight maze corridors. SLAM Toolbox runs in online asynchronous mode to build the map while the robot explores, with custom mapper parameters that balance between mapping accuracy and computational efficiency for real-time performance.
 
 LiDAR sensor data is continuously processed to detect walls, identify open spaces, and recognize the maze exit. The algorithm analyzes 360-degree laser scan data, filtering infinite values to identify potential exits and safe navigation paths with high precision.
-
-### Intelligent Exploration Algorithm
-
-The exploration strategy employs a frontier-based approach with several key innovations. The system continuously monitors LiDAR readings for infinite values in the forward hemisphere (270° to 90°), and when more than 80% of forward-facing readings show infinite range for at least 5 consecutive seconds, the robot recognizes it has found the exit and stops navigation.
-
-Rather than following predetermined waypoints, the robot dynamically generates navigation goals based on sensor data. When unexplored space is detected, the robot rotates toward it and sets a goal 3 meters away in that direction. The navigation node tracks the robot's current position via odometry and adjusts its strategy based on real-time sensor feedback, enabling responsive behavior in complex maze configurations.
-
-### Robust Recovery System
-
-One of the project's strengths is its comprehensive recovery behavior that handles various failure scenarios. A timeout mechanism (30 seconds) detects when the robot hasn't made progress toward its goal, triggering recovery procedures before the robot becomes completely stuck. The system counts navigation failures and triggers increasingly aggressive recovery behaviors after multiple consecutive failures within a cooldown period.
-
-During recovery, the robot analyzes clearance in all four cardinal directions (forward, backward, left, right) using dedicated sensor regions, then moves toward the safest direction with at least 0.4m clearance. If no safe direction is found, the robot performs a recovery spin to reorient itself and find new exploration opportunities.
-
----
-
-## System Architecture
-
-The project uses a modular launch architecture with two main components. The simulation launch initializes the Gazebo environment, spawns the custom maze model from SDF files, launches the TurtleBot3 robot with precise positioning, and configures the robot state publisher for transforms. The navigation launch starts SLAM Toolbox with custom parameters for online mapping, launches Nav2 stack without a pre-existing map, configures RViz2 for visualization with custom view settings, and manages parameter files for different TurtleBot3 models.
-
-The core exploration logic is implemented in a ROS2 node that subscribes to LiDAR and odometry topics, publishes velocity commands and navigation goals, interfaces with Nav2's action server, and implements state machine logic for exploration, navigation, and recovery. The node maintains multiple state flags to track navigation status, rotation state, infinite value detection, timeout conditions, and recovery mode.
-
----
 
 ## Key Challenges and Solutions
 
@@ -135,6 +103,14 @@ best = max(safe, key=safe.get)
 | Language | Python 3 |
 | Framework | ROS2 |
 | Maze Size | > 2.5m × 2.5m (0.5m grid) |
+
+---
+
+### Testing Maze
+<div class="gallery" data-columns="2">
+	<img src="/images/Projects/Project4/Maze_final.gif">
+	<img src="/images/Projects/Project4/Maze01_final.gif">
+</div>
 
 ---
 
