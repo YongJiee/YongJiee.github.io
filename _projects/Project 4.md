@@ -21,7 +21,7 @@ The system was developed as part of the RSE2108 ROS2 Assignment, where the robot
 
 Watch the TurtleBot3 autonomously explore and solve three different maze configurations:
 
-### Final Large 5x5 Maze
+### Large 5x5 Maze
 <video width="100%" controls >
     <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
 </video>
@@ -95,7 +95,7 @@ best = max(safe, key=safe.get)
 
 | Component | Technology |
 |-----------|-----------|
-| Robot Platform | TurtleBot3 (Burger/Waffle) |
+| Robot Platform | TurtleBot3 (Burger) |
 | Simulation | Gazebo with SDF models |
 | Mapping | SLAM Toolbox (online async) |
 | Navigation | Nav2 stack |
@@ -106,10 +106,18 @@ best = max(safe, key=safe.get)
 
 ---
 
-### Testing Maze
-<div class="gallery" data-columns="2">
-	<img src="/images/Projects/Project4/Maze_final.gif">
-	<img src="/images/Projects/Project4/Maze01_final.gif">
+### Maze Navigation Demonstrations
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
+    <div style="text-align: center;">
+        <img src="/images/Projects/Project4/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <p style="margin-top: 15px; font-weight: bold;">2.5x2.5m Maze</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Basic exploration and exit detection</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="/images/Projects/Project4/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <p style="margin-top: 15px; font-weight: bold;">Large 5x5m Maze</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Complex navigation with recovery behaviors</p>
+    </div>
 </div>
 
 ---
