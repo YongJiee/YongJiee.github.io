@@ -19,6 +19,8 @@ This project demonstrates autonomous maze navigation and escape using ROS2 (Robo
 
 The system was developed as part of the RSE2108 ROS2 Assignment, where the robot had to escape from mazes larger than 2.5m x 2.5m with grid sizes of 0.5m x 0.5m, starting from the center of the maze.
 
+🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
+
 ### Large 5x5 Maze
 <video width="100%" controls >
     <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
