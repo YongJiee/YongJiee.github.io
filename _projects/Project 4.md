@@ -21,11 +21,17 @@ The system was developed as part of the RSE2108 ROS2 Assignment, where the robot
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
-### Large 5x5 Maze
+---
+
+### Watch It In Action
+
+See the complete autonomous maze escape in this demonstration:
+
 <video width="100%" controls >
     <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
 </video>
 
+*TurtleBot3 successfully navigating and escaping a large 5x5m maze using real-time SLAM and intelligent pathfinding*
 ---
 
 ## Technical Implementation
@@ -36,6 +42,37 @@ The project integrates several sophisticated robotics frameworks and algorithms 
 
 LiDAR sensor data is continuously processed to detect walls, identify open spaces, and recognize the maze exit. The algorithm analyzes 360-degree laser scan data, filtering infinite values to identify potential exits and safe navigation paths with high precision.
 
+### Intelligent Exploration Algorithm
+
+The exploration strategy employs a frontier-based approach with several key innovations. The system continuously monitors LiDAR readings for infinite values in the forward hemisphere (270° to 90°), and when more than 80% of forward-facing readings show infinite range for at least 5 consecutive seconds, the robot recognizes it has found the exit and stops navigation.
+
+Rather than following predetermined waypoints, the robot dynamically generates navigation goals based on sensor data. When unexplored space is detected, the robot rotates toward it and sets a goal 3 meters away in that direction. The navigation node tracks the robot's current position via odometry and adjusts its strategy based on real-time sensor feedback, enabling responsive behavior in complex maze configurations.
+
+### Robust Recovery System
+
+One of the project's strengths is its comprehensive recovery behavior that handles various failure scenarios. A timeout mechanism (30 seconds) detects when the robot hasn't made progress toward its goal, triggering recovery procedures before the robot becomes completely stuck. The system counts navigation failures and triggers increasingly aggressive recovery behaviors after multiple consecutive failures within a cooldown period.
+
+During recovery, the robot analyzes clearance in all four cardinal directions (forward, backward, left, right) using dedicated sensor regions, then moves toward the safest direction with at least 0.4m clearance. If no safe direction is found, the robot performs a recovery spin to reorient itself and find new exploration opportunities.
+
+---
+
+### System Architecture
+
+The system consists of three main components running in parallel terminals, working together to enable autonomous maze escape:
+
+#### Terminal 1: Simulation Environment (Gazebo)
+The simulation launches either world files or custom SDF maze models. Gazebo provides the physics simulation, rendering the TurtleBot3 robot and maze environment. The robot spawns at specified coordinates within the maze center using launch parameters for x, y positions and yaw orientation.
+
+#### Terminal 2: Navigation Stack (SLAM + Nav2 + RViz)
+The navigation system integrates SLAM Toolbox for real-time mapping with custom parameters optimized for maze exploration. Nav2 stack handles autonomous path planning and obstacle avoidance without requiring a pre-existing map. RViz2 provides real-time visualization of the robot's position, LiDAR scans, generated map, and planned paths, allowing monitoring of the entire navigation process.
+
+#### Terminal 3: Exploration Node
+The custom Python node implements the core maze escape logic. It subscribes to LiDAR scan data for exit detection and obstacle avoidance, monitors odometry for position tracking, publishes navigation goals to Nav2 for autonomous movement, and executes recovery behaviors when the robot encounters failures. The node implements a state machine that manages exploration, exit detection, navigation, and recovery modes.
+
+#### Data Flow
+LiDAR data flows from Gazebo simulation through the exploration node for exit detection, while SLAM Toolbox simultaneously builds the map. The exploration node sends navigation goals to Nav2, which plans paths using the real-time SLAM map and publishes velocity commands to move the robot. All components communicate via ROS2 topics and actions, with RViz displaying the complete system state for monitoring and debugging.
+
+---
 ## Key Challenges and Solutions
 
 **Exit Recognition Challenge**: Distinguishing between temporary openings in the maze and the actual exit required robust detection logic. The solution implements a time-based confirmation system that requires 5 consecutive seconds of consistent infinite LiDAR readings across the forward hemisphere before declaring exit found. This prevents false positives from brief sensor anomalies or temporary openings.
@@ -48,18 +85,15 @@ LiDAR sensor data is continuously processed to detect walls, identify open space
 
 ## Results and Performance
 
-The autonomous maze explorer successfully navigates complex maze environments, demonstrating several key capabilities. The robot explores unknown mazes without human intervention, building complete maps of the environment while searching for the exit. The 5-second confirmation window provides robust exit recognition with zero false positives in testing scenarios.
+The autonomous maze escape system successfully navigates and exits complex maze environments, demonstrating several key capabilities. The robot explores unknown mazes without human intervention, building complete maps while searching for the exit. The 5-second confirmation window provides robust exit recognition with zero false positives in testing scenarios, ensuring the robot only stops when truly outside the maze.
 
 The multi-stage recovery system handles dead-ends, narrow passages, and navigation failures, with the robot successfully escaping stuck situations in over 95% of cases. SLAM Toolbox produces accurate, consistent maps suitable for path planning, with minimal drift even in larger maze configurations.
-
-The project demonstrates proficiency in the ROS2 ecosystem, sensor processing and interpretation, autonomous navigation algorithms, state machine design, and integration of complex robotics frameworks.
 
 ---
 
 ## Code Highlights
 
-The exploration algorithm demonstrates sophisticated sensor processing:
-
+The exploration algorithm demonstrates sophisticated sensor processing for exit detection:
 ```python
 # Exit detection with time-based confirmation
 front_inf = sum(1 for i in inf_idx if 
@@ -74,9 +108,8 @@ if front_pct > 80:
 ```
 
 The recovery system intelligently analyzes clearance in all directions:
-
 ```python
-# Multi-directional clearance analysis
+# Multi-directional clearance analysis for recovery
 directions = {
     'forward': self.extract_sensor_data(msg, 350, 10),
     'backward': self.extract_sensor_data(msg, 170, 190),
@@ -88,7 +121,6 @@ clearances = {k: min(v) if v else 0.0 for k, v in directions.items()}
 safe = {k: v for k, v in clearances.items() if v >= 0.4}
 best = max(safe, key=safe.get)
 ```
-
 ---
 
 ## Technical Specifications
@@ -106,17 +138,20 @@ best = max(safe, key=safe.get)
 
 ---
 
-### Maze Navigation Demonstrations
+## Additional Maze Tests
+
+The system was validated across multiple maze configurations:
+
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
     <div style="text-align: center;">
         <img src="/images/Projects/Project4/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">2.5x2.5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;"></p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Baseline test - autonomous exit detection</p>
     </div>
     <div style="text-align: center;">
         <img src="/images/Projects/Project4/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Large 5x5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;"></p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Extended navigation with recovery behaviors</p>
     </div>
 </div>
 
@@ -124,4 +159,4 @@ best = max(safe, key=safe.get)
 
 ## Future Enhancements
 
-Potential improvements for the system include implementing more sophisticated exploration strategies such as Voronoi-based frontier detection, adding multi-robot coordination for faster maze solving, integrating machine learning for adaptive parameter tuning, and supporting 3D environments with stairs or ramps. These enhancements would further demonstrate the extensibility and scalability of the autonomous navigation architecture developed in this project.
+Potential improvements include Voronoi-based frontier detection for more efficient exploration, multi-robot coordination for faster maze solving, machine learning for adaptive parameter tuning, and 3D environment support with stairs or ramps.
