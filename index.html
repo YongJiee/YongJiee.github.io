@@ -1,52 +1,72 @@
 ---
 layout: default
 title: Portfolio
-description:
+description: Robotics engineering projects and portfolio showcasing my work in automation, AI, and mechanical systems
 featured_image: /images/Background.jpg
 ---
 
-<section class="hero">
+<main>
+	<section class="hero" aria-labelledby="hero-title">
 
-	<div class="hero__image" style="background-image: url({{ page.featured_image | relative_url }})">
-		<div class="hero__overlay"></div>
-	</div>
+		<div class="hero__image" style="background-image: url({{ page.featured_image | relative_url }})" role="img" aria-label="Portfolio background showcasing robotics work">
+			<div class="hero__overlay"></div>
+		</div>
 
-	<div class="wrap">
+		<div class="wrap">
 
-		<h1>Aspiring Robotics Engineer</h1>
-		<p>Some of my Projects!</p>
+			<h1 id="hero-title">Aspiring Robotics Engineer</h1>
+			<p>Explore my projects in robotics, automation, and innovative engineering solutions</p>
 
-		{% include socials.html %}
+			{% include socials.html %}
 
-	</div>
+		</div>
 
-</section>
+	</section>
 
-<section class="listing">
+	<section class="listing" aria-label="Project Portfolio">
 
-	<div class="wrap">
+		<div class="wrap">
 
-		{% for project in site.projects reversed %}
+			{% if site.projects.size > 0 %}
 
-		<article class="post">
+				{% for project in site.projects reversed %}
 
-			<div class="post__image-wrap">
-				<div class="post__image" style="background-image: url({{ project.featured_image | relative_url }})">
+				<article class="post">
+
+					<div class="post__image-wrap">
+						<div class="post__image" style="background-image: url({{ project.featured_image | relative_url }})" role="img" aria-label="{{ project.title }} project thumbnail" loading="lazy">
+						</div>
+					</div>
+
+					<div class="post__content-wrap">
+						<div class="post__content">
+							<h2 class="post__title">
+								<a href="{{ project.url | relative_url }}" aria-label="View details for {{ project.title }}">
+									{{ project.title }}
+								</a>
+							</h2>
+							{% if project.subtitle %}
+								<p class="post__subtitle">{{ project.subtitle }}</p>
+							{% endif %}
+							{% if project.description %}
+								<p class="post__description">{{ project.description }}</p>
+							{% endif %}
+						</div>
+					</div>
+
+				</article>
+
+				{% endfor %}
+
+			{% else %}
+
+				<div class="empty-state">
+					<p>No projects available yet. Check back soon for exciting robotics projects!</p>
 				</div>
-			</div>
 
-			<div class="post__content-wrap">
-				<div class="post__content">
-					<h2 class="post__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-					<p class="post__subtitle">{{ project.subtitle }}</p>
-					<p class="post__description">{{ project.description }}</p>
-				</div>
-			</div>
+			{% endif %}
 
-		</article>
+		</div>
 
-		{% endfor %}
-
-	</div>
-
-</section>
+	</section>
+</main>
