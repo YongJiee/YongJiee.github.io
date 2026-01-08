@@ -1,8 +1,21 @@
+# Site Settings
 site: Yong Jie
+title: Yong Jie - Aspiring Robotics Engineer
+description: Portfolio showcasing robotics engineering projects, automation solutions, and innovative mechanical systems
+author: Yong Jie
 
-url: YongJiee.github.io
-baseurl: 
+# URL Settings
+url: https://YongJiee.github.io
+baseurl: ""
 
+# Social Media (add your profiles)
+social:
+  twitter: your_twitter_handle
+  github: YongJiee
+  linkedin: your_linkedin_profile
+  email: your.email@example.com
+
+# Collections
 collections:
   pages:
     output: true
@@ -14,44 +27,84 @@ collections:
     output: true
     permalink: /project/:slug
 
+# Default Front Matter
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
+      image: /images/default-share.jpg
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
+      author: Yong Jie
+  - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
 
+# Markdown Settings
 markdown: kramdown
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+# Sass/SCSS Settings
 sass:
   style: compressed
+  sass_dir: _sass
 
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
 
+# Pagination
 paginate: 6
 paginate_path: "/blog/page:num/"
-  
+
+# SEO Tag Settings
+twitter:
+  username: your_twitter_handle
+  card: summary_large_image
+
+# Feed Settings
+feed:
+  path: feed.xml
+
+# Exclude from Processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - package.json
+  - package-lock.json
+
+# Include
+include:
+  - _pages
+
+# Timezone (adjust to your location)
+timezone: Asia/Singapore
