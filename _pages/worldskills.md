@@ -54,15 +54,8 @@ Each competition involved creating fully functional automation systems from scra
 </div>
 
 ### WorldSkills Singapore 2021
-<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0;">
-    <iframe 
-        src="https://www.youtube.com/embed/ZfWlUohpyxU" 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/ZfWlUohpyxU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
