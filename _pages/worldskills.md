@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: /images/Projects/Worldskills/Team.jpg
+featured_image: /images/Projects/Worldskills/TeamFinal.jpg
 ---
 
 ## Competition Achievements
