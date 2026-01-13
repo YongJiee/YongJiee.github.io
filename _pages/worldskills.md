@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: /images/Projects/Worldskills/TeamFinal.jpg
+featured_image: 
 ---
 
 ## Competition Achievements
@@ -52,6 +52,7 @@ Each competition involved creating fully functional automation systems from scra
 ### Competition Photos
 
 <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+    <img src="/images/Projects/Worldskills/Team.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
     <img src="/images/Projects/Worldskills/competition-1.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
     <img src="/images/Projects/Worldskills/competition-2.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
     <img src="/images/Projects/Worldskills/competition-3.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
@@ -59,7 +60,7 @@ Each competition involved creating fully functional automation systems from scra
     <img src="/images/Projects/Worldskills/competition-5.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
     <img src="/images/Projects/Worldskills/competition-6.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
     <img src="/images/Projects/Worldskills/competition-7.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-8.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    
 </div>
 
 ### WorldSkills Singapore 2021
