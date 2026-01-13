@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: /images/worldskills/featured-competition.jpg
+featured_image: /images/Projects/Worldskills/Team.jpg
 ---
 
 ## Competition Achievements
@@ -49,19 +49,28 @@ Each competition involved creating fully functional automation systems from scra
 
 ## Competition Highlights
 
-<div style="display:flex;flex-wrap:wrap;gap:15px;margin:20px 0;">
-    <!-- Add competition images here -->
+### Competition Photos
+
+<div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+    <img src="/images/Projects/Worldskills/competition-1.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-2.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-3.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-4.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-5.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images//Projects/Worldskills/competition-6.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images//Projects/Worldskills/competition-7.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images//Projects/Worldskills/competition-8.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
 </div>
 
 ### WorldSkills Singapore 2021
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZfWlUohpyxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/escWpFtIhZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
-## Impact
+## Impact on My Career
 
-These competitions provided hands-on experience with industry-standard equipment and real-world automation challenges. The ability to work under pressure, troubleshoot complex systems, and deliver quality results on tight deadlines directly translates to my current role at **Panasonic Factory Solutions**, where I design and implement industrial automation solutions for clients.
+These competitions provided invaluable hands-on experience with industrial automation standards and best practices. The technical skills, problem-solving abilities, and teamwork experience I developed through WorldSkills continue to serve as a strong foundation for my future career in robotics and automation engineering.
 
 **Key Takeaways:**
 - International-level technical standards and best practices
