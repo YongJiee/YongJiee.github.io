@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: /images/Projects/Worldskills/Team.JPG
+featured_image: /images/Projects/Worldskills/Team.jpg
 ---
 
 ## Competition Achievements
@@ -53,13 +53,13 @@ Each competition involved creating fully functional automation systems from scra
 
 <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
     <img src="/images/Projects/Worldskills/competition-1.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-2.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-3.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-4.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-5.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-6.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-7.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
-    <img src="/images/Projects/Worldskills/competition-8.JPG" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-2.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-3.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-4.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-5.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-6.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-7.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+    <img src="/images/Projects/Worldskills/competition-8.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
 </div>
 
 ### WorldSkills Singapore 2021
