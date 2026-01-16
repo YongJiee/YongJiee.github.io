@@ -14,7 +14,7 @@ featured_image: '/images/Projects/SEP1/Final Navigation.gif'
 </div>
 
 ## Project Overview
-<!--As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. -->
+As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. 
 
 Our team applied the **SEBoK systems approach** to design and implement an autonomous navigation system as part of our university's **Systems Engineering Project 1** module.
 

@@ -2,12 +2,12 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: /images/Projects/Worldskills/Team.jpg
+featured_image:
 ---
 
 ## Competition Achievements
 
-I competed in **WorldSkills Singapore Mechatronics** from 2018-2021, earning **Medallions of Excellence** in 2020 and 2021. WorldSkills is an international competition often called the "Olympics of Skills," where two-person teams design, build, and program complete industrial automation systems under strict time and quality requirements.
+I competed in **WorldSkills Singapore Mechatronics** from 2018-2021, earning **Medallion of Excellence** in 2020 and 2021. WorldSkills is an international competition often called the "Olympics of Skills," where two-person teams design, build, and program complete industrial automation systems under strict time and quality requirements.
 
 ### Awards & Recognition
 - **Medallion of Excellence** - 2020, 2021
@@ -52,6 +52,7 @@ Each competition involved creating fully functional automation systems from scra
 ### Competition Photos
 
 <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 40px 0 20px 0; position: relative; z-index: 1;">
+    <img src="/images/Projects/Worldskills/team.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-1.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-2.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-3.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
@@ -59,7 +60,6 @@ Each competition involved creating fully functional automation systems from scra
     <img src="/images/Projects/Worldskills/competition-5.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-6.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-7.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
-    <img src="/images/Projects/Worldskills/competition-8.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
 </div>
 
 ### WorldSkills Singapore 2021
@@ -70,7 +70,7 @@ Each competition involved creating fully functional automation systems from scra
 
 ---
 
-## Impact on My Career
+## What I Learned from Competition
 
 These competitions provided invaluable hands-on experience with industrial automation standards and best practices. The technical skills, problem-solving abilities, and teamwork experience I developed through WorldSkills continue to serve as a strong foundation for my future career in robotics and automation engineering.
 
