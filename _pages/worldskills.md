@@ -52,7 +52,7 @@ Each competition involved creating fully functional automation systems from scra
 ### Competition Photos
 
 <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 40px 0 20px 0; position: relative; z-index: 1;">
-    <img src="/images/Projects/Worldskills/team.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
+    <img src="/images/Projects/Worldskills/Team.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-1.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-2.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
     <img src="/images/Projects/Worldskills/competition-3.jpg" alt="WorldSkills Competition" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; display: block;">
