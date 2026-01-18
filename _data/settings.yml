@@ -655,8 +655,131 @@ advanced_settings:
         opacity: 1 !important;
       }
     }
+    /* ========================================
+       PROJECT PAGE - CODE HIGHLIGHTS FIX
+       ======================================== */
+    
+    /* Reduce heading sizes on project pages for better hierarchy */
+    .project-content h2,
+    .single h2 {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
 
-  header_js: ""
+    .project-content h3,
+    .single h3 {
+      font-size: 1.35rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Code blocks - consistent sizing */
+    .project-content pre,
+    .single pre {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      padding: 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      margin: 1.5rem 0;
+    }
+
+    .project-content code,
+    .single code {
+      font-size: 0.875rem;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Inline code */
+    .project-content p code,
+    .single p code {
+      background: #f1f5f9;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 0.85em;
+      color: #e11d48;
+    }
+
+    /* Better list spacing in projects */
+    .project-content ul,
+    .project-content ol,
+    .single ul,
+    .single ol {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .project-content li,
+    .single li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile adjustments for code */
+    @media (max-width: 768px) {
+      .project-content h2,
+      .single h2 {
+        font-size: 1.5rem;
+      }
+
+      .project-content h3,
+      .single h3 {
+        font-size: 1.25rem;
+      }
+
+      .project-content pre,
+      .single pre {
+        font-size: 0.8rem;
+        padding: 1rem;
+      }
+    }
+
+    /* ========================================
+       ABOUT PAGE - PHOTO SIZE FIX
+       ======================================== */
+    
+    /* Target the figure with inline styles */
+    figure[style*="float: left"] {
+      width: 40% !important;
+      margin-right: 3% !important;
+      margin-bottom: 1.5rem;
+    }
+
+    figure[style*="float: left"] img {
+      width: 100% !important;
+      max-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Clear float for buttons */
+    .button {
+      clear: both;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    /* Mobile - stack photo on top */
+    @media (max-width: 768px) {
+      figure[style*="float: left"] {
+        float: none !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto 2rem !important;
+      }
+
+      figure[style*="float: left"] img {
+        max-width: 240px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      figure[style*="float: left"] img {
+        max-width: 200px;
+      }
+    }
   
   footer_js: |
     <script>
