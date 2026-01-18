@@ -216,161 +216,443 @@ advanced_settings:
   analytics: UA-161551607-1
   custom_styles: |
     /* ========================================
-       MOBILE MENU VISIBILITY FIX
+       TEXT SELECTION HIGHLIGHT - TECH BLUE
        ======================================== */
-
-    /* Ensure menu is visible when opened */
-    .menu--open .menu__wrap {
-      visibility: visible !important;
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+    
+    ::selection {
+      background-color: #2563eb;
+      color: #ffffff;
+      text-shadow: none;
     }
 
-    /* Mobile menu styling */
+    ::-moz-selection {
+      background-color: #2563eb;
+      color: #ffffff;
+      text-shadow: none;
+    }
+
+    /* ========================================
+       TAG CONTAINER
+       ======================================== */
+    
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tag-container span {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #e5e9f0;
+      color: #2c3e50;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95em;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .tag-container span:hover {
+      background-color: #dbeafe;
+      color: #1e40af;
+      transform: translateY(-1px);
+    }
+
+    .tag-container span::selection {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+
+    /* ========================================
+       CONTACT FORM SECTION
+       ======================================== */
+    
+    .bottom-contact {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      padding: 3rem 0;
+      margin-top: 3rem;
+    }
+
+    .bottom-contact .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .bottom-contact h3 {
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .bottom-contact .subtitle {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       CONTACT FORM STYLING
+       ======================================== */
+    
+    .contact-form {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-form.sending {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #ffffff;
+      font-family: "Muli", serif;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #94a3b8;
+      opacity: 1;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+      font-family: inherit;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       SUBMIT BUTTON
+       ======================================== */
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+      padding: 0.875rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0 auto;
+      min-width: 180px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .submit-btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .submit-btn.success {
+      background: linear-gradient(135deg, #10b981, #059669) !important;
+    }
+
+    .submit-btn.error {
+      background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    }
+
+    .btn-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .submit-btn:hover .btn-icon {
+      transform: translateX(3px);
+    }
+
+    /* ========================================
+       SUCCESS AND ERROR MESSAGES
+       ======================================== */
+    
+    .success-message,
+    .error-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      text-align: center;
+      padding: 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      animation: slideInFromTop 0.5s ease-out;
+    }
+
+    .success-message {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1.5px solid rgba(16, 185, 129, 0.4);
+      color: #10b981;
+    }
+
+    .error-message {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1.5px solid rgba(239, 68, 68, 0.4);
+      color: #ef4444;
+    }
+
+    .success-message svg,
+    .error-message svg {
+      flex-shrink: 0;
+    }
+
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================================
+       LOADING ANIMATION
+       ======================================== */
+    
+    .submit-btn.loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid transparent;
+      border-top: 2px solid #ffffff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .submit-btn.loading .btn-text,
+    .submit-btn.loading .btn-icon {
+      opacity: 0;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ========================================
+       SOCIAL ICONS - CIRCULAR ONLY
+       ======================================== */
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .social-icon:hover {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: #2563eb;
+      color: #2563eb;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    }
+
+    .social-icon:hover::before {
+      opacity: 0.25;
+    }
+
+    .social-icon svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover svg {
+      transform: scale(1.15);
+    }
+
+    .social-icon:active {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+       ======================================== */
+    
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      
+      .bottom-contact {
+        padding: 2.5rem 0;
+      }
+      
+      .bottom-contact .container {
+        padding: 0 1rem;
+      }
+      
+      .contact-form {
+        padding: 1.5rem;
+      }
+
+      .bottom-contact h3 {
+        font-size: 1.75rem;
+      }
+
+      .bottom-contact .subtitle {
+        font-size: 0.95rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+        min-width: auto;
+      }
+
+      .social-icons {
+        gap: 1.25rem;
+      }
+
+      .social-icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .social-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .bottom-contact h3 {
+        font-size: 1.5rem;
+      }
+
+      .contact-form {
+        padding: 1.25rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ========================================
+       MOBILE MENU FIX - MINIMAL ADDITION
+       ======================================== */
+    
+    /* Only fix visibility when menu is opened */
     @media (max-width: 767px) {
-      .menu__wrap {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 280px;
-        background: #ffffff;
-        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
-        z-index: 9999;
-        overflow-y: auto;
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(100%);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
       .menu--open .menu__wrap {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .menu__list {
-        padding: 80px 2rem 2rem;
-        list-style: none;
-        margin: 0;
-      }
-
-      .menu__list__item {
-        margin: 0;
-        padding: 0;
-      }
-
-      .menu__list__item__link {
-        display: block;
-        padding: 1rem 0;
-        color: #2A2F36;
-        font-size: 18px;
-        font-weight: 600;
-        text-decoration: none;
-        border-bottom: 1px solid #e2e8f0;
-        transition: all 0.3s ease;
-      }
-
-      .menu__list__item__link:hover {
-        color: #2563eb;
-        padding-left: 8px;
-      }
-
-      .menu__list__item:last-child .menu__list__item__link {
-        border-bottom: none;
-      }
-
-      /* Hamburger icon */
-      .menu__toggle {
-        position: relative;
-        width: 44px;
-        height: 44px;
-        cursor: pointer;
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .menu__toggle__icon {
-        position: relative;
-        width: 24px;
-        height: 2px;
-        background: #2A2F36;
-        transition: all 0.3s ease;
-      }
-
-      .menu__toggle__icon::before,
-      .menu__toggle__icon::after {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 2px;
-        background: #2A2F36;
-        transition: all 0.3s ease;
-      }
-
-      .menu__toggle__icon::before {
-        top: -8px;
-      }
-
-      .menu__toggle__icon::after {
-        bottom: -8px;
-      }
-
-      /* Hamburger animation when menu is open */
-      .menu--open .menu__toggle__icon {
-        background: transparent;
-      }
-
-      .menu--open .menu__toggle__icon::before {
-        top: 0;
-        transform: rotate(45deg);
-      }
-
-      .menu--open .menu__toggle__icon::after {
-        bottom: 0;
-        transform: rotate(-45deg);
-      }
-
-      /* Overlay when menu is open */
-      .menu::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 9998;
-      }
-
-      .menu--open::before {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Prevent body scroll when menu is open */
-      body.menu-open {
-        overflow: hidden;
-      }
-    }
-
-    /* Desktop - ensure menu is always visible */
-    @media (min-width: 768px) {
-      .menu__wrap {
         visibility: visible !important;
         opacity: 1 !important;
-        transform: none !important;
-        position: static;
-      }
-
-      .menu__toggle {
-        display: none;
       }
     }
 
@@ -389,6 +671,7 @@ advanced_settings:
         inputs.forEach(input => {
           input.addEventListener('focus', function() {
             if (window.innerWidth < 768) {
+              // Prevent zoom by ensuring font-size is 16px or larger
               this.style.fontSize = '16px';
             }
           });
@@ -397,50 +680,75 @@ advanced_settings:
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           
+          // Get form elements
           const name = document.getElementById('name').value.trim();
           const email = document.querySelector('input[name="_replyto"]').value.trim();
           const message = document.getElementById('message').value.trim();
+          const submitBtn = form.querySelector('.submit-btn');
           
+          // Hide previous messages
           successMessage.style.display = 'none';
           errorMessage.style.display = 'none';
           
+          // Validate form
           if (!name || !email || !message) {
             showError('Please fill in all fields.');
-            if (navigator.vibrate) navigator.vibrate(200);
+            // Haptic feedback on mobile (if supported)
+            if (navigator.vibrate) {
+              navigator.vibrate(200);
+            }
             return;
           }
           
+          // Email validation
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
             showError('Please enter a valid email address.');
-            if (navigator.vibrate) navigator.vibrate(200);
+            if (navigator.vibrate) {
+              navigator.vibrate(200);
+            }
             return;
           }
           
+          // Show loading state
           setButtonState('loading');
           form.classList.add('sending');
           
+          // Blur active element to hide keyboard on mobile
           if (document.activeElement) {
             document.activeElement.blur();
           }
           
+          // Prepare form data
           const formData = new FormData(form);
           
+          // Submit to Formspree
           fetch(form.action, {
             method: 'POST',
             body: formData,
-            headers: { 'Accept': 'application/json' }
+            headers: {
+              'Accept': 'application/json'
+            }
           })
           .then(response => {
-            if (response.ok) return response.json();
+            if (response.ok) {
+              return response.json();
+            }
             throw new Error('Network response was not ok');
           })
           .then(data => {
+            // Success
             setButtonState('success');
             form.classList.remove('sending');
             successMessage.style.display = 'flex';
             form.reset();
-            if (navigator.vibrate) navigator.vibrate([50, 100, 50]);
+            
+            // Success haptic feedback
+            if (navigator.vibrate) {
+              navigator.vibrate([50, 100, 50]);
+            }
+            
+            // Reset button after delay
             setTimeout(() => {
               setButtonState('default');
               successMessage.style.display = 'none';
@@ -451,14 +759,24 @@ advanced_settings:
             setButtonState('error');
             form.classList.remove('sending');
             showError('There was an error sending your message. Please try again or contact me directly via email.');
-            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-            setTimeout(() => setButtonState('default'), 3000);
+            
+            // Error haptic feedback
+            if (navigator.vibrate) {
+              navigator.vibrate([100, 50, 100]);
+            }
+            
+            // Reset button after delay
+            setTimeout(() => {
+              setButtonState('default');
+            }, 3000);
           });
         });
         
         function setButtonState(state) {
           const submitBtn = form.querySelector('.submit-btn');
           const btnText = submitBtn.querySelector('.btn-text');
+          
+          // Remove all state classes
           submitBtn.classList.remove('loading', 'success', 'error');
           submitBtn.disabled = false;
           
@@ -468,28 +786,43 @@ advanced_settings:
               submitBtn.disabled = true;
               if (btnText) btnText.textContent = 'Sending...';
               break;
+              
             case 'success':
               submitBtn.classList.add('success');
               if (btnText) btnText.textContent = 'Message Sent!';
               break;
+              
             case 'error':
               submitBtn.classList.add('error');
               if (btnText) btnText.textContent = 'Try Again';
               break;
+              
+            case 'default':
             default:
               if (btnText) btnText.textContent = 'Send Message';
+              break;
           }
         }
         
         function showError(message) {
           errorMessage.querySelector('p').textContent = message;
           errorMessage.style.display = 'flex';
-          setTimeout(() => errorMessage.style.display = 'none', 5000);
+          
+          // Auto-hide after 5 seconds
+          setTimeout(() => {
+            errorMessage.style.display = 'none';
+          }, 5000);
+          
+          // Scroll to error message (smooth on desktop, instant on mobile for better UX)
           const scrollBehavior = window.innerWidth < 768 ? 'auto' : 'smooth';
-          errorMessage.scrollIntoView({ behavior: scrollBehavior, block: 'center' });
+          errorMessage.scrollIntoView({ 
+            behavior: scrollBehavior, 
+            block: 'center' 
+          });
         }
       }
       
+      // Lazy load images for better performance
       if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
@@ -503,7 +836,10 @@ advanced_settings:
             }
           });
         });
-        document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
       }
     });
     </script>
