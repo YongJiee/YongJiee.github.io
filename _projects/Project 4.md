@@ -48,7 +48,6 @@ Built an autonomous navigation system where a TurtleBot3 robot explores unknown 
 
 ### Key Features
 - Dynamic goal generation based on sensor data
-- Frontier-based exploration strategy
 - 95%+ success rate escaping stuck situations
 - Zero false positives on exit detection
 - Custom tuned parameters for tight corridors
