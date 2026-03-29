@@ -51,11 +51,6 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
   </div>
 
   <div style="flex: 1 1 200px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
-    <h4>Tan Yong Jie</h4>
-    <p><strong>Technical Lead (Software)</strong></p>
-  </div>
-
-  <div style="flex: 1 1 200px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
     <h4>Goh Tong Ren Albert</h4>
     <p>Project Manager</p>
   </div>
@@ -63,6 +58,11 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
   <div style="flex: 1 1 200px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
     <h4>Tan Yong Zhuo</h4>
     <p>Mechanical Lead</p>
+  </div>
+
+  <div style="flex: 1 1 200px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
+    <h4>Tan Yong Jie</h4>
+    <p><strong>Technical Lead (Software)</strong></p>
   </div>
 
 </div>
@@ -84,7 +84,7 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
   </div>
 
   <figure style="width: 45%; text-align: center; font-style: italic;">
-    <img src="/images/Projects/ProjectOPS/hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
+    <img src="/images/Projects/Project4/hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
     <p>OPS hardware — Pi + Arducam mux + 3 cameras</p>
   </figure>
 </div>
@@ -143,8 +143,8 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
 ## Camera Coverage — All 6 Faces
 
 <div style="display: flex; gap: 20px; margin-top: 10px;">
-  <img src="/images/Projects/ProjectOPS/inbound_demo.gif" style="width: 48%; border-radius: 8px;">
-  <img src="/images/Projects/ProjectOPS/sorting_demo.gif" style="width: 48%; border-radius: 8px;">
+  <img src="/images/Projects/Project4/inbound_hardware.jpg" style="width: 48%; border-radius: 8px;">
+  <img src="/images/Projects/Project4/sorting_hardware.jpg" style="width: 48%; border-radius: 8px;">
 </div>
 
 <div style="display: flex; gap: 20px; margin-top: 8px; font-style: italic; font-size: 0.9em;">

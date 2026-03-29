@@ -3,7 +3,7 @@ title: 'Autonomous Maze Escape Robot'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
 date: 2025-09-01 12:00:00 +0000
 description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust exit detection and intelligent pathfinding.
-featured_image: '/images/Projects/Project4/Exploration_Final.gif'
+featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 ---
 
 <div class="tag-container">
@@ -25,7 +25,7 @@ Built an autonomous navigation system where a TurtleBot3 robot explores unknown 
 ## Watch It In Action
 
 <video width="100%" controls>
-    <source src="/images/Projects/Project4/Maze_02.mp4" type="video/mp4">
+    <source src="/images/Projects/Project3/Maze_02.mp4" type="video/mp4">
 </video>
 
 *TurtleBot3 successfully navigating and escaping a large 5x5m maze using real-time SLAM and intelligent pathfinding*
@@ -147,12 +147,12 @@ best = max(safe, key=safe.get)
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
     <div style="text-align: center;">
-        <img src="/images/Projects/Project4/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <img src="/images/Projects/Project3/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">2.5x2.5m Maze</p>
         <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Baseline test - autonomous exit detection</p>
     </div>
     <div style="text-align: center;">
-        <img src="/images/Projects/Project4/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <img src="/images/Projects/Project3/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Large 5x5m Maze</p>
         <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Extended navigation with recovery behaviors</p>
     </div>
