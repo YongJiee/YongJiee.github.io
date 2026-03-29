@@ -1,7 +1,7 @@
 ---
 title: 'Omnidirectional Perception System'
 subtitle: 'ROS2 Humble, Raspberry Pi, OpenCV, Tesseract OCR, Python, SQLite'
-date: 2026-03-29 12:00:00 +0000
+date: 2026-05-05 12:00:00 +0000
 description: A multi-camera warehouse scanning system that generates a Universal Product Passport for every package - even when barcodes fail - by fusing OCR and barcode signals across all six faces in under 3 seconds.
 featured_image: '/images/Projects/Project4/Hardware_setup.jpg'
 ---
