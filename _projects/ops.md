@@ -95,7 +95,7 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
 ## System Architecture
 
-The system runs across two machines — a Raspberry Pi 4 handling all camera capture, and a WSL Ubuntu host running the ROS2 processing pipeline, connected over direct ethernet with no internet.
+The system runs across two machines — a Raspberry Pi 4 handling all camera capture, and a WSL Ubuntu host running the ROS2 processing pipeline, connected over direct ethernet.
 
 <img src="/images/Projects/ProjectOPS/architecture.png" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
 
@@ -105,7 +105,7 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
     <h4>Camera Capture</h4>
     <p><strong>Runs on:</strong> Raspberry Pi 4</p>
     <p><strong>Node:</strong> <code>multi_camera_publisher</code></p>
-    <p><strong>Tool:</strong> Picamera2, Arducam mux (sequential via I²C)</p>
+    <p><strong>Tool:</strong> Picamera2, Arducam mux</p>
   </div>
 
   <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
@@ -136,12 +136,6 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
     <p><strong>Tool:</strong> ROS2 topic <code>/robot_command</code></p>
   </div>
 
-  <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
-    <h4>Clock Synchronisation</h4>
-    <p><strong>Runs on:</strong> WSL Ubuntu</p>
-    <p><strong>Approach:</strong> Autonomous offset measurement per session — no NTP on isolated ethernet</p>
-  </div>
-
 </div>
 
 ---
@@ -164,38 +158,38 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
 
 ---
 
-## Technical Implementation
+## Problems & How We Solved Them
 
-### 1. Image Preprocessing Pipeline
+### Problem 1 — Camera angle distorts text, making OCR unreliable
 
-Each camera frame goes through an OpenCV preprocessing pipeline before OCR to maximise text readability:
+Side cameras sit at 45° to fit the compact rig. Raw images arrive skewed, causing Tesseract to misread characters or miss words entirely.
+
+**Solution:** An OpenCV preprocessing pipeline runs on every frame before OCR — Canny edge detection finds the package face boundary, then perspective warp corrects the angle so Tesseract receives a flat, front-facing view.
 
 ```python
 def preprocess_image(self, image):
-    # Convert to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
-    # Edge detection to find package face boundary
+    # Find package face boundary
     edges = cv2.Canny(gray, 50, 150)
     contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # Perspective warp to correct camera angle
+    # Correct camera angle via perspective warp
     if contours:
         largest = max(contours, key=cv2.contourArea)
         pts = self._get_corner_points(largest)
-        warped = self._perspective_warp(gray, pts)
-        return warped
+        return self._perspective_warp(gray, pts)
 
     return gray
 ```
 
-Canny edge detection finds the package boundary, and perspective warp corrects for the 45° camera angle on Cam0 and Cam2 — ensuring OCR receives a flat, front-facing view of each face.
-
 ---
 
-### 2. OCR Extraction
+### Problem 2 — Cardboard texture generates false OCR tokens
 
-Tesseract runs in PSM 11 (sparse text mode) — chosen because package labels don't follow a structured layout. A noise filter strips out common false-positive tokens caused by cardboard texture:
+Tesseract picks up noise characters from cardboard grain and print artifacts — tokens like `"wt"`, `"fl"`, `"oz"` — that pollute the match and reduce accuracy.
+
+**Solution:** A curated `OCR_NOISE_WORDS` filter strips known false-positive tokens before any matching occurs. Real-world testing confirmed 100% of noise tokens were correctly ignored across all resilience scenarios.
 
 ```python
 OCR_NOISE_WORDS = {'the', 'and', 'of', 'net', 'wt', 'oz', 'ml', 'fl', 'made', 'in'}
@@ -203,19 +197,17 @@ OCR_NOISE_WORDS = {'the', 'and', 'of', 'net', 'wt', 'oz', 'ml', 'fl', 'made', 'i
 def extract_text(self, image):
     raw = pytesseract.image_to_string(image, config='--psm 11')
     tokens = raw.lower().split()
-
-    # Filter noise tokens from real camera artifacts
     clean = [t for t in tokens if t not in OCR_NOISE_WORDS and len(t) > 2]
     return clean
 ```
 
-Barcode decoding runs in parallel on the same frame using pyzbar — if a barcode is found, it bypasses OCR entirely with a sentinel score of `200.0`.
-
 ---
 
-### 3. SmartMatcher — Fuzzy Scoring Engine
+### Problem 3 — Some products are ambiguous without a barcode
 
-Rather than a simple string match, SmartMatcher dynamically selects a scoring formula based on database contents and available signals:
+Products like *Cream Lip Gloss* exist under two different brands with near-identical label text. A naive fuzzy match would pick one at random — which is worse than admitting uncertainty.
+
+**Solution:** SmartMatcher scores all candidates and calls `check_tie()` to detect when two products score within margin. Rather than guessing, it flags the result for manual resolution. The system only accepts a match when confidence clears 95%.
 
 ```python
 def _calculate_accuracy(self, ocr_tokens, candidate):
@@ -224,20 +216,20 @@ def _calculate_accuracy(self, ocr_tokens, candidate):
     keyword_bonus = self._keyword_bonus(ocr_tokens, candidate)
 
     if self._is_unique_product(candidate):
-        return product_score * 0.9 + keyword_bonus      # brand not needed
+        return product_score * 0.9 + keyword_bonus      # brand not required
     elif brand_score == 0:
         return brand_score * 0.6                        # brand-only fallback
     else:
         return brand_score * 0.4 + product_score * 0.5 + keyword_bonus
 ```
 
-`check_tie()` detects when two candidates score within margin — flagging ambiguous results rather than guessing. A 95% threshold is enforced for acceptance.
-
 ---
 
-### 4. SQLite — Universal Product Passport
+### Problem 4 — Every scan needs a traceable, queryable record
 
-Every scan writes a complete record to the database, regardless of whether identification succeeded or was flagged:
+Identification results need to be stored in a way that's auditable — including failed or flagged scans, not just successful ones. Assessors also need to verify results live without running queries.
+
+**Solution:** Every scan writes a complete Universal Product Passport row to SQLite regardless of outcome. `scan_mode` is stored directly in the scans table (no JOIN needed) so DB Browser shows the full picture instantly. Unknown quantities are written as `quantity_source='flagged'` rather than silently omitted.
 
 ```python
 def save_scan(self, scan_data):
@@ -261,47 +253,6 @@ def save_scan(self, scan_data):
     conn.commit()
     conn.close()
 ```
-
-`quantity_source='flagged'` signals unknown inbound quantity for manual resolution. `scan_mode` is stored directly in the scans table — no JOIN required — so assessors can verify results instantly in DB Browser.
-
----
-
-### 5. Autonomous Clock Synchronisation
-
-Pi and WSL are on an isolated ethernet link — no internet, no NTP. The clock offset is measured autonomously on the first image of each session:
-
-```python
-if self.clock_offset is None:
-    wsl_receive_time  = time.time()
-    pi_cam_start      = msg_data['cam_start']
-    self.clock_offset = wsl_receive_time - pi_cam_start
-    self.get_logger().info(f'Clock offset: {self.clock_offset:.3f}s')
-```
-
-This offset is passed via JSON payload to `database_matcher_node`, which applies it to `overall_start` for accurate end-to-end timing. Typical offset: 0.5–0.8s per session.
-
----
-
-### 6. Race Condition Prevention
-
-With multiple camera feeds resolving asynchronously, a `_fuse_triggered` flag prevents the matcher from double-publishing:
-
-```python
-if self._fuse_triggered:
-    return
-self._fuse_triggered = True
-self._publish_result(best_match)
-```
-
----
-
-## Key Engineering Decisions
-
-**Why fuzzy matching instead of a trained ML classifier?**  
-A classifier requires labelled training data for every new product. Fuzzy matching with `OCR_NOISE_WORDS` generalises to new products immediately — only the database needs updating. Given a constantly rotating product inventory, this was the pragmatic choice over retraining overhead.
-
-**Why sequential camera capture?**  
-The Arducam multiplexer switches cameras via I²C — it physically cannot expose more than one sensor at a time. `ThreadPoolExecutor` was tested and ruled out. Instead, latency was squeezed per capture: focus delay 0.2s → 0.05s, local disk save removed, redundant RGB→BGR conversion eliminated. Pi cycle time: ~2.1–2.5s for 3 cameras.
 
 ---
 
@@ -360,8 +311,6 @@ The Arducam multiplexer switches cameras via I²C — it physically cannot expos
 
 The most valuable lesson wasn't a technology — it was learning to make decisions under real constraints rather than ideal ones.
 
-**Clock sync without NTP** forced me to think about what I actually needed (accurate relative timing per session) versus what I assumed I needed (wall-clock sync). The autonomous offset measurement solved the real problem in ~10 lines.
-
 **Fuzzy matching vs ML** came down to a build-vs-maintain framing. A classifier would have been more interesting to build, but fuzzy matching with a well-tuned noise filter was the right answer for an inventory that changes constantly. Choosing the less impressive solution because it fits the problem better is a real engineering call.
 
-**Designing for failure** — `quantity_source='flagged'`, tie detection, `OCR_NOISE_WORDS`, brand-integrity gating — the most important software work wasn't in the happy path. It was in deciding what to do when things go wrong, and making those decisions explicit rather than silent.
+**Designing for failure** — flagged quantities, tie detection, noise filtering, brand-integrity gating — the most important software work wasn't in the happy path. It was in deciding what to do when things go wrong, and making those decisions explicit rather than silent.
