@@ -3,7 +3,7 @@ title: 'Omnidirectional Perception System'
 subtitle: 'ROS2 Humble, Raspberry Pi, OpenCV, Tesseract OCR, Python, SQLite'
 date: 2026-03-29 12:00:00 +0000
 description: A multi-camera warehouse scanning system that generates a Universal Product Passport for every package - even when barcodes fail - by fusing OCR and barcode signals across all six faces in under 3 seconds.
-featured_image: '/images/Projects/ProjectOPS/OPS_demo.gif'
+featured_image: '/images/Projects/Project4/Hardware_setup.jpg'
 ---
 
 <div class="tag-container">
@@ -26,8 +26,6 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 | ✅ Works when barcode fails | ✅ ≤ 3s end-to-end | ✅ Up to 98.7% match |
 
 🔗 [View Full Code on GitHub →](https://github.com/YongJiee/Omnidirectional-Perception-System)
-
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 ---
 
@@ -84,7 +82,7 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
   </div>
 
   <figure style="width: 45%; text-align: center; font-style: italic;">
-    <img src="/images/Projects/Project4/hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
+    <img src="/images/Projects/Project4/Hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
     <p>OPS hardware — Pi + Arducam mux + 3 cameras</p>
   </figure>
 </div>
@@ -97,7 +95,7 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
 The system runs across two machines — a Raspberry Pi 4 handling all camera capture, and a WSL Ubuntu host running the ROS2 processing pipeline, connected over direct ethernet.
 
-<img src="/images/Projects/ProjectOPS/architecture.png" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
+<img src="/images/Projects/Project4/architecture.svg" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
 
 <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;">
 
@@ -141,16 +139,6 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
 ---
 
 ## Camera Coverage — All 6 Faces
-
-<div style="display: flex; gap: 20px; margin-top: 10px;">
-  <img src="/images/Projects/Project4/inbound_hardware.jpg" style="width: 48%; border-radius: 8px;">
-  <img src="/images/Projects/Project4/sorting_hardware.jpg" style="width: 48%; border-radius: 8px;">
-</div>
-
-<div style="display: flex; gap: 20px; margin-top: 8px; font-style: italic; font-size: 0.9em;">
-  <p style="width: 48%; text-align: center;">Inbound mode — top + side faces scanned</p>
-  <p style="width: 48%; text-align: center;">Sorting mode — bottom + side + end-effector</p>
-</div>
 
 - **Cam0 + Cam2** at 45° → side faces
 - **Cam1** top-down → inbound scans TOP; sorting: arm holds box underneath so Cam1 scans BOTTOM
@@ -290,19 +278,23 @@ def save_scan(self, scan_data):
 
 ---
 
-## Additional Demo Scenarios
+## Demo Scenarios
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
-    <div style="text-align: center;">
-        <img src="/images/Projects/Project4/Inbound Scenario 2.mp4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <p style="margin-top: 15px; font-weight: bold;">Inbound mode</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Top + side faces · live database update</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="/images/Projects/Project4/Sorting Scenario 3.mp4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <p style="margin-top: 15px; font-weight: bold;">Sorting mode</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Bottom + side + end-effector · pass/fail to arm</p>
-    </div>
+  <div style="text-align: center;">
+    <video style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" controls>
+      <source src="/images/Projects/Project4/Inbound Scenario 2.mp4" type="video/mp4">
+    </video>
+    <p style="margin-top: 15px; font-weight: bold;">Inbound mode</p>
+    <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Top + side faces · live database update</p>
+  </div>
+  <div style="text-align: center;">
+    <video style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" controls>
+      <source src="/images/Projects/Project4/Sorting Scenario 3.mp4" type="video/mp4">
+    </video>
+    <p style="margin-top: 15px; font-weight: bold;">Sorting mode</p>
+    <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Bottom + side + end-effector · pass/fail to arm</p>
+  </div>
 </div>
 
 ---
