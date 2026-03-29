@@ -1,7 +1,7 @@
 ---
 title: 'Autonomous Maze Escape Robot'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
-date: 2025-09-01 12:00:00 +0000
+date: 2026-01-04 12:00:00 +0000
 description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust exit detection and intelligent pathfinding.
 featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 ---

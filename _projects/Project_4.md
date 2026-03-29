@@ -27,6 +27,8 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
 🔗 [View Full Code on GitHub →](https://github.com/YongJiee/Omnidirectional-Perception-System)
 
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+
 ---
 
 ## Project Highlights
@@ -83,7 +85,7 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
   <figure style="width: 45%; text-align: center; font-style: italic;">
     <img src="/images/Projects/Project4/Hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
-    <p>OPS hardware — Pi + Arducam mux + 3 cameras</p>
+    <p>OPS scanning rig — robotic arm + conveyor system</p>
   </figure>
 </div>
 
