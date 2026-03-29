@@ -27,7 +27,11 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
 🔗 [View Full Code on GitHub →](https://github.com/YongJiee/Omnidirectional-Perception-System)
 
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank">
+  <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg" 
+       style="width: 100%; border-radius: 8px; cursor: pointer;">
+</a>
+<p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">▶ Click to watch full system walkthrough on YouTube</p>
 
 ---
 
