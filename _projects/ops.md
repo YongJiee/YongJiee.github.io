@@ -294,12 +294,12 @@ def save_scan(self, scan_data):
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
     <div style="text-align: center;">
-        <img src="/images/Projects/ProjectOPS/inbound_demo.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <img src="/images/Projects/Project4/Inbound Scenario 2.mp4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Inbound mode</p>
         <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Top + side faces · live database update</p>
     </div>
     <div style="text-align: center;">
-        <img src="/images/Projects/ProjectOPS/sorting_demo.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <img src="/images/Projects/Project4/Sorting Scenario 3.mp4" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Sorting mode</p>
         <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Bottom + side + end-effector · pass/fail to arm</p>
     </div>
