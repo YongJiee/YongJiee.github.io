@@ -111,7 +111,7 @@ social_settings:
   dribbble_url: ''
   behance_url: ''
   deviantart_url: ''
-  github_url: ''
+  github_url: 'https://github.com/YongJiee'
   reddit_url: ''
   flickr_url: ''
   etsy_url: ''
@@ -119,7 +119,7 @@ social_settings:
   soundcloud_url: ''
   spotify_url: ''
   bandcamp_url: ''
-  linkedin_url: ''
+  linkedin_url: 'https://www.linkedin.com/in/yong-jie-tan/'
 
 color_settings:
   background_color: '#ffffff'
