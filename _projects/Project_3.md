@@ -20,7 +20,7 @@ featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 
 A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Built for the RSE2108 ROS2 Assignment, tested on mazes up to 5×5m — all in Gazebo simulation.
 
-> **Source code:** [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
+🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
 ---
 

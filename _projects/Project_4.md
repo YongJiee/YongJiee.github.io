@@ -2,7 +2,7 @@
 title: 'Omnidirectional Perception System'
 subtitle: 'ROS2 Humble, Raspberry Pi, OpenCV, Tesseract OCR, Python, SQLite'
 date: 2026-01-05 12:00:00 +0000
-description: A multi-camera warehouse scanning system that generates a Universal Product Passport for every package - even when barcodes fail - by fusing OCR and barcode signals across all six faces in under 3 seconds.
+description: A multi-camera warehouse scanning system that generates a Universal Product Passport for every package - even when barcodes fail - by fusing OCR and barcode signals across up to six package faces in under 3 seconds.
 featured_image: '/images/Projects/Project4/OPS.gif'
 ---
 
@@ -19,11 +19,16 @@ featured_image: '/images/Projects/Project4/OPS.gif'
 
 A single damaged barcode in a warehouse stops everything. The item loses its identity, someone has to intervene manually, and traceability breaks. We built a vision system that scans all six faces of a package and combines OCR text with barcode data into a **Universal Product Passport** — so one unreadable label doesn't take down the whole scan.
 
-**My role:** Technical Lead (Software) — system architecture, all five ROS2 nodes, OCR and image preprocessing pipeline, SmartMatcher scoring engine, SQLite database integration, and end-to-end testing across 43 scenarios.
+**My role:** Technical Lead (Software)
+- System architecture & all **five ROS2 nodes**
+- OCR pipeline & image preprocessing (OpenCV + Tesseract)
+- SmartMatcher scoring engine
+- SQLite database integration
+- End-to-end testing across **43 scenarios**
 
 | Resilience | Efficiency | Accuracy |
 |:----------:|:----------:|:--------:|
-| ✅ Works when barcode fails | ✅ ≤ 3s end-to-end | ✅ Up to 98.7% match |
+| ✅ Works when barcode fails | ✅ ≤ 3s end-to-end | ✅ Up to 98.7% (best case) |
 
 🔗 [View Full Code on GitHub →](https://github.com/YongJiee/Omnidirectional-Perception-System)
 
@@ -33,7 +38,7 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 ## Project Highlights
 
-- Scans all **6 faces** of any package using 3× IMX708 cameras across inbound and sorting modes
+- Scans **up to 6 faces** per package — all six in sorting mode, five in inbound — using 3× IMX708 cameras + arm end-effector camera
 - **OCR + barcode fusion** — system identifies items even when barcode is fully missing or damaged
 - **43/43 test scenarios PASS** — 10 inbound, 8 sorting, 25 resilience
 - End-to-end scan time **~2.1–2.9s** across all scenarios
@@ -95,9 +100,7 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 ## System Architecture
 
-The system runs across two machines — a Raspberry Pi 4 handling all camera capture, and a WSL Ubuntu host running the ROS2 processing pipeline, connected over direct ethernet.
-
-WSL Ubuntu was used for development and demonstration purposes; production deployment would target a native Linux host.
+The system runs across two machines — a **Raspberry Pi 4** handling all camera capture, and a **WSL Ubuntu** host running the ROS2 processing pipeline, connected over direct ethernet. Built and demoed on WSL Ubuntu — production would swap that for a native Linux host.
 
 <img src="/images/Projects/Project4/architecture.svg" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
 
@@ -142,7 +145,9 @@ WSL Ubuntu was used for development and demonstration purposes; production deplo
 
 ---
 
-## Camera Coverage — All 6 Faces
+## Camera Coverage
+
+Coverage varies by mode — see the architecture diagram above for placement.
 
 - **Cam0 + Cam2** at 45° → side faces
 - **Cam1** top-down → inbound scans TOP; sorting: arm holds box underneath so Cam1 scans BOTTOM
@@ -199,7 +204,7 @@ def extract_text(self, image):
 
 Products like *Cream Lip Gloss* exist under two different brands with near-identical label text. A naive fuzzy match would pick one at random — which is worse than admitting uncertainty.
 
-**Solution:** SmartMatcher scores every candidate and runs `check_tie()` when two products land too close together. Instead of picking one at random, it flags the scan for manual review. A match only goes through if confidence hits 95% — if it doesn't, the system says so explicitly.
+**Solution:** SmartMatcher scores every candidate and runs `check_tie()` when two products land too close together. Instead of picking one at random, it flags the scan for manual review. A match only goes through above a configured confidence threshold — if it falls short, the system flags it explicitly rather than guessing.
 
 ```python
 def _calculate_accuracy(self, brand_score, product_score, keyword_score,
@@ -226,13 +231,14 @@ def _calculate_accuracy(self, brand_score, product_score, keyword_score,
 
     return 0.0
 ```
- Weights: brand × 0.40, product × 0.50, keyword bonus capped at 10 points. Barcode exact match always returns 100%. Ambiguous product names (same name across multiple brands) return 0% and require barcode to resolve.
+> Weights: brand × 0.40, product × 0.50, keyword bonus capped at 10 pts.
+> Barcode match → 100%. Ambiguous product name → 0%, barcode required.
 
 ---
 
 ### Problem 4 — Every scan needs a traceable, queryable record
 
-Identification results need to be stored in a way that's auditable — including failed or flagged scans, not just successful ones. Assessors also need to verify results live without running queries.
+Identification results need to be stored in a way that's auditable — including failed or flagged scans, not just successful ones. Judges also needed to verify results live, without running SQL queries.
 
 **Solution:** Every scan writes to SQLite — successful matches, failed ones, flagged ties, all of it. `scan_mode` lives directly in the scans table so you don't need a JOIN to see what happened. Uncertain quantities get written as `quantity_source='flagged'` rather than quietly dropped.
 
@@ -267,7 +273,7 @@ def save_scan(self, scan_data):
 
 **Challenge:** We could have used an ML classifier for matching, but a warehouse inventory changes constantly — new products, rebrands, seasonal SKUs. A trained model would need retraining every time.
 
-**Solution:** Fuzzy matching with a noise filter handles new products immediately without retraining. It's less interesting to explain than a neural net. It's also the right call.
+**Solution:** Fuzzy matching with a noise filter handles new products immediately without retraining — no labeling effort, no retraining cycle, and new SKUs are supported the moment they're added to the database. The right tool for the job.
 
 ---
 
@@ -283,8 +289,8 @@ def save_scan(self, scan_data):
 
 ### Resilience Findings
 
-- **Brand integrity is critical** — brand text corruption drops score to ~93% (FAIL)
-- **Product corruption is tolerated** — if brand is intact, score stays ~95–96% (PASS)
+- **Brand integrity is critical** — brand text corruption drops score to **~93%** (FAIL)
+- **Product corruption is tolerated** — if brand is intact, score stays **~95–96%** (PASS)
 - **OCR-safe products** (no barcode needed): Cream Lip Stain (98.5%), Lip Butter Balm (98.7%) - scores from single-product resilience scenarios, not population averages
 - **Barcode-required**: Cream Lip Gloss — ambiguous across two brands, correctly fails without barcode
 - **Real-world camera noise** — 100% ignored via `OCR_NOISE_WORDS` filter
@@ -306,6 +312,8 @@ def save_scan(self, scan_data):
 ---
 
 ## Demo Scenarios
+
+Two representative scenarios from the **43-scenario** test suite:
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
   <div style="text-align: center;">
