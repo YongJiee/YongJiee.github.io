@@ -9,11 +9,11 @@ featured_image: '/images/Background.jpg'
   <img src="/images/Me.jpg" style="width: 70%;" class="img-fluid rounded">
 </figure>
 
-Robotics Systems Engineer with a background spanning competitive robotics, industrial automation, and academic robotics projects, specialising in **ROS2**, **computer vision**, and **industrial automation**. Currently in my second last year at **Singapore Institute of Technology (SIT)**, graduating **2028**.
+I'm a robotics engineering student at **Singapore Institute of Technology (SIT)**, graduating in **2028**. I work across **ROS2**, **computer vision**, and **industrial automation** — skills I've built up through competitions and hands-on project work.
 
-I competed in **WorldSkills** — the Olympics of vocational skills — at national level in **mechatronics**, receiving **two Medallions of Excellence**. Before that, I represented my school in local and international robotics competitions from age 13.
+I competed in **WorldSkills** — basically the Olympics of vocational skills — in **mechatronics**, and came home with **two Medallions of Excellence**. I've been doing robotics competitions since I was 13.
 
-My background spans the full stack of robotics engineering, building from **PLC programming** and **industrial automation** at **ITE** and **NYP** through to robotics software in my current degree:
+My technical background covers a few different areas, starting from **PLC programming** and **industrial automation** at **ITE** and **NYP**, and expanding into robotics software at SIT:
 
 | Domain | Technologies |
 |--------|-------------|
@@ -21,7 +21,7 @@ My background spans the full stack of robotics engineering, building from **PLC 
 | Robotics Software | **ROS2** multi-node systems, **OpenCV** pipelines |
 | Hardware Integration | Electrical wiring, sensor networks, pneumatics |
 
-> Seeking a **12-month internship** starting **January 2027**, focused on **robotics software development** or **systems integration**.
+> I'm looking for a **12-month internship** from **January 2027**, in **robotics software development** or **systems integration**.
 
 ---
 
