@@ -7,20 +7,17 @@
   position: relative;
   top: 0;
   margin-top: 0;
-  padding: 40px 0 60px;
+  padding: 25px 0 35px;
   background: $hero-background-color;
-  height: auto !important;
 
   @include mq(tabletp) {
     margin-top: 25px;
-    padding: 70px 0 90px;
-    min-height: 280px !important;
-    height: auto !important;
+    padding: 40px 0 50px;
   }
 
   @include mq(laptop) {
     margin-top: 30px;
-    padding: 90px 0 110px;
+    padding: 50px 0 60px;
   }
 
   .wrap {
