@@ -1,0 +1,528 @@
+// - - - - - - - - - - - - - - - - - -
+// Custom styles
+// Migrated from settings.yml custom_styles
+// Colors: teal #00BFA5 (accent), orange #FF6B35 (buttons)
+// - - - - - - - - - - - - - - - - - -
+
+
+// - - - Hero credentials badges - - -
+
+.hero__credentials {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  @include mq(tabletp) {
+    top: -70px;
+  }
+}
+
+.hero__credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  background: rgba(0, 191, 165, 0.15);
+  border: 1px solid rgba(0, 191, 165, 0.45);
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  svg {
+    color: #00BFA5;
+    flex-shrink: 0;
+  }
+}
+
+
+// - - - Tech stack tags - - -
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tag-container span {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #e5e9f0;
+  color: #2c3e50;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95em;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.tag-container span:hover {
+  background-color: #E0F5F3;
+  color: #00695C;
+  transform: translateY(-1px);
+}
+
+
+// - - - Profile photo (replaces inline styles in about.md) - - -
+
+.profile-photo {
+  text-align: center;
+  float: left;
+  width: 50%;
+  margin-right: 2%;
+  margin-left: 0;
+  font-style: italic;
+
+  img {
+    width: 70%;
+  }
+}
+
+
+// - - - Contact / footer section - - -
+
+.bottom-contact {
+  background: linear-gradient(135deg, #0d1117 0%, #004D40 100%);
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+.bottom-contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bottom-contact h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bottom-contact .subtitle {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.bottom-contact .contact-form {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bottom-contact .contact-form.sending {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00BFA5;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+
+// - - - Submit button - - -
+
+.submit-btn {
+  background: linear-gradient(135deg, #FF6B35 0%, #E85D2F 100%);
+  color: white;
+  padding: 0.875rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  min-width: 180px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn.success {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+.submit-btn.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+
+// - - - Form feedback messages - - -
+
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.success-message {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+.success-message svg,
+.error-message svg {
+  flex-shrink: 0;
+}
+
+@keyframes slideInFromTop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+// - - - Button loading spinner - - -
+
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.submit-btn.loading .btn-text,
+.submit-btn.loading .btn-icon {
+  opacity: 0;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+// - - - Footer social icons - - -
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00BFA5, #26C6DA);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.social-icon:hover {
+  background: rgba(0, 191, 165, 0.2);
+  border-color: #00BFA5;
+  color: #00BFA5;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 191, 165, 0.35);
+}
+
+.social-icon:hover::before {
+  opacity: 0.25;
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.15);
+}
+
+.social-icon:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+
+// - - - Responsive - - -
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .bottom-contact {
+    padding: 2.5rem 0;
+  }
+
+  .bottom-contact .container {
+    padding: 0 1rem;
+  }
+
+  .bottom-contact .contact-form {
+    padding: 1.5rem;
+  }
+
+  .bottom-contact h3 {
+    font-size: 1.75rem;
+  }
+
+  .bottom-contact .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .social-icons {
+    gap: 1.25rem;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  // Mobile menu visibility fix
+  .menu--open .menu__wrap {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  // Profile photo: full-width centered on mobile
+  .profile-photo {
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto 2rem !important;
+  }
+
+  .profile-photo img {
+    width: 100% !important;
+    max-width: 280px !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  // Project page heading sizes
+  .project-content h2, .single h2 {
+    font-size: 1.5rem !important;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-content h3, .single h3 {
+    font-size: 1.25rem !important;
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .project-content h4, .single h4 {
+    font-size: 1.1rem !important;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-content pre, .single pre {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .project-content code, .single code {
+    font-size: 0.85rem !important;
+  }
+
+  .project-content p, .single p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .project-content ul, .project-content ol,
+  .single ul, .single ol {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-contact h3 {
+    font-size: 1.5rem;
+  }
+
+  .bottom-contact .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-photo img {
+    max-width: 240px !important;
+  }
+}
+
+// Responsive iframes
+.single-post iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  display: block;
+}
+
+// Responsive images in project pages
+.single-post img {
+  max-width: 100%;
+  height: auto;
+}

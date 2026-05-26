@@ -5,8 +5,8 @@ description: Robotics engineering student at SIT specialising in ROS2, computer 
 featured_image: '/images/Background.jpg'
 ---
 
-<figure style="text-align: center; float: left; width: 50%; margin-right: 2%; margin-left: 0%; font-style: italic">
-  <img src="/images/Me.jpg" style="width: 70%;" class="img-fluid rounded">
+<figure class="profile-photo">
+  <img src="/images/Me.jpg" class="img-fluid rounded" alt="Tan Yong Jie">
 </figure>
 
 I'm a robotics engineering student at **Singapore Institute of Technology (SIT)**, graduating in **2028**. I work across **ROS2**, **computer vision**, and **industrial automation** — skills I've built up through competitions and hands-on project work.
@@ -20,6 +20,7 @@ My technical background covers a few different areas, starting from **PLC progra
 | Industrial Automation | **PLC programming** (TwinCAT, Panasonic), **HMI** development |
 | Robotics Software | **ROS2** multi-node systems, **OpenCV** pipelines |
 | Hardware Integration | Electrical wiring, sensor networks, pneumatics |
+| Languages & Tools | **Python**, **C++**, Git, Linux, ROS2, OpenCV |
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
   <a href="/worldskills" class="button">View Competition Details</a>

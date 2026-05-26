@@ -14,7 +14,8 @@
   @include mq(tabletp) {
     margin-top: 25px;
     padding: 120px 0 180px;
-    height: 300px !important;
+    min-height: 340px !important;
+    height: auto !important;
   }
 
   @include mq(laptop) {
