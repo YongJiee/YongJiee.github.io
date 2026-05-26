@@ -2,7 +2,7 @@
 title: 'Autonomous Maze Escape Robot'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
 date: 2025-09-01 12:00:00 +0000
-description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving time-confirmed exit detection with 80% LiDAR threshold and intelligent pathfinding.
+description: A ROS2 robot that maps and escapes unknown mazes on its own — SLAM builds the map live, Nav2 handles the path, and a custom algorithm watches for the exit using an 80% LiDAR threshold.
 featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 ---
 
@@ -16,10 +16,11 @@ featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 
 ## Project Overview
 
-A TurtleBot3 explores an unknown maze, builds a map as it goes, and finds the exit — no pre-programmed paths, no human input. Built for the RSE2108 ROS2 Assignment across maze sizes up to 5×5m.
-Everything runs in Gazebo simulation using physics-accurate SDF maze models.
+**Individual project — sole developer** (ROS2, SLAM, Nav2, Python)
 
-🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
+A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Built for the RSE2108 ROS2 Assignment, tested on mazes up to 5×5m — all in Gazebo simulation.
+
+> **Source code:** [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
 ---
 
@@ -29,70 +30,70 @@ Everything runs in Gazebo simulation using physics-accurate SDF maze models.
     <source src="/images/Projects/Project3/Maze_02.mp4" type="video/mp4">
 </video>
 
-*TurtleBot3 navigating and escaping a 5×5m maze — real-time SLAM, no pre-programmed paths*
+*5×5m maze run — SLAM map building in real-time, recovery behavior triggered mid-run*
 
 ---
 
 ## What I Built
 
 ### Navigation System
-- **Real-time SLAM mapping** - SLAM Toolbox builds maps while exploring
-- **Autonomous path planning** - Nav2 stack handles obstacle avoidance
-- **Exit detection algorithm** - LiDAR-based recognition with 5-second confirmation
-- **Recovery behaviors** - Multi-directional clearance analysis and stuck detection
+- **Real-time SLAM mapping** — maps the environment on the fly as the robot moves
+- **Autonomous path planning** — Nav2 figures out where to go and avoids obstacles
+- **Exit detection algorithm** — LiDAR checks for an opening and confirms it for 5 seconds before stopping
+- **Recovery behaviors** — scans all four directions and drives toward the clearest path when stuck
 
 ### System Architecture
-- **Simulation (Gazebo)** - Physics simulation with custom SDF maze models
-- **Navigation Stack** - SLAM Toolbox + Nav2 + RViz visualization
-- **Exploration Node** - Custom Python logic for maze escape and recovery
-- **Data Flow** - ROS2 topics connecting LiDAR, SLAM, navigation, and control
+- **Simulation (Gazebo)** — runs the robot in TurtleBot3 maze environments
+- **Navigation Stack** — SLAM Toolbox + Nav2 + RViz for mapping and visualization
+- **Exploration Node** — Python node I wrote for all the maze escape and recovery logic
+- **Data Flow** — ROS2 topics wire together LiDAR, SLAM, navigation, and motor control
 
 ### Key Features
-- Dynamic goal generation based on sensor data
-- Time-confirmed exit detection with 80% LiDAR threshold
-- Recovery behaviors validated across 2 maze configurations
-- Parameters tuned for corridors down to 0.5m width
+- **Dynamic goal generation** — goal position updates based on live sensor data
+- **Time-confirmed exit detection** with **80% LiDAR threshold** held for 5 seconds
+- **Recovery behaviors** tested and working in both maze sizes
+- Tuned to handle corridors as narrow as **0.5m**
 
 ---
 
 ## Technical Implementation
 
 ### Core Technologies
-- **ROS2** - Robot Operating System 2 framework
-- **SLAM Toolbox** - Online asynchronous mapping
-- **Nav2 Stack** - Path planning and motion control
-- **Python 3** - Custom exploration algorithms
-- **Gazebo** - 3D physics simulation
-- **LiDAR** - 360° laser scanning for perception
+- **ROS2** — middleware framework for the whole system
+- **SLAM Toolbox** — builds the map in real-time as the robot moves
+- **Nav2 Stack** — handles path planning and motor control
+- **Python 3** — all the custom exploration and detection logic
+- **Gazebo** — 3D physics simulation environment
+- **LiDAR** — 360° laser scanner for obstacle and exit detection
 
 ### Programming Approach
-- Frontier-based exploration algorithm
-- State machine for navigation modes
-- Time-based confirmation for exit detection
-- Multi-stage recovery behaviors
-- Real-time sensor processing
+- **Goal-directed exploration** — sets a far goal to drive exploration, swaps to the exit once detected
+- **State machine** — switches between explore, detect, recover, and done modes
+- **Time-based confirmation** — holds the exit check for 5 seconds before committing
+- **Multi-stage recovery** — tries multiple directions before resuming exploration
+- **Real-time sensor processing** — reads LiDAR every scan to update navigation decisions
 
 ---
 
 ## Key Challenges Solved
 
 ### Exit Recognition
-**Challenge:** Distinguishing actual exit from temporary openings  
-**Solution:** Validated across both maze configurations — 2.5×2.5m and 5×5m — with zero false positives in either run. Recovery behaviors held up in both without any navigation failures.
+**Challenge:** Telling apart an actual exit from a temporary gap in the wall  
+**Solution:** If the front LiDAR stays above 80% open for 5 seconds straight, it's the exit. Tested in both the 2.5×2.5m and 5×5m mazes — no false positives in either run.
 
 ### Navigation Failures
 **Challenge:** Robot getting stuck in corners and dead-ends  
-**Solution:** A custom recovery system checks clearance in all four directions and moves toward whichever has the most room.
+**Solution:** When stuck, the robot checks clearance in all four directions and drives toward whichever side has the most room.
 
 ### Real-Time Mapping
-**Challenge:** Balancing SLAM accuracy with computational performance  
-**Solution:** Parameters tuned to update the map every 0.5s and trigger on movement as small as 5cm — enough resolution without killing compute.
+**Challenge:** Keeping the map accurate without slowing everything down  
+**Solution:** Map updates every **0.5s** and kicks in on movements as small as **5cm** — tight enough to stay useful without tanking performance.
 
 ---
 
 ## Code Highlights
 
-Exit detection with time-based confirmation:
+#### Exit detection — time-based confirmation
 ```python
 front_inf = sum(1 for i in inf_idx if 
                (a := math.degrees(msg.angle_min + i*msg.angle_increment)%360) >= 270 or a <= 90)
@@ -105,7 +106,7 @@ if front_pct > 80:
         self.maze_complete()
 ```
 
-Multi-directional recovery system:
+#### Multi-directional recovery system
 ```python
 directions = {
     'forward': self.extract_sensor_data(msg, 350, 10),
@@ -124,10 +125,10 @@ best = max(safe, key=safe.get)
 ## Results & Performance
 
 ### Capabilities Demonstrated
-- Fully autonomous exploration - no waypoints, no pre-programmed paths
-- Zero false positives across 2 maze configurations (2.5×2.5m and 5×5m), 1 run each
-- Recovery behaviors executed successfully in both configurations with no navigation failures
-- Successful navigation in 2.5m-5m+ mazes
+- **Fully autonomous** — no waypoints, no hardcoded paths, just sensor data
+- **Zero false positives** — exit detected correctly on the first run in both the **2.5×2.5m** and **5×5m** mazes
+- **Recovery worked** — got unstuck and kept going in both configurations, no navigation failures
+- Navigated successfully in both maze sizes without any manual intervention
 
 ### Technical Specifications
 
@@ -145,16 +146,18 @@ best = max(safe, key=safe.get)
 
 ## Additional Maze Tests
 
+I ran it on two different mazes to check that exit detection and recovery both hold up.
+
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 40px 0;">
     <div style="text-align: center;">
         <img src="/images/Projects/Project3/Maze_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">2.5x2.5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Baseline test - autonomous exit detection</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Smaller maze — first test, exit detection only</p>
     </div>
     <div style="text-align: center;">
         <img src="/images/Projects/Project3/Maze01_final.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="margin-top: 15px; font-weight: bold;">Large 5x5m Maze</p>
-        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Extended navigation with recovery behaviors</p>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Bigger maze — longer run, recovery triggered a few times</p>
     </div>
 </div>
 
