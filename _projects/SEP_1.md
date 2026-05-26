@@ -14,24 +14,22 @@ featured_image: '/images/Projects/SEP1/Final Navigation.gif'
 </div>
 
 ## Project Overview
-As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. 
-
-We built a **1.5m × 1.33m** arena with 35cm-wide paths and a 14cm ramp structure.
+As the **team leader**, I owned end-to-end software integration — connecting SLAM, the navigation stack, and recovery logic into a single working system. I directly programmed all navigation behavior in **Python and ROS1**, while teammates handled arena construction and hardware assembly.
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git)
 
 <iframe src="https://www.youtube.com/embed/-_vPyRajMhM" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<p style="font-style: italic; font-size: 0.9em; margin-top: 6px;">System overview & arena walkthrough</p>
 
 ---
 
 ## Project Highlights
 
-- Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python)
-- Developed autonomous indoor navigation using **ROS1 Navigation Stack**
-- Integrated **RTAB-Map** for real-time **SLAM** and map generation
-- Deployed on **AgileX LIMO Robot** with depth camera and LiDAR
-- **Implemented custom recovery behavior** using `/move_base/make_plan` service
-- Built a 1.5m × 1.33m arena with 35cm-wide paths and 14cm ramp
+- Led a **5-member team** as the sole programmer — teammates handled hardware assembly and arena construction
+- Deployed autonomous indoor navigation on **AgileX LIMO Robot** using **ROS1 Navigation Stack**
+- Used **RTAB-Map** for real-time **SLAM** — loop closure corrected drift mid-run
+- **Implemented custom multi-stage recovery behavior** using `/move_base/make_plan` service
+- Navigated **35cm-wide paths** in a **1.5m × 1.33m** arena with a **14cm-high ramp**
 
 ---
 
@@ -42,10 +40,10 @@ We built a **1.5m × 1.33m** arena with 35cm-wide paths and a 14cm ramp structur
   <div style="width: 45%;">
     <h3 style="font-size: 1.6em;">Hardware Used:</h3>
     <ul style="font-size: 1.1em;">
-      <li>AgileX LIMO Robot</li>
-      <li>Jetson Nano</li>
-      <li>Orrbec Astra Depth Camera</li>
-      <li>2D LiDAR Sensor</li>
+      <li><strong>AgileX LIMO Robot</strong></li>
+      <li><strong>Jetson Nano</strong></li>
+      <li><strong>Orbbec Astra Depth Camera</strong></li>
+      <li><strong>2D LiDAR Sensor</strong></li>
       <li>IMU (Inertial Measurement Unit)</li>
       <li>Wheel Encoders</li>
     </ul>
@@ -62,6 +60,8 @@ We built a **1.5m × 1.33m** arena with 35cm-wide paths and a 14cm ramp structur
 
 ---
 ## Software Overview
+
+The navigation stack combines the following ROS components. RTAB-Map handles mapping and loop closure; AMCL then localizes the robot within that saved map during autonomous runs.
 
 <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;">
 
@@ -162,7 +162,7 @@ def navigate_to_goal(self, plot_name, goal):
     return False
 ```
 
-If recovery still fails, the robot doesn't skip the plot and move on — it returns to home first, resets from a known-good position, then tries again. This stops one bad navigation from cascading into the rest of the route:
+If recovery still fails, the robot doesn't skip the plot and move on — it **returns to home first**, resets from a known-good position, then tries again. This stops one bad navigation from cascading into the rest of the route:
 
 ```python
 def navigate_to_goal_with_retry(self, plot_name, goal):
@@ -184,8 +184,13 @@ def navigate_to_goal_with_retry(self, plot_name, goal):
 
     return False
 ```
+
+In testing, this two-level retry loop eliminated the cascading failures we saw in early runs — a single bad goal no longer knocked out the rest of the route.
+
 ---
 
 ## Demonstration
+
+Full autonomous run — the robot navigates all plots in sequence, with the multi-stage recovery behavior visible when it encounters a blocked path.
 
 <iframe src="https://www.youtube.com/embed/YuCFiMQ4BtU" width="640" height="360" frameborder="0" allowfullscreen></iframe>
