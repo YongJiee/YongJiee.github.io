@@ -2,7 +2,7 @@
 title: 'Autonomous Navigation with LIMO Robot using ROS1'
 subtitle: 'ROS1 Melodic, Python, Navigation Stack, RTAB-Map'
 date: 2025-05-05 12:00:00 +0000
-description: Developed an autonomous indoor navigation system for the LIMO robot as part of the Systems Engineering Project 1 course module. Integrated ROS1 Melodic with RTAB-Map for SLAM and tuned the navigation stack for reliable path planning and obstacle avoidance.
+description: Autonomous indoor navigation system for the AgileX LIMO robot — ROS1 Melodic, RTAB-Map SLAM, and a custom multi-stage recovery behavior for reliable path planning in tight spaces.
 featured_image: '/images/Projects/SEP1/Final Navigation.gif'
 ---
 <div class="tag-container">
@@ -16,9 +16,7 @@ featured_image: '/images/Projects/SEP1/Final Navigation.gif'
 ## Project Overview
 As the **team leader**, I was responsible for overall system integration and directly programmed the robot’s navigation behavior using **Python and ROS1**. 
 
-Our team applied the **SEBoK systems approach** to design and implement an autonomous navigation system as part of our university's **Systems Engineering Project 1** module.
-
-We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewel Mastercard Bridge, featuring various navigation plots and a custom ramp structure. The **AgileX LIMO robot** navigated the arena autonomously using **ROS1 Melodic**, the **Navigation Stack**, and **RTAB-Map** for real-time **SLAM** and mapping.
+We built a **1.5m × 1.33m** arena with 35cm-wide paths and a 14cm ramp structure.
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/Systems-Engineering-Project-1-Group-6.git)
 
@@ -28,12 +26,12 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ## Project Highlights
 
-<!-- - Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python) -->
+- Led a 5-member team and directly programmed the LIMO robot in ROS1 (Python)
 - Developed autonomous indoor navigation using **ROS1 Navigation Stack**
 - Integrated **RTAB-Map** for real-time **SLAM** and map generation
 - Deployed on **AgileX LIMO Robot** with depth camera and LiDAR
 - **Implemented custom recovery behavior** using `/move_base/make_plan` service
-- Built a Changi Airport-themed arena with 35cm-wide paths and 14cm ramp
+- Built a 1.5m × 1.33m arena with 35cm-wide paths and 14cm ramp
 
 ---
 
@@ -135,35 +133,59 @@ We built a **1.5m x 1.33m arena** themed after Singapore Changi Airport’s Jewe
 
 ## Technical Challenges & Solutions
 
-One key challenge was handling situations where the robot could not generate a valid path due to costmap inflation, dead ends, or dynamic obstacles.  
-**Solution:** We implemented a **custom recovery behavior** that:
-- **Clears the local costmap**
+The hardest part wasn't getting the robot to navigate — it was getting it to recover when navigation broke. Costmap inflation, dead ends, and dynamic obstacles all caused path planning to fail mid-route.
+
+**Solution:** Rather than failing immediately, the robot works through four escalating recovery stages before giving up:
+- **Clears the local costmap** to remove stale obstacle data
 - **Rotates in place** to scan for new paths
-- **Reverses slightly** to escape dead ends  
- This greatly improved recovery success and allowed the robot to continue navigating reliably in dynamic environments.
+- **Reverses slightly** to escape dead ends
+- **Aggressive costmap reset** as a last resort before failing
 
----
+```python
+def navigate_to_goal(self, plot_name, goal):
+    self.state = RecoveryState.NAVIGATING
 
-## Development Timeline
+    if self.can_make_plan(goal):
+        if self.send_goal(goal):
+            return True
 
-- **Week 1:** Team formation, plot assignment, and setup of Ubuntu 18.04 development environment  
-- **Week 2:** Learned core ROS1 concepts — packages, nodes, topics, and services  
-- **Week 3:** Practiced using `roslaunch`, implemented custom publishers/subscribers, and built basic service/client 
-- **Week 4:** Introduction to the ROS Navigation Stack — concepts like costmaps, TF, and robot footprint  
-- **Week 5:** Navigation setup with LIMO robot, including `actionlib`, transforms, and real-world teleop testing  
-- **Week 6:** Integrated RTAB-Map for SLAM using depth and LiDAR sensors in indoor environment  
-- **Week 7:** Fine-tuned map resolution, visual SLAM performance, and robot localization using AMCL  
-- **Week 8:** Implemented global and local planners with costmap tuning for tighter indoor spaces  
-- **Week 9:** Developed custom recovery behavior — clear costmap, rotate, reverse, retry goal planning  
-- **Week 10:** Conducted full-route testing and debugging in dynamic arena with obstacles and ramps  
-- **Week 11:** Final system integration, edge case handling, and demo preparation  
-- **Week 12:** Live demonstration of autonomous navigation
+    for attempt in range(self.max_recovery_attempts):
+        for recovery_behavior in self.recovery_behaviors:
+            if recovery_behavior(goal):
+                if self.can_make_plan(goal):
+                    if self.send_goal(goal):
+                        return True
+                break
+        rospy.sleep(1.0)
 
+    self.state = RecoveryState.FAILED
+    return False
+```
 
+If recovery still fails, the robot doesn't skip the plot and move on — it returns to home first, resets from a known-good position, then tries again. This stops one bad navigation from cascading into the rest of the route:
+
+```python
+def navigate_to_goal_with_retry(self, plot_name, goal):
+    for attempt in range(self.max_goal_attempts):
+        if self.navigate_to_goal(plot_name, goal):
+            return True
+
+    # Return to home, then retry from known-good position
+    if not self.return_to_home():
+        return False
+
+    rospy.sleep(2.0)
+
+    for attempt in range(self.max_home_retry_attempts):
+        if self.navigate_to_goal(plot_name, goal):
+            return True
+        self.return_to_home()
+        rospy.sleep(1.0)
+
+    return False
+```
 ---
 
 ## Demonstration
-
-This video showcases the LIMO robot performing full autonomous navigation in a custom-built indoor arena inspired by Changi Airport's Canopy Park. The robot uses **RTAB-Map** for real-time SLAM, along with the **ROS1 Navigation Stack** for path planning, obstacle avoidance, and dynamic recovery.
 
 <iframe src="https://www.youtube.com/embed/YuCFiMQ4BtU" width="640" height="360" frameborder="0" allowfullscreen></iframe>

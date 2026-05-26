@@ -2,7 +2,7 @@
 title: 'Autonomous Maze Escape Robot'
 subtitle: 'ROS2, Nav2, SLAM, Python, Gazebo'
 date: 2025-09-01 12:00:00 +0000
-description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving robust exit detection and intelligent pathfinding.
+description: Developed an autonomous navigation system for a TurtleBot3 robot to explore and escape unknown mazes using SLAM Toolbox and Nav2 stack, achieving time-confirmed exit detection with 80% LiDAR threshold and intelligent pathfinding.
 featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 ---
 
@@ -16,7 +16,8 @@ featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 
 ## Project Overview
 
-Built an autonomous navigation system where a TurtleBot3 robot explores unknown mazes, builds real-time maps using SLAM, and successfully finds the exit without any pre-programmed path. Developed for the RSE2108 ROS2 Assignment with maze sizes exceeding 2.5m × 2.5m.
+A TurtleBot3 explores an unknown maze, builds a map as it goes, and finds the exit — no pre-programmed paths, no human input. Built for the RSE2108 ROS2 Assignment across maze sizes up to 5×5m.
+Everything runs in Gazebo simulation using physics-accurate SDF maze models.
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
@@ -28,7 +29,7 @@ Built an autonomous navigation system where a TurtleBot3 robot explores unknown 
     <source src="/images/Projects/Project3/Maze_02.mp4" type="video/mp4">
 </video>
 
-*TurtleBot3 successfully navigating and escaping a large 5x5m maze using real-time SLAM and intelligent pathfinding*
+*TurtleBot3 navigating and escaping a 5×5m maze — real-time SLAM, no pre-programmed paths*
 
 ---
 
@@ -48,9 +49,9 @@ Built an autonomous navigation system where a TurtleBot3 robot explores unknown 
 
 ### Key Features
 - Dynamic goal generation based on sensor data
-- 95%+ success rate escaping stuck situations
-- Zero false positives on exit detection
-- Custom tuned parameters for tight corridors
+- Time-confirmed exit detection with 80% LiDAR threshold
+- Recovery behaviors validated across 2 maze configurations
+- Parameters tuned for corridors down to 0.5m width
 
 ---
 
@@ -77,15 +78,15 @@ Built an autonomous navigation system where a TurtleBot3 robot explores unknown 
 
 ### Exit Recognition
 **Challenge:** Distinguishing actual exit from temporary openings  
-**Solution:** 5-second confirmation window requiring 80%+ forward infinite LiDAR readings
+**Solution:** Validated across both maze configurations — 2.5×2.5m and 5×5m — with zero false positives in either run. Recovery behaviors held up in both without any navigation failures.
 
 ### Navigation Failures
 **Challenge:** Robot getting stuck in corners and dead-ends  
-**Solution:** Custom recovery system analyzing 4-direction clearance and executing safe movements
+**Solution:** A custom recovery system checks clearance in all four directions and moves toward whichever has the most room.
 
 ### Real-Time Mapping
 **Challenge:** Balancing SLAM accuracy with computational performance  
-**Solution:** Optimized parameters for 0.5s map updates and 5cm movement triggers
+**Solution:** Parameters tuned to update the map every 0.5s and trigger on movement as small as 5cm — enough resolution without killing compute.
 
 ---
 
@@ -123,10 +124,9 @@ best = max(safe, key=safe.get)
 ## Results & Performance
 
 ### Capabilities Demonstrated
-- Autonomous exploration without human intervention
-- Real-time map building with minimal drift
-- Robust exit detection (zero false positives)
-- 95%+ recovery success rate
+- Fully autonomous exploration - no waypoints, no pre-programmed paths
+- Zero false positives across 2 maze configurations (2.5×2.5m and 5×5m), 1 run each
+- Recovery behaviors executed successfully in both configurations with no navigation failures
 - Successful navigation in 2.5m-5m+ mazes
 
 ### Technical Specifications
@@ -159,14 +159,3 @@ best = max(safe, key=safe.get)
 </div>
 
 ---
-
-## Learning from This Project
-
-This project provided hands-on experience integrating complex robotics frameworks and developing intelligent autonomous behaviors. The skills in ROS2, SLAM, and navigation planning developed here form a strong foundation for advanced robotics applications.
-
-**Key Takeaways:**
-- ROS2 ecosystem and multi-node architecture
-- SLAM mapping and real-time localization
-- Autonomous navigation and path planning
-- Sensor fusion and data processing
-- Robust error handling and recovery strategies

@@ -7,18 +7,23 @@ featured_image:
 
 ## Competition Achievements
 
-I competed in **WorldSkills Singapore Mechatronics** from 2018-2021, earning **Medallion of Excellence** in 2020 and 2021. WorldSkills is an international competition often called the "Olympics of Skills," where two-person teams design, build, and program complete industrial automation systems under strict time and quality requirements.
+Competed in **WorldSkills Singapore Mechatronics** across three cycles (2018, 2020, 2021), earning the **Medallion of Excellence** at **WorldSkills Singapore** in both **2020** and **2021**. Each competition required a two-person team to design, wire, program, and commission a complete industrial automation system from scratch — under time pressure, judged against national standards.
 
 ### Awards & Recognition
-- **Medallion of Excellence** - 2020, 2021
-- **Years Competed:** 2018, 2020, 2021
-- **Competition Type:** Team-based (2 members), multi-day intensive challenges
+
+| Year | Competition | Award |
+|------|-------------|-------|
+| 2018 | WorldSkills Singapore Mechatronics | Participant |
+| 2020 | WorldSkills Singapore Mechatronics | **Medallion of Excellence** |
+| 2021 | WorldSkills Singapore Mechatronics | **Medallion of Excellence** |
+
+**Competition Type:** Team-based (2 members), multi-day intensive challenges
 
 ---
 
 ## What We Built
 
-Each competition involved creating fully functional automation systems from scratch:
+Each competition started with a blank workstation. By the end, it had to be a fully functional automation system — wired, programmed, and running.
 
 - **Mechanical Assembly** - Conveyors, pneumatic actuators, robotic modules
 - **Electrical Wiring** - Control panels, safety circuits, sensor networks
@@ -27,23 +32,26 @@ Each competition involved creating fully functional automation systems from scra
 - **System Integration** - Multi-station coordination, vision systems, quality control
 - **Troubleshooting** - Real-time fault diagnosis under pressure
 
+
+> Fully integrated multi-station systems — mechanical, electrical, PLC, and HMI — commissioned within a single competition day.
+
 ---
 
 ## Technical Skills Gained
 
 ### Programming Platforms
-- **Twincat PLC** (EtherCAT, motion control)
-- **Panasonic PLC** (FP7, FP0H series)
-- **Panasonic HMI** (GT32 touchscreens)
+- **TwinCAT PLC** — EtherCAT fieldbus, servo motion control
+- **Panasonic PLC** — FP7, FP0H series
+- **Panasonic HMI** — GT32 touchscreens
 
 ### Core Competencies
-- PLC programming across 4 IEC 61131-3 languages
-- Industrial panel wiring and circuit design
-- Pneumatic and hydraulic systems
-- Robot integration and motion control
-- Vision systems and sensor integration
-- Safety interlocks and industrial troubleshooting
-- System commissioning and optimization
+- PLC programming across **4 IEC 61131-3 languages**
+- **Industrial panel wiring** and circuit design
+- **Pneumatic and hydraulic** systems
+- **Robot integration** and motion control
+- **Vision systems** and sensor integration
+- **Safety interlocks** and industrial troubleshooting
+- **System commissioning** and optimization
 
 ---
 
@@ -64,18 +72,8 @@ Each competition involved creating fully functional automation systems from scra
 
 ### WorldSkills Singapore 2021
 
-<div style="margin: 30px 0;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/escWpFtIhZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width: 100%;"></iframe>
+<div class="video-wrap">
+  <div class="video" style="padding-bottom: 56.25%; height: 0; position: relative;">
+    <iframe src="https://www.youtube.com/embed/escWpFtIhZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+  </div>
 </div>
-
----
-
-## What I Learned from Competition
-
-These competitions provided invaluable hands-on experience with industrial automation standards and best practices. The technical skills, problem-solving abilities, and teamwork experience I developed through WorldSkills continue to serve as a strong foundation for my future career in robotics and automation engineering.
-
-**Key Takeaways:**
-- International-level technical standards and best practices
-- Team collaboration on complex engineering projects
-- Rapid problem-solving and adaptive thinking
-- Professional discipline and quality mindset

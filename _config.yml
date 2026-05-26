@@ -1,8 +1,7 @@
 # Site Settings
 site: Yong Jie
-title: Yong Jie - Aspiring Robotics Engineer
-description: Portfolio showcasing robotics engineering projects, automation solutions, and innovative mechanical systems
-author: Yong Jie
+title: Yong Jie - Robotics Systems Engineer
+description: Robotics Systems Engineer specialising in ROS2, computer vision, and industrial automation. WorldSkills Medallion of Excellence in Mechatronics.
 
 # URL Settings
 url: https://YongJiee.github.io
@@ -11,9 +10,9 @@ baseurl: ""
 # Social Media (add your profiles)
 social:
   twitter: your_twitter_handle
-  github: YongJiee
-  linkedin: your_linkedin_profile
-  email: your.email@example.com
+  github: https://github.com/YongJiee
+  linkedin: https://www.linkedin.com/in/yong-jie-tan/
+  email: Tan_Yong_jie@outlook.com
 
 # Collections
 collections:

@@ -17,7 +17,7 @@ featured_image: '/images/Projects/Project4/OPS.gif'
 
 ## Warehouse barcode scanning has a single point of failure. We eliminated it.
 
-When a barcode is obscured, damaged, or missing in a warehouse, the item loses its identity — triggering manual intervention and breaking traceability. We built an autonomous vision system that scans all six faces of any package and fuses OCR text and barcode data into a **Universal Product Passport**, so identification never depends on a single signal being readable.
+A single damaged barcode in a warehouse stops everything. The item loses its identity, someone has to intervene manually, and traceability breaks. We built a vision system that scans all six faces of a package and combines OCR text with barcode data into a **Universal Product Passport** — so one unreadable label doesn't take down the whole scan.
 
 **My role:** Technical Lead (Software) — system architecture, all five ROS2 nodes, OCR and image preprocessing pipeline, SmartMatcher scoring engine, SQLite database integration, and end-to-end testing across 43 scenarios.
 
@@ -97,6 +97,8 @@ When a barcode is obscured, damaged, or missing in a warehouse, the item loses i
 
 The system runs across two machines — a Raspberry Pi 4 handling all camera capture, and a WSL Ubuntu host running the ROS2 processing pipeline, connected over direct ethernet.
 
+WSL Ubuntu was used for development and demonstration purposes; production deployment would target a native Linux host.
+
 <img src="/images/Projects/Project4/architecture.svg" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
 
 <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;">
@@ -119,7 +121,7 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
     <h4>SmartMatcher</h4>
     <p><strong>Runs on:</strong> WSL Ubuntu</p>
     <p><strong>Node:</strong> <code>database_matcher_node</code></p>
-    <p><strong>Tool:</strong> thefuzz, custom scoring engine</p>
+    <p><strong>Tool:</strong> fuzzywuzzy, custom scoring engine</p>
   </div>
 
   <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 8px; padding: 12px; background: #f9fafb;">
@@ -154,7 +156,7 @@ The system runs across two machines — a Raspberry Pi 4 handling all camera cap
 
 Side cameras sit at 45° to fit the compact rig. Raw images arrive skewed, causing Tesseract to misread characters or miss words entirely.
 
-**Solution:** An OpenCV preprocessing pipeline runs on every frame before OCR — Canny edge detection finds the package face boundary, then perspective warp corrects the angle so Tesseract receives a flat, front-facing view.
+**Solution:** Before OCR runs, every frame goes through an OpenCV pipeline. Canny edge detection finds the package face, then a perspective warp flattens the angle. Tesseract gets a clean, front-facing image instead of a skewed one.
 
 ```python
 def preprocess_image(self, image):
@@ -179,7 +181,7 @@ def preprocess_image(self, image):
 
 Tesseract picks up noise characters from cardboard grain and print artifacts — tokens like `"wt"`, `"fl"`, `"oz"` — that pollute the match and reduce accuracy.
 
-**Solution:** A curated `OCR_NOISE_WORDS` filter strips known false-positive tokens before any matching occurs. Real-world testing confirmed 100% of noise tokens were correctly ignored across all resilience scenarios.
+**Solution:** A curated `OCR_NOISE_WORDS` blocklist of tokens Tesseract consistently misreads from cardboard - things like `wt`, `fl`, `oz`. They get stripped before matching runs. Every noise token was caught across all 25 resilience scenarios.
 
 ```python
 OCR_NOISE_WORDS = {'the', 'and', 'of', 'net', 'wt', 'oz', 'ml', 'fl', 'made', 'in'}
@@ -197,21 +199,34 @@ def extract_text(self, image):
 
 Products like *Cream Lip Gloss* exist under two different brands with near-identical label text. A naive fuzzy match would pick one at random — which is worse than admitting uncertainty.
 
-**Solution:** SmartMatcher scores all candidates and calls `check_tie()` to detect when two products score within margin. Rather than guessing, it flags the result for manual resolution. The system only accepts a match when confidence clears 95%.
+**Solution:** SmartMatcher scores every candidate and runs `check_tie()` when two products land too close together. Instead of picking one at random, it flags the scan for manual review. A match only goes through if confidence hits 95% — if it doesn't, the system says so explicitly.
 
 ```python
-def _calculate_accuracy(self, ocr_tokens, candidate):
-    brand_score   = self._enhanced_fuzzy_match(ocr_tokens, candidate['brand'])
-    product_score = self._enhanced_fuzzy_match(ocr_tokens, candidate['product_name'])
-    keyword_bonus = self._keyword_bonus(ocr_tokens, candidate)
+def _calculate_accuracy(self, brand_score, product_score, keyword_score,
+                         barcode_matched, ocr_text, products, matched_product):
+    if barcode_matched:
+        return 100.0
 
-    if self._is_unique_product(candidate):
-        return product_score * 0.9 + keyword_bonus      # brand not required
-    elif brand_score == 0:
-        return brand_score * 0.6                        # brand-only fallback
-    else:
-        return brand_score * 0.4 + product_score * 0.5 + keyword_bonus
+    brand_detected   = brand_score   >= MIN_BRAND_SCORE    # 85
+    product_detected = product_score >= MIN_PRODUCT_SCORE  # 80
+    keyword_bonus    = min(keyword_score * 0.1, 10.0)      # capped at 10 pts
+
+    if brand_detected and product_detected:
+        return min((brand_score * 0.4) + (product_score * 0.5) + keyword_bonus, 100.0)
+
+    elif product_detected and not brand_detected:
+        matched_name    = matched_product[1].lower() if matched_product else ''
+        same_name_count = sum(1 for p in products if p[1].lower() == matched_name)
+        if same_name_count > 1:
+            return 0.0   # ambiguous — barcode required
+        return min(product_score * 0.9 + keyword_bonus, 100.0)
+
+    elif brand_detected and not product_detected:
+        return min(brand_score * 0.6 + keyword_bonus, 100.0)
+
+    return 0.0
 ```
+ Weights: brand × 0.40, product × 0.50, keyword bonus capped at 10 points. Barcode exact match always returns 100%. Ambiguous product names (same name across multiple brands) return 0% and require barcode to resolve.
 
 ---
 
@@ -219,7 +234,7 @@ def _calculate_accuracy(self, ocr_tokens, candidate):
 
 Identification results need to be stored in a way that's auditable — including failed or flagged scans, not just successful ones. Assessors also need to verify results live without running queries.
 
-**Solution:** Every scan writes a complete Universal Product Passport row to SQLite regardless of outcome. `scan_mode` is stored directly in the scans table (no JOIN needed) so DB Browser shows the full picture instantly. Unknown quantities are written as `quantity_source='flagged'` rather than silently omitted.
+**Solution:** Every scan writes to SQLite — successful matches, failed ones, flagged ties, all of it. `scan_mode` lives directly in the scans table so you don't need a JOIN to see what happened. Uncertain quantities get written as `quantity_source='flagged'` rather than quietly dropped.
 
 ```python
 def save_scan(self, scan_data):
@@ -244,6 +259,16 @@ def save_scan(self, scan_data):
     conn.close()
 ```
 
+![Universal Product Passport — SQLite record as seen in DB Browser](/images/Projects/Project4/UPP_screenshot.png)
+*Universal Product Passport entry written to SQLite after a completed scan*
+
+---
+### Problem 5 — Choosing the right matching approach
+
+**Challenge:** We could have used an ML classifier for matching, but a warehouse inventory changes constantly — new products, rebrands, seasonal SKUs. A trained model would need retraining every time.
+
+**Solution:** Fuzzy matching with a noise filter handles new products immediately without retraining. It's less interesting to explain than a neural net. It's also the right call.
+
 ---
 
 ## Results & Performance
@@ -260,7 +285,7 @@ def save_scan(self, scan_data):
 
 - **Brand integrity is critical** — brand text corruption drops score to ~93% (FAIL)
 - **Product corruption is tolerated** — if brand is intact, score stays ~95–96% (PASS)
-- **OCR-safe products** (no barcode needed): Cream Lip Stain (98.5%), Lip Butter Balm (98.7%)
+- **OCR-safe products** (no barcode needed): Cream Lip Stain (98.5%), Lip Butter Balm (98.7%) - scores from single-product resilience scenarios, not population averages
 - **Barcode-required**: Cream Lip Gloss — ambiguous across two brands, correctly fails without barcode
 - **Real-world camera noise** — 100% ignored via `OCR_NOISE_WORDS` filter
 
@@ -274,7 +299,7 @@ def save_scan(self, scan_data):
 | Framework | ROS2 Humble |
 | OCR | Tesseract PSM 11 |
 | Barcode | pyzbar |
-| Matching | thefuzz (SmartMatcher) |
+| Matching | fuzzywuzzy (SmartMatcher) |
 | Database | SQLite |
 | Language | Python 3.10 |
 
@@ -300,11 +325,3 @@ def save_scan(self, scan_data):
 </div>
 
 ---
-
-## What I Learned
-
-The most valuable lesson wasn't a technology — it was learning to make decisions under real constraints rather than ideal ones.
-
-**Fuzzy matching vs ML** came down to a build-vs-maintain framing. A classifier would have been more interesting to build, but fuzzy matching with a well-tuned noise filter was the right answer for an inventory that changes constantly. Choosing the less impressive solution because it fits the problem better is a real engineering call.
-
-**Designing for failure** — flagged quantities, tie detection, noise filtering, brand-integrity gating — the most important software work wasn't in the happy path. It was in deciding what to do when things go wrong, and making those decisions explicit rather than silent.
