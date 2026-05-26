@@ -21,10 +21,9 @@ My technical background covers a few different areas, starting from **PLC progra
 | Robotics Software | **ROS2** multi-node systems, **OpenCV** pipelines |
 | Hardware Integration | Electrical wiring, sensor networks, pneumatics |
 
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+  <a href="/worldskills" class="button">View Competition Details</a>
+  <a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
+</div>
+
 > I'm looking for a **12-month internship** from **January 2027**, in **robotics software development** or **systems integration**.
-
----
-
-<a href="/worldskills" class="button">View Competition Details</a>
-
-<a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
