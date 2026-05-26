@@ -9,13 +9,21 @@ featured_image: '/images/Background.jpg'
   <img src="/images/Me.jpg" style="width: 70%;" class="img-fluid rounded">
 </figure>
 
-Robotics Systems Engineer with 10+ years in competitive robotics, specialising in ROS2, computer vision, and industrial automation. Currently in my second last years at Singapore Institute of Technology (SIT), graduating 2028.
+Robotics Systems Engineer with a background spanning competitive robotics, industrial automation, and academic robotics projects, specialising in **ROS2**, **computer vision**, and **industrial automation**. Currently in my second last year at **Singapore Institute of Technology (SIT)**, graduating **2028**.
 
-I competed in WorldSkills — the Olympics of vocational skills — at both national and international level in mechatronics, receiving a Medallion of Excellence. Before that, I represented my school in local and international robotics competitions from age 13.
+I competed in **WorldSkills** — the Olympics of vocational skills — at national level in **mechatronics**, receiving **two Medallions of Excellence**. Before that, I represented my school in local and international robotics competitions from age 13.
 
-My background spans the full stack of robotics engineering: PLC programming and industrial automation from my time at ITE and NYP, through to ROS2 multi-node systems, OpenCV pipelines, and hardware-software integration in my current degree projects.
+My background spans the full stack of robotics engineering, building from **PLC programming** and **industrial automation** at **ITE** and **NYP** through to robotics software in my current degree:
 
-I'm seeking a 12-month internship starting January 2027, focused on robotics software development or systems integration.
+| Domain | Technologies |
+|--------|-------------|
+| Industrial Automation | **PLC programming** (TwinCAT, Panasonic), **HMI** development |
+| Robotics Software | **ROS2** multi-node systems, **OpenCV** pipelines |
+| Hardware Integration | Electrical wiring, sensor networks, pneumatics |
+
+> Seeking a **12-month internship** starting **January 2027**, focused on **robotics software development** or **systems integration**.
+
+---
 
 <a href="/worldskills" class="button">View Competition Details</a>
 
