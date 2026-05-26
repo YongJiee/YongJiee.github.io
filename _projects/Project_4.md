@@ -28,7 +28,7 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 | Resilience | Efficiency | Accuracy |
 |:----------:|:----------:|:--------:|
-| ✅ Works when barcode fails | ✅ ≤ 3s end-to-end | ✅ Up to 98.7% (best case) |
+| ✅ Works when barcode fails | ✅ ≤ 3s end-to-end | ✅ Up to 98.7% (OCR-only; see Resilience Findings) |
 
 🔗 [View Full Code on GitHub →](https://github.com/YongJiee/Omnidirectional-Perception-System)
 
@@ -76,8 +76,8 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 ## Hardware Integration
 
-<div style="display: flex; align-items: center; justify-content: space-between;">
-  <div style="width: 45%;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1 1 250px;">
     <h3 style="font-size: 1.6em;">Hardware Used:</h3>
     <ul style="font-size: 1.1em;">
       <li>Raspberry Pi 4 (Bookworm)</li>
@@ -88,8 +88,8 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
     </ul>
   </div>
 
-  <figure style="width: 45%; text-align: center; font-style: italic;">
-    <img src="/images/Projects/Project4/Hardware_setup.jpg" style="width: 85%;" class="img-fluid rounded">
+  <figure style="flex: 1 1 250px; text-align: center; font-style: italic;">
+    <img src="/images/Projects/Project4/Hardware_setup.jpg" style="width: 100%;" class="img-fluid rounded">
     <p>OPS scanning rig — robotic arm + conveyor system</p>
   </figure>
 </div>

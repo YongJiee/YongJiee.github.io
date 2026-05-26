@@ -18,7 +18,7 @@ featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 
 **Individual project — sole developer** (ROS2, SLAM, Nav2, Python)
 
-A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Built for the RSE2108 ROS2 Assignment, tested on mazes up to 5×5m — all in Gazebo simulation.
+A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Tested on mazes up to 5×5m — all in Gazebo simulation.
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
@@ -79,7 +79,7 @@ A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own w
 
 ### Exit Recognition
 **Challenge:** Telling apart an actual exit from a temporary gap in the wall  
-**Solution:** If the front LiDAR stays above 80% open for 5 seconds straight, it's the exit. Tested in both the 2.5×2.5m and 5×5m mazes — no false positives in either run.
+**Solution:** If the front LiDAR stays above 80% open for 5 seconds straight, it's the exit. The 80% threshold was tuned empirically — lower values triggered false positives at wide corridor junctions; higher values missed valid exits near angled walls. Tested in both the 2.5×2.5m and 5×5m mazes — no false positives in either run.
 
 ### Navigation Failures
 **Challenge:** Robot getting stuck in corners and dead-ends  

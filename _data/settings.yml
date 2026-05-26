@@ -125,7 +125,7 @@ color_settings:
   background_color: '#ffffff'
   background_alt_color: '#f8fafc'
   text_dark_color: '#2A2F36'
-  text_medium_color: '#6C7A89'
+  text_medium_color: '#4B5563'
   text_light_color: '#ABB7B7' 
   accent_color: '#2563eb'
   border_color: '#e2e8f0'
@@ -738,7 +738,27 @@ advanced_settings:
         max-width: 240px !important;
       }
     }
-  
+
+    /* ========================================
+       RESPONSIVE IFRAMES
+       ======================================== */
+
+    .single-post iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      height: auto;
+      display: block;
+    }
+
+    /* ========================================
+       RESPONSIVE IMAGES IN PROJECT PAGES
+       ======================================== */
+
+    .single-post img {
+      max-width: 100%;
+      height: auto;
+    }
+
   footer_js: |
     <script>
     document.addEventListener('DOMContentLoaded', function() {

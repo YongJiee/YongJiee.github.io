@@ -35,9 +35,8 @@ As the **team leader**, I owned end-to-end software integration — connecting S
 
 ## Hardware Integration
 
-<div style="display: flex; align-items: center; justify-content: space-between;">
-  <!-- Hardware List -->
-  <div style="width: 45%;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1 1 250px;">
     <h3 style="font-size: 1.6em;">Hardware Used:</h3>
     <ul style="font-size: 1.1em;">
       <li><strong>AgileX LIMO Robot</strong></li>
@@ -49,9 +48,8 @@ As the **team leader**, I owned end-to-end software integration — connecting S
     </ul>
   </div>
 
-  <!-- Image -->
-  <figure style="width: 45%; text-align: center; font-style: italic;">
-    <img src="/images/Projects/SEP1/Limo Robot.jpg" style="width: 85%;" class="img-fluid rounded">
+  <figure style="flex: 1 1 250px; text-align: center; font-style: italic;">
+    <img src="/images/Projects/SEP1/Limo Robot.jpg" style="width: 100%;" class="img-fluid rounded">
     <p>AgileX LIMO Robot</p>
   </figure>
 </div>
@@ -124,9 +122,9 @@ The navigation stack combines the following ROS components. RTAB-Map handles map
 
 **CAD Drawing & Real Plot View:**
 
-<div style="display: flex; gap: 20px; margin-top: 10px;">
-  <img src="/images/Projects/SEP1/Final_Drawing.png" style="width: 48%; border-radius: 8px;">
-  <img src="/images/Projects/SEP1/Final_Plot.jpg" style="width: 48%; border-radius: 8px;">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px;">
+  <img src="/images/Projects/SEP1/Final_Drawing.png" style="flex: 1 1 200px; min-width: 0; width: 100%; border-radius: 8px;">
+  <img src="/images/Projects/SEP1/Final_Plot.jpg" style="flex: 1 1 200px; min-width: 0; width: 100%; border-radius: 8px;">
 </div>
 
 ---

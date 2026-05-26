@@ -9,7 +9,6 @@ baseurl: ""
 
 # Social Media (add your profiles)
 social:
-  twitter: your_twitter_handle
   github: https://github.com/YongJiee
   linkedin: https://www.linkedin.com/in/yong-jie-tan/
   email: Tan_Yong_jie@outlook.com
@@ -80,7 +79,6 @@ paginate_path: "/blog/page:num/"
 
 # SEO Tag Settings
 twitter:
-  username: your_twitter_handle
   card: summary_large_image
 
 # Feed Settings

@@ -1,7 +1,7 @@
 ---
 title: About Me
-subtitle: 
-description: 
+subtitle: Robotics Engineering Student | Singapore Institute of Technology
+description: Robotics engineering student at SIT specialising in ROS2, computer vision, and industrial automation. WorldSkills Medallion of Excellence in Mechatronics (2020, 2021).
 featured_image: '/images/Background.jpg'
 ---
 
@@ -27,4 +27,4 @@ My technical background covers a few different areas, starting from **PLC progra
 
 <a href="/worldskills" class="button">View Competition Details</a>
 
-<a href="https://YongJiee.github.io/images/Tan Yong Jie_Resume (2025).pdf" class="button button--large" download="Tan Yong Jie_Resume (2025).pdf">Resume</a>
+<a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
