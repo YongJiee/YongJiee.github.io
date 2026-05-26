@@ -7,87 +7,46 @@
   position: relative;
   top: 0;
   margin-top: 0;
-  padding: 60px 0 100px;
+  padding: 40px 0 60px;
   background: $hero-background-color;
-  height: auto !important; // allow full height on mobile
+  height: auto !important;
 
   @include mq(tabletp) {
     margin-top: 25px;
-    padding: 120px 0 180px;
-    min-height: 340px !important;
+    padding: 70px 0 90px;
+    min-height: 280px !important;
     height: auto !important;
   }
 
   @include mq(laptop) {
     margin-top: 30px;
-    padding: 160px 0 220px;
+    padding: 90px 0 110px;
   }
 
   .wrap {
-    padding-top: 50px; // ✅ push content lower on mobile
-
-    @include mq(tabletp) {
-      padding-top: 10px;
-    }
-
-    @include mq(laptop) {
-      padding-top: 0;
-    }
-
     position: relative;
     z-index: 2;
     text-align: center;
   }
 
   h1 {
-    position: relative;
-    top: 0;
     color: $hero-text-color;
-
-    @include mq(tabletp) {
-      top: -70px;
-      white-space: pre-line;
-    }
-
     margin-bottom: 0.5rem;
   }
 
   p {
-    position: relative;
-    top: 0;
     color: rgba($hero-text-color, 0.8);
     font-size: 1.1rem;
-
-    @include mq(tabletp) {
-      top: -70px;
-      margin-top: 25px;
-    }
-
-    @include mq(laptop) {
-      margin-top: 30px;
-    }
-
-    margin-bottom: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 1rem;
   }
 
   .socials {
-    position: relative;
-    top: 0;
     margin-top: 15px;
-
-    @include mq(tabletp) {
-      top: -70px;
-      margin-top: 25px;
-    }
-
-    @include mq(laptop) {
-      margin-top: 30px;
-    }
-
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2.5rem; // breathing space before next section
+    margin-bottom: 0;
   }
 
   .socials__item__link {
