@@ -14,28 +14,35 @@ featured_image: /images/Background.jpg
 
 		<div class="wrap">
 
-			<!-- INSERT PROFILE PHOTO: place your photo at /images/Me.jpg (already exists) — the img tag below will display it -->
-			<div class="hero__photo-wrap">
-				<img src="/images/Me.jpg" alt="Tan Yong Jie" class="hero__photo">
+			<div class="hero__card">
+
+				<div class="hero__photo-wrap">
+					<img src="/images/Me.jpg" alt="Tan Yong Jie" class="hero__photo">
+				</div>
+
+				<div class="hero__info">
+
+					<h1 id="hero-title">Tan Yong Jie</h1>
+					<p class="hero__role">Robotics Engineering Student</p>
+					<p class="hero__stack">ROS2 · Computer Vision · Industrial Automation</p>
+
+					<div class="hero__credentials" role="list" aria-label="Key achievements">
+						<span class="hero__credential" role="listitem">
+							<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+							2× WorldSkills Medallist
+						</span>
+						<span class="hero__credential" role="listitem">SIT Class of 2028</span>
+						<span class="hero__credential hero__credential--avail" role="listitem">
+							<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+							Available for internship · Jan 2027
+						</span>
+					</div>
+
+					{% include socials.html %}
+
+				</div>
+
 			</div>
-
-			<h1 id="hero-title">Tan Yong Jie</h1>
-			<p class="hero__role">Robotics Engineering Student</p>
-			<p class="hero__stack">ROS2 · Computer Vision · Industrial Automation</p>
-
-			<div class="hero__credentials" role="list" aria-label="Key achievements">
-				<span class="hero__credential" role="listitem">
-					<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-					2× WorldSkills Medallist
-				</span>
-				<span class="hero__credential" role="listitem">SIT Class of 2028</span>
-				<span class="hero__credential hero__credential--avail" role="listitem">
-					<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-					Available for internship · Jan 2027
-				</span>
-			</div>
-
-			{% include socials.html %}
 
 		</div>
 
