@@ -8,19 +8,25 @@
 
 .hero__photo-wrap {
   margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero__photo {
-  width: 110px;
-  height: 110px;
+  display: block;
+  width: 110px !important;
+  height: 110px !important;
+  max-width: 110px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(59, 130, 246, 0.6);
   box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15), 0 8px 24px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
 
   @media (min-width: 768px) {
-    width: 130px;
-    height: 130px;
+    width: 130px !important;
+    height: 130px !important;
+    max-width: 130px !important;
   }
 }
 
