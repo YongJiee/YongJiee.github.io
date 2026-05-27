@@ -4,6 +4,21 @@
 // - - - - - - - - - - - - - - - - - -
 
 
+// - - - Homepage-only compact hero - - -
+
+.hero--home {
+  padding: 40px 0 35px !important;
+
+  @include mq(tabletp) {
+    padding: 50px 0 45px !important;
+  }
+
+  @include mq(laptop) {
+    padding: 55px 0 50px !important;
+  }
+}
+
+
 // - - - Hero card (photo left, info right) - - -
 
 .hero__card {
@@ -36,6 +51,7 @@
   max-width: 120px !important;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top center;
   border: 3px solid rgba(59, 130, 246, 0.6);
   box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15), 0 8px 24px rgba(0, 0, 0, 0.35);
 
