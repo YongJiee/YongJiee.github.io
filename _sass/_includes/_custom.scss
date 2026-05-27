@@ -112,9 +112,13 @@
 
 // - - - Listing intro - - -
 
+.listing {
+  margin-top: 0 !important;
+}
+
 .listing__intro {
   text-align: center;
-  padding: 3rem 0 1.5rem;
+  padding: 2.5rem 0 1.5rem;
   border-bottom: 1px solid #c8d8f0;
   margin-bottom: 1rem;
 }

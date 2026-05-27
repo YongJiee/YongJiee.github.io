@@ -41,7 +41,6 @@ My technical background spans industrial automation at **ITE** and **NYP**, thro
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
-  <a href="/worldskills" class="button">View Competition Details</a>
   <a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
 </div>
 
