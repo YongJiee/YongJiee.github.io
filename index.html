@@ -14,8 +14,14 @@ featured_image: /images/Background.jpg
 
 		<div class="wrap">
 
-			<h1 id="hero-title">Robotics Engineering Student</h1>
-			<p>ROS2 · Computer Vision · Industrial Automation</p>
+			<!-- INSERT PROFILE PHOTO: place your photo at /images/Me.jpg (already exists) — the img tag below will display it -->
+			<div class="hero__photo-wrap">
+				<img src="/images/Me.jpg" alt="Tan Yong Jie" class="hero__photo">
+			</div>
+
+			<h1 id="hero-title">Tan Yong Jie</h1>
+			<p class="hero__role">Robotics Engineering Student</p>
+			<p class="hero__stack">ROS2 · Computer Vision · Industrial Automation</p>
 
 			<div class="hero__credentials" role="list" aria-label="Key achievements">
 				<span class="hero__credential" role="listitem">
@@ -23,6 +29,10 @@ featured_image: /images/Background.jpg
 					2× WorldSkills Medallist
 				</span>
 				<span class="hero__credential" role="listitem">SIT Class of 2028</span>
+				<span class="hero__credential hero__credential--avail" role="listitem">
+					<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+					Available for internship · Jan 2027
+				</span>
 			</div>
 
 			{% include socials.html %}
@@ -34,6 +44,11 @@ featured_image: /images/Background.jpg
 	<section class="listing" aria-label="Project Portfolio">
 
 		<div class="wrap">
+
+			<div class="listing__intro">
+				<h2 class="listing__intro-title">Selected Projects</h2>
+				<p class="listing__intro-sub">Autonomous systems built from hardware through software — ROS2, computer vision, and industrial automation.</p>
+			</div>
 
 			{% if site.projects.size > 0 %}
 

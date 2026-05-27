@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image:
+featured_image: '/images/Projects/Worldskills/competition-1.jpg'
 ---
 
 ## Competition Achievements
@@ -52,6 +52,43 @@ Each competition started with a blank workstation. By the end, it had to be a fu
 - **Vision systems** and sensor integration
 - **Safety interlocks** and industrial troubleshooting
 - **System commissioning** and optimization
+
+---
+
+## PLC & HMI Work
+
+Programming samples from competition builds — ladder logic, structured text, and operator interfaces built under competition conditions.
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
+
+  <figure style="margin: 0; text-align: center;">
+    <!-- INSERT IMAGE: PLC ladder logic or structured text screenshot -->
+    <!-- Suggested path: /images/Projects/Worldskills/plc_code.jpg -->
+    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
+      📸 PLC Code Screenshot<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/plc_code.jpg</span>
+    </div>
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">TwinCAT / Panasonic PLC — ladder or structured text</figcaption>
+  </figure>
+
+  <figure style="margin: 0; text-align: center;">
+    <!-- INSERT IMAGE: HMI screen or operator panel -->
+    <!-- Suggested path: /images/Projects/Worldskills/hmi_screen.jpg -->
+    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
+      📸 HMI Screen Screenshot<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/hmi_screen.jpg</span>
+    </div>
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Panasonic GT32 HMI — operator interface with alarms</figcaption>
+  </figure>
+
+  <figure style="margin: 0; text-align: center;">
+    <!-- INSERT IMAGE: Wired control panel / electrical panel -->
+    <!-- Suggested path: /images/Projects/Worldskills/control_panel.jpg -->
+    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
+      📸 Control Panel Photo<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/control_panel.jpg</span>
+    </div>
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Wired control panel — built from scratch during competition</figcaption>
+  </figure>
+
+</div>
 
 ---
 

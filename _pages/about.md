@@ -13,14 +13,32 @@ I'm a robotics engineering student at **Singapore Institute of Technology (SIT)*
 
 I competed in **WorldSkills** — basically the Olympics of vocational skills — in **mechatronics**, and came home with **two Medallions of Excellence**. I've been doing robotics competitions since I was 13.
 
-My technical background covers a few different areas, starting from **PLC programming** and **industrial automation** at **ITE** and **NYP**, and expanding into robotics software at SIT:
+My technical background spans industrial automation at **ITE** and **NYP**, through to robotics software at SIT.
 
-| Domain | Technologies |
-|--------|-------------|
-| Industrial Automation | **PLC programming** (TwinCAT, Panasonic), **HMI** development |
-| Robotics Software | **ROS2** multi-node systems, **OpenCV** pipelines |
-| Hardware Integration | Electrical wiring, sensor networks, pneumatics |
-| Languages & Tools | **Python**, **C++**, Git, Linux, ROS2, OpenCV |
+<div class="skills-grid">
+
+  <div class="skill-group">
+    <div class="skill-group__label skill-group__label--expert">Expert</div>
+    <div class="skill-group__tags">
+      <span>ROS2</span><span>Python</span><span>PLC Programming</span><span>HMI Development</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group__label skill-group__label--proficient">Proficient</div>
+    <div class="skill-group__tags">
+      <span>OpenCV</span><span>SLAM</span><span>Nav2</span><span>Linux</span><span>Git</span><span>C++</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group__label skill-group__label--familiar">Familiar</div>
+    <div class="skill-group__tags">
+      <span>SQLite</span><span>Gazebo</span><span>RViz</span><span>Tesseract OCR</span>
+    </div>
+  </div>
+
+</div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
   <a href="/worldskills" class="button">View Competition Details</a>
