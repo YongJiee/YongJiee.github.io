@@ -173,9 +173,8 @@
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
   white-space: nowrap;
-  min-width: 80px;
   text-align: center;
-  flex-shrink: 0;
+  align-self: flex-start;
   margin-top: 2px;
 }
 
