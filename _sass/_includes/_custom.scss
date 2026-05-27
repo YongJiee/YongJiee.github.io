@@ -149,8 +149,9 @@
 }
 
 .skill-group__label--familiar {
-  background: #DBEAFE;
-  color: #1D4ED8;
+  background: transparent;
+  color: #3B82F6;
+  border: 2px solid #93C5FD;
 }
 
 .skill-group__tags {
