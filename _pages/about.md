@@ -26,14 +26,14 @@ I've also led teams under pressure — including as the **sole programmer on a 5
   <div class="skill-group">
     <div class="skill-group__label skill-group__label--expert">Competition-Proven</div>
     <div class="skill-group__tags">
-      <span>ROS2</span><span>Python</span><span>PLC Programming</span><span>HMI Development</span>
+      <span>PLC Programming</span><span>HMI Development</span>
     </div>
   </div>
 
   <div class="skill-group">
     <div class="skill-group__label skill-group__label--proficient">Proficient</div>
     <div class="skill-group__tags">
-      <span>OpenCV</span><span>SLAM</span><span>Nav2</span><span>Linux</span><span>Git</span>
+      <span>ROS2</span><span>Python</span><span>OpenCV</span><span>SLAM</span><span>Nav2</span><span>Linux</span><span>Git</span>
     </div>
   </div>
 
