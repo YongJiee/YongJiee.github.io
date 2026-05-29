@@ -18,7 +18,7 @@ My technical background spans industrial automation at **ITE** and **NYP**, thro
 <div class="skills-grid">
 
   <div class="skill-group">
-    <div class="skill-group__label skill-group__label--expert">Expert</div>
+    <div class="skill-group__label skill-group__label--expert">Competition-Proven</div>
     <div class="skill-group__tags">
       <span>ROS2</span><span>Python</span><span>PLC Programming</span><span>HMI Development</span>
     </div>

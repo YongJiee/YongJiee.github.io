@@ -2,7 +2,7 @@
 title: WorldSkills Competitions
 subtitle: Mechatronics
 description: Portfolio of my WorldSkills achievements, PLC and HMI expertise
-featured_image: '/images/Projects/Worldskills/competition-1.jpg'
+featured_image: '/images/Projects/Worldskills/MPS_Station.jpeg'
 ---
 
 ## Competition Achievements
@@ -24,6 +24,11 @@ Competed in **WorldSkills Singapore Mechatronics** across three cycles (2018, 20
 ## What We Built
 
 Each competition started with a blank workstation. By the end, it had to be a fully functional automation system — wired, programmed, and running.
+
+<figure style="margin: 24px 0; text-align: center;">
+  <img src="/images/Projects/Worldskills/MPS_building.jpeg" style="width: 100%; max-width: 640px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Building the MPS station during competition">
+  <figcaption style="margin-top: 8px; font-size: 0.9em; color: #666;">My partner and I commissioning the station mid-competition</figcaption>
+</figure>
 
 - **Mechanical Assembly** - Conveyors, pneumatic actuators, robotic modules
 - **Electrical Wiring** - Control panels, safety circuits, sensor networks
@@ -57,35 +62,18 @@ Each competition started with a blank workstation. By the end, it had to be a fu
 
 ## PLC & HMI Work
 
-Programming samples from competition builds — ladder logic, structured text, and operator interfaces built under competition conditions.
+Programming samples from competition builds — ladder diagram and HMI main screen built under competition conditions.
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
 
   <figure style="margin: 0; text-align: center;">
-    <!-- INSERT IMAGE: PLC ladder logic or structured text screenshot -->
-    <!-- Suggested path: /images/Projects/Worldskills/plc_code.jpg -->
-    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
-      📸 PLC Code Screenshot<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/plc_code.jpg</span>
-    </div>
-    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">TwinCAT / Panasonic PLC — ladder or structured text</figcaption>
+    <img src="/images/Projects/Worldskills/plc_code.jpeg" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Ladder Diagram (LD)">
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Panasonic PLC — Ladder Diagram (LD) programmed during competition</figcaption>
   </figure>
 
   <figure style="margin: 0; text-align: center;">
-    <!-- INSERT IMAGE: HMI screen or operator panel -->
-    <!-- Suggested path: /images/Projects/Worldskills/hmi_screen.jpg -->
-    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
-      📸 HMI Screen Screenshot<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/hmi_screen.jpg</span>
-    </div>
-    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Panasonic GT32 HMI — operator interface with alarms</figcaption>
-  </figure>
-
-  <figure style="margin: 0; text-align: center;">
-    <!-- INSERT IMAGE: Wired control panel / electrical panel -->
-    <!-- Suggested path: /images/Projects/Worldskills/control_panel.jpg -->
-    <div style="background: #f0f5ff; border: 2px dashed #3B82F6; border-radius: 8px; padding: 3rem 1rem; color: #3D5A80; font-size: 0.9rem;">
-      📸 Control Panel Photo<br><span style="font-size:0.8em; opacity:0.7;">Place image at /images/Projects/Worldskills/control_panel.jpg</span>
-    </div>
-    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Wired control panel — built from scratch during competition</figcaption>
+    <img src="/images/Projects/Worldskills/hmi_screen.jpeg" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="HMI Main Screen">
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: #3D5A80;">Panasonic GT32 HMI — main operator screen built during competition</figcaption>
   </figure>
 
 </div>
