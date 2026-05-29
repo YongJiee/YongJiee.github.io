@@ -9,13 +9,11 @@ featured_image: '/images/Background.jpg'
   <img src="/images/Me.jpg" class="img-fluid rounded" alt="Tan Yong Jie">
 </figure>
 
-I'm a robotics engineering student at **Singapore Institute of Technology (SIT)**, graduating in **2028**. I work across **ROS2**, **computer vision**, and **industrial automation** — built up over a decade of competitions, starting at age 13.
+I'm a robotics engineering student at **Singapore Institute of Technology (SIT)**, graduating in **2028**. I work across **ROS2**, **computer vision**, and **industrial automation** — skills I've built up through competitions and hands-on project work.
 
-My path: **ITE** (Mechatronics) → **NYP** (Robotics & Mechatronics Engineering) → **SIT** (Robotics Systems Engineering), each step building deeper into the same field.
+I competed in **WorldSkills** — basically the Olympics of vocational skills — in **mechatronics**, and came home with **two Medallions of Excellence**. I've been doing robotics competitions since I was 13.
 
-I competed in **WorldSkills Singapore Mechatronics** across three cycles and earned **two Medallions of Excellence** (2020, 2021). The format: a blank workstation, a two-person team, one day to wire and commission a full industrial automation system from scratch — judged against national standards.
-
-I've also led teams under pressure — including as the **sole programmer on a 5-person robotics team**, coordinating with hardware and mechanical teammates to deliver end-to-end.
+My technical background spans industrial automation at **ITE** and **NYP**, through to robotics software at SIT.
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
   <a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
