@@ -9,15 +9,15 @@ featured_image: '/images/Background.jpg'
   <img src="/images/Me.jpg" class="img-fluid rounded" alt="Tan Yong Jie">
 </figure>
 
-I'm a robotics engineering student at **Singapore Institute of Technology (SIT)**, graduating in **2028**. I work across **ROS2**, **computer vision**, and **industrial automation** — skills I've built up through competitions and hands-on project work.
+I've been building robots competitively since secondary school. Before I even finished my N-levels, I was already competing in national and international competitions and coming home with first-place finishes. That passion pushed me toward mechatronics at **ITE**, then robotics engineering at **NYP**, and eventually to **WorldSkills** where I took home two **Medallions of Excellence**. Think of it as the Olympics for vocational skills.
 
-I competed in **WorldSkills** — basically the Olympics of vocational skills — in **mechatronics**, and came home with **two Medallions of Excellence**. I've been doing robotics competitions since I was 13.
-
-My technical background spans industrial automation at **ITE** and **NYP**, through to robotics software at SIT.
+Each step took me closer to where I wanted to be. I'm now studying **Robotics Systems Engineering** at the **Singapore Institute of Technology (SIT)**, graduating in **2028**, with a focus on building robots that work reliably in the real world.
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
   <a href="https://YongJiee.github.io/images/TanYongJie_Resume.pdf" class="button button--large" download="TanYongJie_Resume.pdf">Resume</a>
 </div>
+
+<div style="clear: both;"></div>
 
 <div class="skills-grid">
 
