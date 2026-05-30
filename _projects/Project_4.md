@@ -38,9 +38,9 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 ## Project Highlights
 
-- Scans **up to 6 faces** per package — all six in sorting mode, five in inbound — using 3× IMX708 cameras + arm end-effector camera
-- **OCR + barcode fusion** — system identifies items even when barcode is fully missing or damaged
-- **43/43 test scenarios PASS** — 10 inbound, 8 sorting, 25 resilience
+- Scans **up to 6 faces** per package (all six in sorting mode, five in inbound) using 3× IMX708 cameras + arm end-effector camera
+- **OCR + barcode fusion:** system identifies items even when barcode is fully missing or damaged
+- **43/43 test scenarios PASS:** 10 inbound, 8 sorting, 25 resilience
 - End-to-end scan time **~2.1–2.9s** across all scenarios
 - Live **Universal Product Passport** written to SQLite, visible in DB Browser during demo
 
@@ -100,7 +100,7 @@ A single damaged barcode in a warehouse stops everything. The item loses its ide
 
 ## System Architecture
 
-The system runs across two machines — a **Raspberry Pi 4** handling all camera capture, and a **WSL Ubuntu** host running the ROS2 processing pipeline, connected over direct ethernet. Built and demoed on WSL Ubuntu — production would swap that for a native Linux host.
+The system runs across two machines: a **Raspberry Pi 4** handling all camera capture, and a **WSL Ubuntu** host running the ROS2 processing pipeline, connected over direct ethernet. Built and demoed on WSL Ubuntu — production would swap that for a native Linux host.
 
 <img src="/images/Projects/Project4/architecture.svg" style="width: 90%; margin-bottom: 10px; border-radius: 8px;">
 
@@ -184,7 +184,7 @@ def preprocess_image(self, image):
 
 ### Problem 2 — Cardboard texture generates false OCR tokens
 
-Tesseract picks up noise characters from cardboard grain and print artifacts — tokens like `"wt"`, `"fl"`, `"oz"` — that pollute the match and reduce accuracy.
+Tesseract picks up noise characters from cardboard grain and print artifacts, tokens like `"wt"`, `"fl"`, `"oz"`, that pollute the match and reduce accuracy.
 
 **Solution:** A curated `OCR_NOISE_WORDS` blocklist of tokens Tesseract consistently misreads from cardboard - things like `wt`, `fl`, `oz`. They get stripped before matching runs. Every noise token was caught across all 25 resilience scenarios.
 
@@ -238,7 +238,7 @@ def _calculate_accuracy(self, brand_score, product_score, keyword_score,
 
 ### Problem 4 — Every scan needs a traceable, queryable record
 
-Identification results need to be stored in a way that's auditable — including failed or flagged scans, not just successful ones. Judges also needed to verify results live, without running SQL queries.
+Identification results need to be stored in a way that's auditable, including failed or flagged scans, not just successful ones. Judges also needed to verify results live, without running SQL queries.
 
 **Solution:** Every scan writes to SQLite — successful matches, failed ones, flagged ties, all of it. `scan_mode` lives directly in the scans table so you don't need a JOIN to see what happened. Uncertain quantities get written as `quantity_source='flagged'` rather than quietly dropped.
 
@@ -273,7 +273,7 @@ def save_scan(self, scan_data):
 
 **Challenge:** We could have used an ML classifier for matching, but a warehouse inventory changes constantly — new products, rebrands, seasonal SKUs. A trained model would need retraining every time.
 
-**Solution:** Fuzzy matching with a noise filter handles new products immediately without retraining — no labeling effort, no retraining cycle, and new SKUs are supported the moment they're added to the database. The right tool for the job.
+**Solution:** Fuzzy matching with a noise filter handles new products immediately without retraining: no labeling effort, no retraining cycle, and new SKUs are supported the moment they're added to the database. The right tool for the job.
 
 ---
 
@@ -289,11 +289,11 @@ def save_scan(self, scan_data):
 
 ### Resilience Findings
 
-- **Brand integrity is critical** — brand text corruption drops score to **~93%** (FAIL)
-- **Product corruption is tolerated** — if brand is intact, score stays **~95–96%** (PASS)
+- **Brand integrity is critical:** brand text corruption drops score to **~93%** (FAIL)
+- **Product corruption is tolerated:** if brand is intact, score stays **~95–96%** (PASS)
 - **OCR-safe products** (no barcode needed): Cream Lip Stain (98.5%), Lip Butter Balm (98.7%) - scores from single-product resilience scenarios, not population averages
-- **Barcode-required**: Cream Lip Gloss — ambiguous across two brands, correctly fails without barcode
-- **Real-world camera noise** — 100% ignored via `OCR_NOISE_WORDS` filter
+- **Barcode-required**: Cream Lip Gloss, ambiguous across two brands, correctly fails without barcode
+- **Real-world camera noise:** 100% ignored via `OCR_NOISE_WORDS` filter
 
 ### System Specifications
 

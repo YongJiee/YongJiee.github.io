@@ -16,9 +16,9 @@ featured_image: '/images/Projects/Project3/Exploration_Final.gif'
 
 ## Project Overview
 
-**Individual project — sole developer** (ROS2, SLAM, Nav2, Python)
+**Individual project, sole developer** (ROS2, SLAM, Nav2, Python)
 
-A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Tested on mazes up to 5×5m — all in Gazebo simulation.
+A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own way out. No pre-programmed paths, no human input. Tested on mazes up to 5×5m, all in Gazebo simulation.
 
 🔗 [View Full Code & Report on GitHub →](https://github.com/YongJiee/ROS2-Autonomous-exploration.git)
 
@@ -37,19 +37,19 @@ A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own w
 ## What I Built
 
 ### Navigation System
-- **Real-time SLAM mapping** — maps the environment on the fly as the robot moves
-- **Autonomous path planning** — Nav2 figures out where to go and avoids obstacles
-- **Exit detection algorithm** — LiDAR checks for an opening and confirms it for 5 seconds before stopping
-- **Recovery behaviors** — scans all four directions and drives toward the clearest path when stuck
+- **Real-time SLAM mapping:** maps the environment on the fly as the robot moves
+- **Autonomous path planning:** Nav2 figures out where to go and avoids obstacles
+- **Exit detection algorithm:** LiDAR checks for an opening and confirms it for 5 seconds before stopping
+- **Recovery behaviors:** scans all four directions and drives toward the clearest path when stuck
 
 ### System Architecture
-- **Simulation (Gazebo)** — runs the robot in TurtleBot3 maze environments
-- **Navigation Stack** — SLAM Toolbox + Nav2 + RViz for mapping and visualization
-- **Exploration Node** — Python node I wrote for all the maze escape and recovery logic
-- **Data Flow** — ROS2 topics wire together LiDAR, SLAM, navigation, and motor control
+- **Simulation (Gazebo):** runs the robot in TurtleBot3 maze environments
+- **Navigation Stack:** SLAM Toolbox + Nav2 + RViz for mapping and visualization
+- **Exploration Node:** Python node I wrote for all the maze escape and recovery logic
+- **Data Flow:** ROS2 topics wire together LiDAR, SLAM, navigation, and motor control
 
 ### Key Features
-- **Dynamic goal generation** — goal position updates based on live sensor data
+- **Dynamic goal generation:** goal position updates based on live sensor data
 - **Time-confirmed exit detection** with **80% LiDAR threshold** held for 5 seconds
 - **Recovery behaviors** tested and working in both maze sizes
 - Tuned to handle corridors as narrow as **0.5m**
@@ -59,19 +59,19 @@ A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own w
 ## Technical Implementation
 
 ### Core Technologies
-- **ROS2** — middleware framework for the whole system
-- **SLAM Toolbox** — builds the map in real-time as the robot moves
-- **Nav2 Stack** — handles path planning and motor control
-- **Python 3** — all the custom exploration and detection logic
-- **Gazebo** — 3D physics simulation environment
-- **LiDAR** — 360° laser scanner for obstacle and exit detection
+- **ROS2:** middleware framework for the whole system
+- **SLAM Toolbox:** builds the map in real-time as the robot moves
+- **Nav2 Stack:** handles path planning and motor control
+- **Python 3:** all the custom exploration and detection logic
+- **Gazebo:** 3D physics simulation environment
+- **LiDAR:** 360° laser scanner for obstacle and exit detection
 
 ### Programming Approach
-- **Goal-directed exploration** — sets a far goal to drive exploration, swaps to the exit once detected
-- **State machine** — switches between explore, detect, recover, and done modes
-- **Time-based confirmation** — holds the exit check for 5 seconds before committing
-- **Multi-stage recovery** — tries multiple directions before resuming exploration
-- **Real-time sensor processing** — reads LiDAR every scan to update navigation decisions
+- **Goal-directed exploration:** sets a far goal to drive exploration, swaps to the exit once detected
+- **State machine:** switches between explore, detect, recover, and done modes
+- **Time-based confirmation:** holds the exit check for 5 seconds before committing
+- **Multi-stage recovery:** tries multiple directions before resuming exploration
+- **Real-time sensor processing:** reads LiDAR every scan to update navigation decisions
 
 ---
 
@@ -79,7 +79,7 @@ A TurtleBot3 drops into an unknown maze, maps it on the fly, and finds its own w
 
 ### Exit Recognition
 **Challenge:** Telling apart an actual exit from a temporary gap in the wall  
-**Solution:** If the front LiDAR stays above 80% open for 5 seconds straight, it's the exit. The 80% threshold was tuned empirically — lower values triggered false positives at wide corridor junctions; higher values missed valid exits near angled walls. Tested in both the 2.5×2.5m and 5×5m mazes — no false positives in either run.
+**Solution:** If the front LiDAR stays above 80% open for 5 seconds straight, it's the exit. The 80% threshold was tuned empirically. Lower values triggered false positives at wide corridor junctions, and higher values missed valid exits near angled walls. Tested in both the 2.5×2.5m and 5×5m mazes — no false positives in either run.
 
 ### Navigation Failures
 **Challenge:** Robot getting stuck in corners and dead-ends  
@@ -125,9 +125,9 @@ best = max(safe, key=safe.get)
 ## Results & Performance
 
 ### Capabilities Demonstrated
-- **Fully autonomous** — no waypoints, no hardcoded paths, just sensor data
-- **Zero false positives** — exit detected correctly on the first run in both the **2.5×2.5m** and **5×5m** mazes
-- **Recovery worked** — got unstuck and kept going in both configurations, no navigation failures
+- **Fully autonomous:** no waypoints, no hardcoded paths, just sensor data
+- **Zero false positives:** exit detected correctly on the first run in both the **2.5×2.5m** and **5×5m** mazes
+- **Recovery worked:** got unstuck and kept going in both configurations, no navigation failures
 - Navigated successfully in both maze sizes without any manual intervention
 
 ### Technical Specifications

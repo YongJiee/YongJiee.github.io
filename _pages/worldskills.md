@@ -7,7 +7,7 @@ featured_image: '/images/Projects/Worldskills/MPS_Station.jpeg'
 
 ## Competition Achievements
 
-Competed in **WorldSkills Singapore Mechatronics** across three cycles (2018, 2020, 2021), earning the **Medallion of Excellence** at **WorldSkills Singapore** in both **2020** and **2021**. Each competition required a two-person team to design, wire, program, and commission a complete industrial automation system from scratch — under time pressure, judged against national standards.
+Competed in **WorldSkills Singapore Mechatronics** across three cycles (2018, 2020, 2021), earning the **Medallion of Excellence** at **WorldSkills Singapore** in both **2020** and **2021**. Each competition required a two-person team to design, wire, program, and commission a complete industrial automation system from scratch, under time pressure, judged against national standards.
 
 ### Awards & Recognition
 
@@ -23,7 +23,7 @@ Competed in **WorldSkills Singapore Mechatronics** across three cycles (2018, 20
 
 ## What We Built
 
-Each competition started with a blank workstation. By the end, it had to be a fully functional automation system — wired, programmed, and running.
+Each competition started with a blank workstation. By the end, it had to be a fully functional automation system: wired, programmed, and running.
 
 <figure style="margin: 24px 0; text-align: center;">
   <img src="/images/Projects/Worldskills/MPS_building.jpeg" style="width: 100%; max-width: 640px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Building the MPS station during competition">
@@ -38,16 +38,16 @@ Each competition started with a blank workstation. By the end, it had to be a fu
 - **Troubleshooting** - Real-time fault diagnosis under pressure
 
 
-> Fully integrated multi-station systems — mechanical, electrical, PLC, and HMI — commissioned within a single competition day.
+> Fully integrated multi-station systems covering mechanical, electrical, PLC, and HMI, commissioned within a single competition day.
 
 ---
 
 ## Technical Skills Gained
 
 ### Programming Platforms
-- **TwinCAT PLC** — EtherCAT fieldbus, servo motion control
-- **Panasonic PLC** — FP7, FP0H series
-- **Panasonic HMI** — GT32 touchscreens
+- **TwinCAT PLC:** EtherCAT fieldbus, servo motion control
+- **Panasonic PLC:** FP7, FP0H series
+- **Panasonic HMI:** GT32 touchscreens
 
 ### Core Competencies
 - PLC programming across **4 IEC 61131-3 languages**
