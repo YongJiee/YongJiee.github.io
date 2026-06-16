@@ -20,7 +20,7 @@ menu_settings:
       url: 'https://YongJiee.github.io/images/TanYongJie_Resume.pdf'
 
 footer_settings:
-  footer_tagline: '<div class="footer-simple"><span>Tan Yong Jie &mdash; Robotics Engineering Student, SIT</span><span class="footer-simple__links"><a href="mailto:Tan_Yong_jie@outlook.com">Tan_Yong_jie@outlook.com</a> &middot; <a href="tel:+6581260458">+65 8126 0458</a> &middot; Singapore, SG</span></div>'
+  footer_tagline: '<div class="footer-simple"><span>Tan Yong Jie &mdash; Robotics Engineering Student, SIT</span><span class="footer-simple__links"><a href="mailto:Tan_Yong_jie@outlook.com">Tan_Yong_jie@outlook.com</a> &middot; Singapore, SG</span></div>'
 
 hero_settings:
   overlay_opacity: 0.55
